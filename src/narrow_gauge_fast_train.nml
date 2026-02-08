@@ -1,0 +1,266 @@
+grf {
+	grfid: "NGFT";
+	name: string(STR_NGFT_NAME);
+	desc: string(STR_NGFT_DESC);
+	version: 2;
+	min_compatible_version: 0;
+	
+}
+// Tables
+cargotable {
+    //DEFAULT
+    PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, VALU, PAPR, WHEA, FOOD, GOLD, RUBR, FRUT, MAIZ, CORE, WATR, DIAM, 
+	//TOYLAND
+	SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, 
+	//ECS
+	AORE, BRCK, BDMT, CERA, CERE, CMNT, DYES, FERT, FICR, FISH, GLAS, LIME, OLSD, PETR, PLAS, POTA, RFPR, SAND, SULP, TOUR, VEHI, WDPR, WOOL, 
+	//FIRS3, XIS
+	METL, BEER, CLAY, COPR, ENSP, FMSP, GRVL, MILK, MNSP, PHOS, RCYC, SCMT, SGBT, SGCN, JAVA, CASS, NUTS, 
+	EOIL, ACID, CHLO, ZINC, IRON, SASH, SALT, QLME, SLAG, MNO2, NITR, COKE, BEAN, PORE, PEAT, BOOM, KAOL, VPTS, VBOD, POWR, PIPE, 
+	//FIRS 4
+	CBLK, CSTI, CTAR, FECR, TYRE, COAT, LYE_, NH3_, O2__, SOAP, STAL, STCB, STSE, STSH, STST, STWR, VENG, 
+	C2H4, HYAC, MEOH, NAPH, PHAC, C3H6, SUAC, TEXT, TIN_, TINP, UREA, 
+	//AXIS
+	ALO_, ALUM, COCO, H2__, NHNO, PPAR, ENUM, ACET, BIOM, RAMT,
+	//FIRS 5
+	CCPR, CRAN, FOCA, HWAR, LFEQ, N7__, PPWK, PUMP, RBAR, STBR, STPP, STTP, SWRP, TYCO, WELD, 
+	//OTIS
+	FRVG, URAN, BAKE, CHSE, ELTR, FUEL, FURN, MEAT, MPTS, NKOR, OTI1, OTI2, OYST, PCL_, SEED, SESP, TWOD, TATO, 
+	//ITI, IotC
+	WDCH, SCPR, WSTE, OILI, OILD, CIGR, TBCO, COBL, NICK, MOLS, 
+	//MISC
+	NUKF, NUKW, NWST, YETI, YETY
+}
+railtypetable {
+	NABE, NAAA, dAAN
+}
+//template
+template template_test(x, y){
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [ 0 + x, y, 8, 18, -3, -10]
+    [ 16 + x, y, 20, 16, -14, -7]
+    [ 48 + x, y, 28, 12, -14, -6]
+    [ 96 + x, y, 20, 16, -6, -7]
+    [ 128 + x, y, 8, 18, -3, -10]
+    [ 144 + x, y, 20, 16, -14, -7]
+    [ 176 + x, y, 28, 12, -14, -6]
+    [ 224 + x, y, 20, 16, -6, -7]
+}
+template template_tram_28(x, y) {
+    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
+    [x,         y,          10,        28,           -4,         -11]
+    [x+ 20,     y,          26,        28,          -17,         -14]
+    [x+ 50,     y,          36,        28,          -20,         -20]
+    [x+ 90,     y,          26,        28,           -9,         -15]
+    [x+120,     y,          10,        28,           -4,         -13]
+    [x+140,     y,          26,        28,          -16,         -16]
+    [x+170,     y,          36,        28,          -16,         -20]
+    [x+210,     y,          26,        28,           -8,         -16]
+}
+
+template template_tram_24(x, y) {
+    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
+    [x,         y,          10,        28,           -4,         -11]
+    [x+ 20,     y,          26,        28,          -17,         -14]
+    [x+ 50,     y,          36,        28,          -22,         -20]
+    [x+ 90,     y,          26,        28,           -9,         -15]
+    [x+120,     y,          10,        28,           -4,         -15]
+    [x+140,     y,          26,        28,          -16,         -16]
+    [x+170,     y,          36,        28,          -14,         -20]
+    [x+210,     y,          26,        28,           -8,         -16]
+}
+
+template template_tram_purchase(x, y) {
+    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
+    [x,         y,          50,        12,          -25,          -6]
+}
+template tmpl_32_train_basic(x, y) {
+    // arguments x, y: coordinates of top-left corner of first sprite
+    [x,      y,  8, 24,  -3, -12] //xpos ypos xsize ysize xoff yoff
+    [x +  9, y, 22, 20, -14, -12]
+    [x + 32, y, 32, 16, -16, -12]
+    [x + 65, y, 22, 20,  -6, -12]
+}
+template tmpl_32_train_4_views(num) {
+    // argument num: Index in the graphics file, assuming vertical ordering of vehicles
+    tmpl_32_train_basic(1, 1 + 32 * num)
+}
+template tmpl_32_train_8_views(num, reversed) {
+    // argument num: Index in the graphics file, assuming vertical ordering of vehicles
+    // argument reversed: Reverse visible orientation of vehicle, if set to 1
+    tmpl_32_train_basic(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_32_train_basic(reversed ? 1 : 89, 1 + 32 * num)
+}
+template tmpl_32_train_single(num, xsize, ysize, xoff, yoff) { 
+    [1, 1 + 32 * num, xsize, ysize, xoff, yoff] 
+}
+
+//spriteset,switch
+//test bus
+spriteset(spriteset_test_bus_empty, "src/gfx/test_bus.png"){
+    template_test(0, 0)
+}
+spriteset(spriteset_test_bus_pass_full, "src/gfx/test_bus.png"){
+    template_test(0, 22)
+}
+spritegroup spritegroup_test_bus {
+    loaded : [spriteset_test_bus_empty, spriteset_test_bus_pass_full];
+    loading : [spriteset_test_bus_empty, spriteset_test_bus_pass_full];
+}
+//test tram
+spriteset(spriteset_test_tram, "src/gfx/test_tram.png") { 
+    template_tram_28(0, 20)
+} 
+spriteset(spriteset_test_tram_1, "src/gfx/test_tram.png") { 
+    template_tram_24(0, 60)
+} 
+spriteset(spriteset_test_tram_2, "src/gfx/test_tram.png") { 
+    template_tram_28(0, 100)
+}
+spriteset(spriteset_purchase_test_tram, "src/gfx/test_tram.png") { 
+    template_tram_purchase(0, 140)
+}
+switch(FEAT_ROADVEHS, SELF, switch_articulated_testtram, extra_callback_info1){
+    1..2: return item_testtram;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_ROADVEHS, SELF, switch_capacity_testtram, position_in_consist){
+    1: return 80;
+    return 68;
+}
+switch(FEAT_ROADVEHS, SELF, switch_spriteset_test_tram, position_in_consist){
+    1: spriteset_test_tram_1;
+    2: spriteset_test_tram_2;
+    spriteset_test_tram;
+}
+//length switching
+switch(FEAT_ROADVEHS, SELF, switch_length_test_tram, position_in_consist){ 
+    1: return 6;
+    return 7;
+}
+
+//600_series
+spriteset(spriteset_600_series_front_lighted, "src/gfx/600_series.png") { tmpl_32_train_8_views(0, 0) } 
+spriteset(spriteset_600_series_rear_lighted, "src/gfx/600_series.png") { tmpl_32_train_8_views(1, 1) } 
+spriteset(spriteset_600_series_front, "src/gfx/600_series.png") { tmpl_32_train_8_views(2, 0) } 
+spriteset(spriteset_600_series_rear, "src/gfx/600_series.png") { tmpl_32_train_8_views(3, 1) } 
+spriteset(spriteset_600_series_middle, "src/gfx/600_series.png") { tmpl_32_train_4_views(4) } 
+spriteset(spriteset_600_series_purchase, "src/gfx/600_series.png") { tmpl_32_train_single(5, 53, 14, -25, -10) } 
+spriteset(spriteset_600_series_invisible, "src/gfx/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
+
+switch(FEAT_TRAINS, SELF, switch_600_series_articulated_part, extra_callback_info1){
+    1..8: return item_600_train;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, vehicle_type_id){
+    item_600_train: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_600_series_CANNOT_ATTACH_OTHER);
+}
+switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) { 
+    0: spriteset_600_series_front_lighted; 
+    8: spriteset_600_series_rear_lighted; 
+    spriteset_600_series_middle; 
+}
+// testing_bus
+item(FEAT_ROADVEHS, item_testbus){
+    property {
+        name: string(STR_NAEM_TESTING_BUS);
+        introduction_date: date(1980,01,01);
+        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        model_life: 65;
+        vehicle_life: 20;
+        reliability_decay: 20;
+        refittable_cargo_classes: ALL_NORMAL_CARGO_CLASSES;
+        loading_speed: 20;
+        cost_factor: 10;
+        running_cost_factor: 90;
+        speed: 80 km/h;
+        misc_flags: bitmask(ROADVEH_FLAG_2CC);
+        refit_cost: 0;
+        running_cost_base: RUNNING_COST_ROADVEH;
+        power: 120 hp;
+        weight: 9.5 ton;
+        cargo_capacity: 60;
+        misc_flags: bitmask(ROADVEH_FLAG_2CC);
+        refit_cost: 0;
+        running_cost_base: RUNNING_COST_ROADVEH;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+    }
+    graphics {
+        default: spritegroup_test_bus;
+    }
+}
+//testing tram
+item(FEAT_ROADVEHS, item_testtram){
+    property {
+        name : string(STR_NAEM_TESTING_TRAM);
+        introduction_date: date(1980,01,01);
+        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        model_life: 65;
+        vehicle_life: 20;
+        reliability_decay: 20;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        loading_speed: 40;
+        cost_factor: 30;
+        running_cost_factor: 100;
+        speed: 80 km/h;
+        power: 820 hp;
+        weight: 60 ton;
+        cargo_capacity: (68*2+80)/3;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+        misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+        tractive_effort_coefficient: 0.5;
+        air_drag_coefficient: 0;
+        running_cost_base: RUNNING_COST_ROADVEH;
+    }
+    graphics {
+        purchase: spriteset_purchase_test_tram;
+        additional_text: return string(STR_DESC_TESTING_TRAM);
+        articulated_part: switch_articulated_testtram;
+        length: switch_length_test_tram;
+        cargo_capacity: switch_capacity_testtram;
+        purchase_cargo_capacity: spriteset_purchase_test_tram;
+        default: switch_spriteset_test_tram;
+    }
+}
+
+// maintrains
+item(FEAT_TRAINS, item_600_train){
+    property {
+        name: string(STR_NAME_600_TRAINS);
+        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date: date(2000,01,01);
+        model_life: 45;
+        vehicle_life: 30;
+        reliability_decay: 20;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        loading_speed: 20;
+        cost_factor:50;
+        running_cost_factor: 150;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        speed: 201 km/h;
+        misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
+        refit_cost: 0;
+        track_type: NAAA;
+        ai_special_flag: AI_FLAG_PASSENGER;
+        power: 1200 hp;
+        running_cost_base: RUNNING_COST_ELECTRIC;
+        dual_headed: 0;
+        cargo_capacity: 40;
+        weight: 200 ton;
+        ai_engine_rank: 0;
+        engine_class: ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon: 0 kW;
+        tractive_effort_coefficient: 0.9 / 9;
+        air_drag_coefficient: 0.06;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon: 0 ton;
+        bitmask_vehicle_info: 0;
+    }
+    graphics {
+        articulated_part: switch_600_series_articulated_part;
+        can_attach_wagon: switch_600_series_attach_wagon;
+        purchase: spriteset_600_series_purchase;
+        default: switch_600_series_graphics;
+    }
+}
