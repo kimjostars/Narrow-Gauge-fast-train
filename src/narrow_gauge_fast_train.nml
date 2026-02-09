@@ -74,7 +74,7 @@ template template_tram_purchase(x, y) {
     //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
     [x,         y,          50,        12,          -25,          -6]
 }
-template tmpl_32_train_basic(x, y) {
+template tmpl_32_train(x, y) {
     // arguments x, y: coordinates of top-left corner of first sprite
     [x,      y,  8, 24,  -3, -12] //xpos ypos xsize ysize xoff yoff
     [x +  9, y, 22, 20, -14, -12]
@@ -83,17 +83,29 @@ template tmpl_32_train_basic(x, y) {
 }
 template tmpl_32_train_4_views(num) {
     // argument num: Index in the graphics file, assuming vertical ordering of vehicles
-    tmpl_32_train_basic(1, 1 + 32 * num)
+    tmpl_32_train(1, 1 + 32 * num)
 }
 template tmpl_32_train_8_views(num, reversed) {
     // argument num: Index in the graphics file, assuming vertical ordering of vehicles
     // argument reversed: Reverse visible orientation of vehicle, if set to 1
-    tmpl_32_train_basic(reversed ? 89 : 1, 1 + 32 * num)
-    tmpl_32_train_basic(reversed ? 1 : 89, 1 + 32 * num)
+    tmpl_32_train(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_32_train(reversed ? 1 : 89, 1 + 32 * num)
 }
 template tmpl_32_train_single(num, xsize, ysize, xoff, yoff) { 
     [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
 }
+template tmpl_32_train_basic(x, y){
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -12]
+    [x+9  , y, 22, 20, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 20,  -6, -12]
+    [x+88 , y,  8, 24,  -3, -12]
+    [x+97 , y, 22, 20, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 20,  -6, -12]
+}
+
 //spriteset,switch
 //test bus
 spriteset(spriteset_test_bus_empty, "src/gfx/test_bus.png"){
@@ -162,11 +174,8 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) {
 }
 
 //123_serise
-spriteset(spriteset_123_series_front, "src/gfx/ef71.png"){
+spriteset(spriteset_123_series, "src/gfx/ef71.png"){
     tmpl_32_train_basic(0, 0)
-}
-spriteset(spriteset_123_series_rear, "src/gfx/ef71.png"){
-    tmpl_32_train_basic(89, 0)
 }
 
 // testing_bus
@@ -306,6 +315,6 @@ item(FEAT_TRAINS, item_123_series){
         bitmask_vehicle_info: 1;
     }
     graphics{
-        default: spriteset_123_series_front;
+        default: spriteset_123_series;
     }
 }
