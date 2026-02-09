@@ -288,7 +288,7 @@ item(FEAT_TRAINS, item_123_series){
         refit_cost: 0;
         track_type: NAAD;
         ai_special_flag: AI_FLAG_PASSENGER;
-        power: 1200 hp;
+        power: 600 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 0;
         cargo_capacity: 70;
