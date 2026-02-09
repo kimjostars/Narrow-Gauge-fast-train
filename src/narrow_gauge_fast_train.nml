@@ -32,7 +32,7 @@ cargotable {
 	NUKF, NUKW, NWST, YETI, YETY
 }
 railtypetable {
-	NABE, NAAA, dAAN
+	NABE, NAAA, dAAN, ELNG
 }
 //template
 template template_test(x, y){
