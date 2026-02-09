@@ -301,6 +301,6 @@ item(FEAT_TRAINS, item_123_series){
         bitmask_vehicle_info: 1;
     }
     graphics{
-        default: spriteset_600_series_front;
+        default: spriteset_123_series_front;
     }
 }
