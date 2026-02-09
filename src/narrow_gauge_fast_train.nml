@@ -92,9 +92,8 @@ template tmpl_32_train_8_views(num, reversed) {
     tmpl_32_train_basic(reversed ? 1 : 89, 1 + 32 * num)
 }
 template tmpl_32_train_single(num, xsize, ysize, xoff, yoff) { 
-    [1, 1 + 32 * num, xsize, ysize, xoff, yoff] 
+    [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
 }
-
 //spriteset,switch
 //test bus
 spriteset(spriteset_test_bus_empty, "src/gfx/test_bus.png"){
@@ -148,11 +147,6 @@ spriteset(spriteset_600_series_middle, "src/gfx/600_series.png") { tmpl_32_train
 spriteset(spriteset_600_series_purchase, "src/gfx/600_series.png") { tmpl_32_train_single(5, 53, 14, -25, -10) } 
 spriteset(spriteset_600_series_invisible, "src/gfx/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
 
-//123_serise
-spriteset(spriteset_123_series_front, "src/gfx/ef71.png"){
-    tmpl_32_train_basic(0, 0)
-}
-
 switch(FEAT_TRAINS, SELF, switch_600_series_articulated_part, extra_callback_info1){
     1..8: return item_600_train;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
@@ -166,6 +160,15 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) {
     8: spriteset_600_series_rear_lighted; 
     spriteset_600_series_middle; 
 }
+
+//123_serise
+spriteset(spriteset_123_series_front, "src/gfx/ef71.png"){
+    tmpl_32_train_basic(0, 0)
+}
+spriteset(spriteset_123_series_rear, "src/gfx/ef71.png"){
+    tmpl_32_train_basic(89, 0)
+}
+
 // testing_bus
 item(FEAT_ROADVEHS, item_testbus){
     property {
