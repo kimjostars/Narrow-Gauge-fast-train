@@ -32,7 +32,7 @@ cargotable {
 	NUKF, NUKW, NWST, YETI, YETY
 }
 railtypetable {
-	NABE, NAAA, dAAN, ELNG
+	NABE, NAAD, NAAA, dAAN, ELNG
 }
 //template
 template template_test(x, y){
@@ -235,15 +235,15 @@ item(FEAT_TRAINS, item_600_train){
         reliability_decay: 20;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         loading_speed: 20;
-        cost_factor:50;
+        cost_factor: 50;
         running_cost_factor: 150;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         speed: 201 km/h;
-        misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
+        misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
         refit_cost: 0;
         track_type: NAAA;
         ai_special_flag: AI_FLAG_PASSENGER;
-        power: 1200 hp;
+        power: 2000 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 0;
         cargo_capacity: 40;
@@ -268,11 +268,35 @@ item(FEAT_TRAINS, item_600_train){
 item(FEAT_TRAINS, item_123_series){
     property{
         name: string(STR_NAME_123_TRAINS);
+        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date: date(1987,01,01);
+        model_life: 45;
+        vehicle_life: 30;
+        reliability_decay: 25;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        loading_speed: 20;
+        cost_factor: 30;
+        running_cost_factor: 100;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        speed: 100 km/h;
+        misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
+        refit_cost: 0;
+        track_type: NAAD;
+        ai_special_flag: AI_FLAG_PASSENGER;
+        power: 1200 hp;
+        running_cost_base: RUNNING_COST_ELECTRIC;
+        dual_headed: 0;
+        cargo_capacity: 70;
+        weight: 44 ton;
+        ai_engine_rank: 0;
+        engine_class: ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon: 0 kW;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 8, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon: 0 ton;
+        bitmask_vehicle_info: 1;
     }
     /*
     graphics{
         default: ;
-    }
-    */
-    
+    }*/
 }
