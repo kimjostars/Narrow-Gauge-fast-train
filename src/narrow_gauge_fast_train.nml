@@ -148,6 +148,11 @@ spriteset(spriteset_600_series_middle, "src/gfx/600_series.png") { tmpl_32_train
 spriteset(spriteset_600_series_purchase, "src/gfx/600_series.png") { tmpl_32_train_single(5, 53, 14, -25, -10) } 
 spriteset(spriteset_600_series_invisible, "src/gfx/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
 
+//123_serise
+spriteset(spriteset_123_series_front, "src/gfx/ef71.png"){
+    tmpl_32_train_basic(0, 0)
+}
+
 switch(FEAT_TRAINS, SELF, switch_600_series_articulated_part, extra_callback_info1){
     1..8: return item_600_train;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
@@ -291,12 +296,11 @@ item(FEAT_TRAINS, item_123_series){
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon: 0 kW;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 8, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 1;
     }
-    /*
     graphics{
-        default: ;
-    }*/
+        default: spriteset_600_series_front;
+    }
 }
