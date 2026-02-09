@@ -1,11 +1,11 @@
 ##grflangid 0x01
 
 #desc
-STR_NGFT_NAME :Narrow Gauge fast train 0.1 alpha
-STR_NGFT_DESC :Narrow Gauge fast train is a train set that can run over 200 km/h on narrow gauge. {}{RED}JP+ Track {BLACK}is required
+STR_NGFT_NAME :Narrow Gauge fast train SET 0.1 alpha
+STR_NGFT_DESC :Narrow Gauge fast train SET is a set of trains that can run over 200 km/h on 1067mm narrow guage. {}{RED}JP+ Track {BLACK}is required to run this newGRF.
 
 #car
-STR_NAEM_TESTING_BUS :Two ton Harf
+STR_NAEM_TESTING_BUS : 2.5 ton truck
 STR_NAEM_TESTING_TRAM : testing tram
 STR_DESC_TESTING_TRAM : testing
 
