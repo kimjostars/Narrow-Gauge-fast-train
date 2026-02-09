@@ -1,7 +1,7 @@
 # 협궤 고속열차 세트
 협궤 고속열차 세트는 가상의 1067mm궤간의 200km이상의 열차와 그외의 열차를 추가해주는 OpenTTD NewGRF입니다.
 **[Github release 페이지](https://github.com/kimjostars/Narrow-Gauge-fast-train/releases)** 에서 다운로드 할수있습니다.
-
+이세트를 게임에 적용할떄 **[JP+ Track](https://github.com/OpenTTD-JPplus/JPplusTracks)**도 같이 적용되어야합니다.
 ### 번역
 이세트의 기본언어는 한국어 입니다.
 다른언어로 번역하고 싶으시다면 이 Github 프로젝트에 Pull Request를 열어주세요.
