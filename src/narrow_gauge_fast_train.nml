@@ -264,3 +264,15 @@ item(FEAT_TRAINS, item_600_train){
         default: switch_600_series_graphics;
     }
 }
+
+item(FEAT_TRAINS, item_123_series){
+    property{
+        name: string();
+    }
+    /*
+    graphics{
+        default: ;
+    }
+    */
+    
+}
