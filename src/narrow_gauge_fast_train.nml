@@ -174,8 +174,11 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) {
 }
 
 //123_serise
-spriteset(spriteset_123_series, "src/gfx/ef71.png"){
+spriteset(spriteset_123_series, "src/gfx/123JW.png"){
     tmpl_32_train_basic(0, 0)
+}
+spriteset(spriteset_123_series_JW_BW, "src/gfx/123JW.png"){
+    tmpl_32_train_basic(0, 31)
 }
 
 // testing_bus
@@ -315,6 +318,6 @@ item(FEAT_TRAINS, item_123_series){
         bitmask_vehicle_info: 1;
     }
     graphics{
-        default: spriteset_123_series;
+        default: spriteset_123_series_JW_BW;
     }
 }
