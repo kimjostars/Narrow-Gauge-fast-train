@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 5;
+	version: 6;
 	min_compatible_version: 0;
 	
 }
@@ -78,7 +78,10 @@ template tmpl_32_train_basic(x, y){
     [x+120, y, 32, 16, -16, -12]
     [x+153, y, 22, 20,  -6, -12]
 }
-
+template template_purchase_engine(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x, y,  87, 12, -25, -7]
+}
 //spriteset,switch
 //600_series
 spriteset(spriteset_600_series_front_lighted, "src/gfx/600_series.png") { tmpl_32_train_8_views(0, 0) } 
@@ -109,6 +112,9 @@ spriteset(spriteset_123_series_JW_YY, "src/gfx/123JW.png"){
 }
 spriteset(spriteset_123_series_JW_BW, "src/gfx/123JW.png"){
     tmpl_32_train_basic(0, 31)
+}
+spriteset(spriteset_123_series_purchase, "src/gfx/123JW.png"){
+    template_purchase_engine(0, 92)
 }
 switch(FEAT_TRAINS, SELF, switch_123_serise_cargo_subtype_text, cargo_subtype){
     0: return string(STR_123_SERIES_JW_YY);
@@ -195,6 +201,7 @@ item(FEAT_TRAINS, item_123_series){
     }
     graphics{
         cargo_subtype_text: switch_123_serise_cargo_subtype_text;
+        purchase: spriteset_123_series_purchase;
         default: switch_123_series_graphics;
     }
 }
