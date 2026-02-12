@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 4;
+	version: 5;
 	min_compatible_version: 0;
 	
 }
@@ -32,48 +32,21 @@ cargotable {
 	NUKF, NUKW, NWST, YETI, YETY
 }
 railtypetable {
-	NABE, NAAD, NAAA, dAAN, ELNG
+    TR_1067_NE:       [NAAN, RAIL], //Non-Electrified
+    TR_1067_DC:       [NAAD, NAAE, NABE, ELNG, ELRL],
+    TR_1067_AC:       [NAAA, NAAE, NABE, ELNG, ELRL],
+    TR_1067_ACDC:     [NAAE, NABE, ELNG, ELRL],
+    TR_1372_DC:       [sAAD, sAAE, SAAD, SAAE, ELRL],
+    TR_1435_NE:       [SAAN, RAIL],
+    TR_1435_DC:       [SAAD, ELRL],
+    TR_1435_AC:       [SAAA, ELRL],
+    TR_1435_ACDC:     [SAAE, ELRL],
+    TR_1435_M:        [SAA3, SAB3, "3RDR", MTRO, ELRL],
+    TR_1435_LINEAR:   [SAAI, ELRL],
+    TR_RUBBER:        [rAA3,rAAE, ELRL],
+    TR_UNIVERSAL:     [_AAE,NAAN, RAIL], //for mu cars
 }
 //template
-template template_test(x, y){
-    //[left_x, upper_y, width, height, offset_x, offset_y]
-    [ 0 + x, y, 8, 18, -3, -10]
-    [ 16 + x, y, 20, 16, -14, -7]
-    [ 48 + x, y, 28, 12, -14, -6]
-    [ 96 + x, y, 20, 16, -6, -7]
-    [ 128 + x, y, 8, 18, -3, -10]
-    [ 144 + x, y, 20, 16, -14, -7]
-    [ 176 + x, y, 28, 12, -14, -6]
-    [ 224 + x, y, 20, 16, -6, -7]
-}
-template template_tram_28(x, y) {
-    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
-    [x,         y,          10,        28,           -4,         -11]
-    [x+ 20,     y,          26,        28,          -17,         -14]
-    [x+ 50,     y,          36,        28,          -20,         -20]
-    [x+ 90,     y,          26,        28,           -9,         -15]
-    [x+120,     y,          10,        28,           -4,         -13]
-    [x+140,     y,          26,        28,          -16,         -16]
-    [x+170,     y,          36,        28,          -16,         -20]
-    [x+210,     y,          26,        28,           -8,         -16]
-}
-
-template template_tram_24(x, y) {
-    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
-    [x,         y,          10,        28,           -4,         -11]
-    [x+ 20,     y,          26,        28,          -17,         -14]
-    [x+ 50,     y,          36,        28,          -22,         -20]
-    [x+ 90,     y,          26,        28,           -9,         -15]
-    [x+120,     y,          10,        28,           -4,         -15]
-    [x+140,     y,          26,        28,          -16,         -16]
-    [x+170,     y,          36,        28,          -14,         -20]
-    [x+210,     y,          26,        28,           -8,         -16]
-}
-
-template template_tram_purchase(x, y) {
-    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
-    [x,         y,          50,        12,          -25,          -6]
-}
 template tmpl_32_train(x, y) {
     // arguments x, y: coordinates of top-left corner of first sprite
     [x,      y,  8, 24,  -3, -12] //xpos ypos xsize ysize xoff yoff
@@ -107,49 +80,6 @@ template tmpl_32_train_basic(x, y){
 }
 
 //spriteset,switch
-//test bus
-spriteset(spriteset_test_bus_empty, "src/gfx/test_bus.png"){
-    template_test(0, 0)
-}
-spriteset(spriteset_test_bus_pass_full, "src/gfx/test_bus.png"){
-    template_test(0, 22)
-}
-spritegroup spritegroup_test_bus {
-    loaded : [spriteset_test_bus_empty, spriteset_test_bus_pass_full];
-    loading : [spriteset_test_bus_empty, spriteset_test_bus_pass_full];
-}
-//test tram
-spriteset(spriteset_test_tram, "src/gfx/test_tram.png") { 
-    template_tram_28(0, 20)
-} 
-spriteset(spriteset_test_tram_1, "src/gfx/test_tram.png") { 
-    template_tram_24(0, 60)
-} 
-spriteset(spriteset_test_tram_2, "src/gfx/test_tram.png") { 
-    template_tram_28(0, 100)
-}
-spriteset(spriteset_purchase_test_tram, "src/gfx/test_tram.png") { 
-    template_tram_purchase(0, 140)
-}
-switch(FEAT_ROADVEHS, SELF, switch_articulated_testtram, extra_callback_info1){
-    1..2: return item_testtram;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_ROADVEHS, SELF, switch_capacity_testtram, position_in_consist){
-    1: return 80;
-    return 68;
-}
-switch(FEAT_ROADVEHS, SELF, switch_spriteset_test_tram, position_in_consist){
-    1: spriteset_test_tram_1;
-    2: spriteset_test_tram_2;
-    spriteset_test_tram;
-}
-//length switching
-switch(FEAT_ROADVEHS, SELF, switch_length_test_tram, position_in_consist){ 
-    1: return 6;
-    return 7;
-}
-
 //600_series
 spriteset(spriteset_600_series_front_lighted, "src/gfx/600_series.png") { tmpl_32_train_8_views(0, 0) } 
 spriteset(spriteset_600_series_rear_lighted, "src/gfx/600_series.png") { tmpl_32_train_8_views(1, 1) } 
@@ -180,71 +110,8 @@ spriteset(spriteset_123_series, "src/gfx/123JW.png"){
 spriteset(spriteset_123_series_JW_BW, "src/gfx/123JW.png"){
     tmpl_32_train_basic(0, 31)
 }
-
-// testing_bus
-item(FEAT_ROADVEHS, item_testbus){
-    property {
-        name: string(STR_NAEM_TESTING_BUS);
-        introduction_date: date(1980,01,01);
-        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        model_life: 65;
-        vehicle_life: 20;
-        reliability_decay: 20;
-        refittable_cargo_classes: ALL_NORMAL_CARGO_CLASSES;
-        loading_speed: 20;
-        cost_factor: 10;
-        running_cost_factor: 90;
-        speed: 80 km/h;
-        misc_flags: bitmask(ROADVEH_FLAG_2CC);
-        refit_cost: 0;
-        running_cost_base: RUNNING_COST_ROADVEH;
-        power: 120 hp;
-        weight: 9.5 ton;
-        cargo_capacity: 60;
-        misc_flags: bitmask(ROADVEH_FLAG_2CC);
-        refit_cost: 0;
-        running_cost_base: RUNNING_COST_ROADVEH;
-        sprite_id: SPRITE_ID_NEW_ROADVEH;
-    }
-    graphics {
-        default: spritegroup_test_bus;
-    }
-}
-//testing tram
-item(FEAT_ROADVEHS, item_testtram){
-    property {
-        name : string(STR_NAEM_TESTING_TRAM);
-        introduction_date: date(1980,01,01);
-        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        model_life: 65;
-        vehicle_life: 20;
-        reliability_decay: 20;
-        refittable_cargo_classes: bitmask(CC_PASSENGERS);
-        loading_speed: 40;
-        cost_factor: 30;
-        running_cost_factor: 100;
-        speed: 80 km/h;
-        power: 820 hp;
-        weight: 60 ton;
-        cargo_capacity: (68*2+80)/3;
-        sprite_id: SPRITE_ID_NEW_ROADVEH;
-        misc_flags: bitmask(ROADVEH_FLAG_TRAM);
-        tractive_effort_coefficient: 0.5;
-        air_drag_coefficient: 0;
-        running_cost_base: RUNNING_COST_ROADVEH;
-    }
-    graphics {
-        purchase: spriteset_purchase_test_tram;
-        additional_text: return string(STR_DESC_TESTING_TRAM);
-        articulated_part: switch_articulated_testtram;
-        length: switch_length_test_tram;
-        cargo_capacity: switch_capacity_testtram;
-        purchase_cargo_capacity: spriteset_purchase_test_tram;
-        default: switch_spriteset_test_tram;
-    }
-}
-
-// maintrains
+//items
+//600series
 item(FEAT_TRAINS, item_600_train){
     property {
         name: string(STR_NAME_600_TRAINS);
@@ -261,7 +128,7 @@ item(FEAT_TRAINS, item_600_train){
         speed: 201 km/h;
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
         refit_cost: 0;
-        track_type: NAAA;
+        track_type: TR_1067_AC;
         ai_special_flag: AI_FLAG_PASSENGER;
         power: 2000 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
@@ -284,7 +151,7 @@ item(FEAT_TRAINS, item_600_train){
         default: switch_600_series_graphics;
     }
 }
-
+//123series
 item(FEAT_TRAINS, item_123_series){
     property{
         name: string(STR_NAME_123_TRAINS);
@@ -301,7 +168,7 @@ item(FEAT_TRAINS, item_123_series){
         speed: 100 km/h;
         misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
         refit_cost: 0;
-        track_type: NAAD;
+        track_type: TR_1067_DC;
         ai_special_flag: AI_FLAG_PASSENGER;
         power: 600 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
