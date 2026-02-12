@@ -90,11 +90,11 @@ spriteset(spriteset_600_series_purchase, "src/gfx/600_series.png") { tmpl_32_tra
 spriteset(spriteset_600_series_invisible, "src/gfx/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
 
 switch(FEAT_TRAINS, SELF, switch_600_series_articulated_part, extra_callback_info1){
-    1..8: return item_600_train;
+    1..8: return item_600_series;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, vehicle_type_id){
-    item_600_train: return CB_RESULT_ATTACH_ALLOW;
+    item_600_series: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_600_series_CANNOT_ATTACH_OTHER);
 }
 switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) { 
@@ -104,15 +104,24 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) {
 }
 
 //123_serise
-spriteset(spriteset_123_series, "src/gfx/123JW.png"){
+spriteset(spriteset_123_series_JW_YY, "src/gfx/123JW.png"){
     tmpl_32_train_basic(0, 0)
 }
 spriteset(spriteset_123_series_JW_BW, "src/gfx/123JW.png"){
     tmpl_32_train_basic(0, 31)
 }
+switch(FEAT_TRAINS, SELF, switch_123_serise_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_123_SERIES_JW_YY);
+    1: return string(STR_123_SERIES_JW_BW);
+    return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_TRAINS, SELF, switch_123_series_graphics, cargo_subtype){
+    0: return spriteset_123_series_JW_YY;
+    1: return spriteset_123_series_JW_BW;
+}
 //items
 //600series
-item(FEAT_TRAINS, item_600_train){
+item(FEAT_TRAINS, item_600_series){
     property {
         name: string(STR_NAME_600_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -185,6 +194,7 @@ item(FEAT_TRAINS, item_123_series){
         bitmask_vehicle_info: 1;
     }
     graphics{
-        default: spriteset_123_series_JW_BW;
+        cargo_subtype_text: switch_123_serise_cargo_subtype_text;
+        default: switch_123_series_graphics;
     }
 }
