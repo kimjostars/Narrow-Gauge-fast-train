@@ -6,7 +6,8 @@
 이세트의 기본언어는 한국어 입니다.
 다른언어로 번역하고 싶으시다면 이 Github 프로젝트에 Pull Request를 열어주세요.
 Pull Request를 열 줄 모르신다면, Issues에 올리셔도 괜찮습니다. 이 파일을 번역하시면 됩니다.
-- **[src/lang/english.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/english.lng)**
+- **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : 한국어 korean
+- **[src/lang/english.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/english.lng)** : 영어 english
 
 ## 라이선스
 이 NewGRF는 **[커먼스 라이선스 v3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)** (CC-BY-NC-SA v3.0)을 따릅니다.
