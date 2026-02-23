@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 7;
+	version: 8;
 	min_compatible_version: 0;
 	
 }
@@ -84,13 +84,13 @@ template template_purchase_engine(x, y) {
 }
 //spriteset,switch
 //600_series
-spriteset(spriteset_600_series_front_lighted, "src/gfx/600_series.png") { tmpl_32_train_8_views(0, 0) } 
-spriteset(spriteset_600_series_rear_lighted, "src/gfx/600_series.png") { tmpl_32_train_8_views(1, 1) } 
-spriteset(spriteset_600_series_front, "src/gfx/600_series.png") { tmpl_32_train_8_views(2, 0) } 
-spriteset(spriteset_600_series_rear, "src/gfx/600_series.png") { tmpl_32_train_8_views(3, 1) } 
-spriteset(spriteset_600_series_middle, "src/gfx/600_series.png") { tmpl_32_train_4_views(4) } 
-spriteset(spriteset_600_series_purchase, "src/gfx/600_series.png") { tmpl_32_train_single(5, 53, 14, -25, -10) } 
-spriteset(spriteset_600_series_invisible, "src/gfx/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
+spriteset(spriteset_600_series_front_lighted, "gfx/600_series.png") { tmpl_32_train_8_views(0, 0) } 
+spriteset(spriteset_600_series_rear_lighted, "gfx/600_series.png") { tmpl_32_train_8_views(1, 1) } 
+spriteset(spriteset_600_series_front, "gfx/600_series.png") { tmpl_32_train_8_views(2, 0) } 
+spriteset(spriteset_600_series_rear, "gfx/600_series.png") { tmpl_32_train_8_views(3, 1) } 
+spriteset(spriteset_600_series_middle, "gfx/600_series.png") { tmpl_32_train_4_views(4) } 
+spriteset(spriteset_600_series_purchase, "gfx/600_series.png") { tmpl_32_train_single(5, 53, 14, -25, -10) } 
+spriteset(spriteset_600_series_invisible, "gfx/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
 
 switch(FEAT_TRAINS, SELF, switch_600_series_articulated_part, extra_callback_info1){
     1..8: return item_600_series;
@@ -107,13 +107,13 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) {
 }
 
 //123_serise
-spriteset(spriteset_123_series_JW_YY, "src/gfx/123JW.png"){
+spriteset(spriteset_123_series_JW_YY, "gfx/123JW.png"){
     tmpl_32_train_basic(0, 0)
 }
-spriteset(spriteset_123_series_JW_BW, "src/gfx/123JW.png"){
+spriteset(spriteset_123_series_JW_BW, "gfx/123JW.png"){
     tmpl_32_train_basic(0, 31)
 }
-spriteset(spriteset_123_series_purchase, "src/gfx/123JW.png"){
+spriteset(spriteset_123_series_purchase, "gfx/123JW.png"){
     template_purchase_engine(0, 92)
 }
 switch(FEAT_TRAINS, SELF, switch_123_serise_cargo_subtype_text, cargo_subtype){
@@ -126,7 +126,7 @@ switch(FEAT_TRAINS, SELF, switch_123_series_graphics, cargo_subtype){
     1: return spriteset_123_series_JW_BW;
 }
 //items
-//600series
+//600series,remake
 item(FEAT_TRAINS, item_600_series){
     property {
         name: string(STR_NAME_600_TRAINS);
