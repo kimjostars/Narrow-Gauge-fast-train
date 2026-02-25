@@ -6,6 +6,9 @@ grf {
 	min_compatible_version: 0;
 	
 }
+// traininfo offset
+traininfo_y_offset = 2;
+train_width_32_px = 1;
 // Tables
 cargotable {
     //DEFAULT
@@ -80,7 +83,7 @@ template tmpl_32_train_basic(x, y){
 }
 template template_purchase_engine(x, y) {
     //[left_x, upper_y, width, height, offset_x, offset_y]
-    [x, y,  87, 15, -25, -7]
+    [x, y,  87, 15, -25, -9]
 }
 //spriteset,switch
 //600_series
@@ -119,6 +122,9 @@ spriteset(spriteset_123_series_purchase, "gfx/123JW.png"){
 switch(FEAT_TRAINS, SELF, switch_123_serise_cargo_subtype_text, cargo_subtype){
     0: return string(STR_123_SERIES_JW_YY);
     1: return string(STR_123_SERIES_JW_BW);
+    2: return string(STR_123_SERIES_JC_W_2_DOOR);
+    3: return string(STR_123_SERIES_JC_W_3_DOOR);
+    4: return string(STR_123_SERIES_JE_RW);
     return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_TRAINS, SELF, switch_123_series_graphics, cargo_subtype){
@@ -126,7 +132,7 @@ switch(FEAT_TRAINS, SELF, switch_123_series_graphics, cargo_subtype){
     1: return spriteset_123_series_JW_BW;
 }
 //items
-//600series,remake
+//600series,to do : remake
 item(FEAT_TRAINS, item_600_series){
     property {
         name: string(STR_NAME_600_TRAINS);
