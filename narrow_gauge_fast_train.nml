@@ -4,7 +4,6 @@ grf {
 	desc: string(STR_NGFT_DESC);
 	version: 8;
 	min_compatible_version: 0;
-	
 }
 // traininfo offset
 traininfo_y_offset = 2;
@@ -81,7 +80,7 @@ template tmpl_32_train_basic(x, y){
     [x+120, y, 32, 16, -16, -12]
     [x+153, y, 22, 20,  -6, -12]
 }
-template template_purchase_engine(x, y) {
+template templ_purchase(x, y) {
     //[left_x, upper_y, width, height, offset_x, offset_y]
     [x, y,  87, 15, -25, -9]
 }
@@ -110,14 +109,23 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) {
 }
 
 //123_serise
-spriteset(spriteset_123_series_JW_YY, "gfx/123JW.png"){
+spriteset(spriteset_123_series_JW_YY, "gfx/123_series.png"){
     tmpl_32_train_basic(0, 0)
 }
-spriteset(spriteset_123_series_JW_BW, "gfx/123JW.png"){
+spriteset(spriteset_123_series_JW_BW, "gfx/123_series.png"){
     tmpl_32_train_basic(0, 31)
 }
-spriteset(spriteset_123_series_purchase, "gfx/123JW.png"){
-    template_purchase_engine(0, 92)
+spriteset(spriteset_123_series_JC_W_2_DOOR, "gfx/123_series.png"){
+    tmpl_32_train_basic(0, 63)
+}
+spriteset(spriteset_123_series_JC_W_3_DOOR, "gfx/123_series.png"){
+    tmpl_32_train_basic(0, 95)
+}
+spriteset(spriteset_123_series_JE_RW, "gfx/123_series.png"){
+    tmpl_32_train_basic(0, 127)
+}
+spriteset(spriteset_123_series_purchase, "gfx/123_series.png"){
+    templ_purchase(0, 153)
 }
 switch(FEAT_TRAINS, SELF, switch_123_serise_cargo_subtype_text, cargo_subtype){
     0: return string(STR_123_SERIES_JW_YY);
