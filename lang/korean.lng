@@ -4,11 +4,6 @@
 STR_NGFT_NAME :협궤고속열차 세트 0.1.2 알파
 STR_NGFT_DESC :협궤고속열차 세트은 협궤에서 200이상 달릴수있는 열차세트입니다. {}{RED}JP+ Track{BLACK}이 필요합니다.
 
-#car
-STR_NAEM_TESTING_BUS :두돈반
-STR_NAEM_TESTING_TRAM :테스트 트램
-STR_DESC_TESTING_TRAM :테스트용
-
 #maintrain
 STR_NAME_600_TRAINS :600계
 STR_600_series_CANNOT_ATTACH_OTHER :다른차량은 연결할수없습니다!
