@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 8;
+	version: 9;
 	min_compatible_version: 0;
 }
 // traininfo offset
@@ -138,6 +138,9 @@ switch(FEAT_TRAINS, SELF, switch_123_serise_cargo_subtype_text, cargo_subtype){
 switch(FEAT_TRAINS, SELF, switch_123_series_graphics, cargo_subtype){
     0: return spriteset_123_series_JW_YY;
     1: return spriteset_123_series_JW_BW;
+    2: return spriteset_123_series_JC_W_2_DOOR;
+    3: return spriteset_123_series_JC_W_3_DOOR;
+    4: return spriteset_123_series_JE_RW;
 }
 //items
 //600series,to do : remake
@@ -199,16 +202,16 @@ item(FEAT_TRAINS, item_123_series){
         refit_cost: 0;
         track_type: TR_1067_DC;
         ai_special_flag: AI_FLAG_PASSENGER;
-        power: 600 hp;
+        power: 598 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 0;
-        cargo_capacity: 70;
+        cargo_capacity: 85;
         weight: 44 ton;
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon: 0 kW;
         tractive_effort_coefficient: 0.6;
-        air_drag_coefficient: 0.1;
+        air_drag_coefficient: 0.3;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 1;
