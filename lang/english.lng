@@ -11,6 +11,6 @@ STR_600_series_CANNOT_ATTACH_OTHER :Unable to connect!
 STR_NAME_123_TRAINS :123 series
 STR_123_SERIES_JW_YY :{BLUE}JR West {YELLOW}Regional Livery
 STR_123_SERIES_JW_BW :{BLUE}JR West {WHITE}Renewal Livery
-STR_123_SERIES_JC_W_2_DOOR :{ORANGE}JR Central {GREEN}Shonan Livery 2doors {BLACK}(developing)
+STR_123_SERIES_JC_W_2_DOOR :{ORANGE}JR Central {GREEN}Shonan Livery 2doors
 STR_123_SERIES_JC_W_3_DOOR :{ORANGE}JR Central {GREEN}Shonan Livery 3doors
 STR_123_SERIES_JE_RW :{GREEN}JR east {RED}Livery {BLACK}(developing)
