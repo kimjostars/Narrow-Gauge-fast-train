@@ -1,8 +1,16 @@
 ##grflangid 0x01
 
 #desc
-STR_NGFT_NAME :Narrow Gauge fast train SET 0.1.2 alpha
+STR_NGFT_NAME :Narrow Gauge fast train SET 0.1.4 alpha
 STR_NGFT_DESC :Narrow Gauge fast train SET is a set of trains that can run over 200 km/h on 1067mm narrow guage. {}{RED}JP+ Track {BLACK}is required to run this newGRF.
+
+#parameters
+STR_NGFT_PURCHASE_COST_NAME :Purchase cost
+STR_NGFT_PURCHASE_COST_DESC :It is Purchase cost defind
+STR_NGFT_PURCHASE_COST_VERY_LOW :Very Low
+STR_NGFT_PURCHASE_COST_LOW :Low
+STR_NGFT_PURCHASE_COST_NOMAL :Nomal
+STR_NGFT_PURCHASE_COST_HIGH :High
 
 #maintrain
 STR_NAME_600_TRAINS :600 series
@@ -13,4 +21,4 @@ STR_123_SERIES_JW_YY :{BLUE}JR West {YELLOW}Regional Livery
 STR_123_SERIES_JW_BW :{BLUE}JR West {WHITE}Renewal Livery
 STR_123_SERIES_JC_W_2_DOOR :{ORANGE}JR Central {GREEN}Shonan Livery 2doors
 STR_123_SERIES_JC_W_3_DOOR :{ORANGE}JR Central {GREEN}Shonan Livery 3doors
-STR_123_SERIES_JE_RW :{GREEN}JR east {RED}Livery {BLACK}(developing)
+STR_123_SERIES_JE_RW :{GREEN}JR east {RED}Livery

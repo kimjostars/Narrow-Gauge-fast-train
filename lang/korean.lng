@@ -1,8 +1,16 @@
 ##grflangid 0x3A
 
 #desc
-STR_NGFT_NAME :협궤고속열차 세트 0.1.2 알파
+STR_NGFT_NAME :협궤고속열차 세트 0.1.4 알파
 STR_NGFT_DESC :협궤고속열차 세트은 협궤에서 200이상 달릴수있는 열차세트입니다. {}{RED}JP+ Track{BLACK}이 필요합니다.
+
+#parameters
+STR_NGFT_PURCHASE_COST_NAME :구매비용
+STR_NGFT_PURCHASE_COST_DESC :구매비용을 설정합니다다. {}기준은 비용은 {RED}JP+ {BLACK}기준입니다.
+STR_NGFT_PURCHASE_COST_VERY_LOW :매우낮음
+STR_NGFT_PURCHASE_COST_LOW :낮음
+STR_NGFT_PURCHASE_COST_NOMAL :보통
+STR_NGFT_PURCHASE_COST_HIGH :높음
 
 #maintrain
 STR_NAME_600_TRAINS :600계
@@ -13,4 +21,4 @@ STR_123_SERIES_JW_YY :{BLUE}JR서일본 {YELLOW}로컬선 도색
 STR_123_SERIES_JW_BW :{BLUE}JR서일본 {WHITE}리뉴얼 도색
 STR_123_SERIES_JC_W_2_DOOR :{ORANGE}JR도카이 {GREEN}쇼난색 2비차
 STR_123_SERIES_JC_W_3_DOOR :{ORANGE}JR도카이 {GREEN}쇼난색 3비차
-STR_123_SERIES_JE_RW :{GREEN}JR동일본 {RED}적백도색 {BLACK}(개발중)
+STR_123_SERIES_JE_RW :{GREEN}JR동일본 {RED}적백도색
