@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 15;
+	version: 29;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -27,6 +27,7 @@ grf {
             desc: string(STR_NGFT_RUNNING_COST_DESC);
             min_value: 0;
             max_value: 3;
+            def_value: 2;
             names: {
                 0: string(STR_NGFT_RUNNING_COST_VERY_LOW);
                 1: string(STR_NGFT_RUNNING_COST_LOW);
@@ -119,6 +120,8 @@ template templ_purchase(x, y) {
     [x, y,  87, 15, -25, -9]
 }
 //trains
+//empty
+spriteset(spriteset_empty, "gfx/empty.png") {[0,0,1,1,0,0]}
 //600series,to do : remake
 spriteset(spriteset_600_series_front_lighted, "gfx/600_series.png") { tmpl_32_train_8_views(0, 0) } 
 spriteset(spriteset_600_series_rear_lighted, "gfx/600_series.png") { tmpl_32_train_8_views(1, 1) } 
@@ -174,6 +177,13 @@ item(FEAT_TRAINS, item_600_series){
         bitmask_vehicle_info: 0;
     }
     graphics {
+        additional_text:
+        string(STR_TRAIN_DESC,
+        string(STR_NARROWGAUGE),
+        string(STR_DENKI,string(STR_AC_KV_2_HZ,20,50,60)),
+        string(STR_LOAD_SPEED,string(STR_DOORS,2)),
+        string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
+        string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))));
         articulated_part: switch_600_series_articulated_part;
         can_attach_wagon: switch_600_series_attach_wagon;
         purchase: spriteset_600_series_purchase;
@@ -199,26 +209,32 @@ spriteset(spriteset_123_series_JE_RW, "gfx/123_series.png"){
 spriteset(spriteset_123_series_purchase, "gfx/123_series.png"){
     templ_purchase(0, 153)
 }
-switch(FEAT_TRAINS, SELF, switch_123_serise_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_123_SERIES_JW_YY);
-    1: return string(STR_123_SERIES_JW_BW);
-    2: return string(STR_123_SERIES_JC_W_2_DOOR);
-    3: return string(STR_123_SERIES_JC_W_3_DOOR);
-    4: return string(STR_123_SERIES_JE_RW);
+switch(FEAT_TRAINS, SELF, sw_123_serise_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_123_SERIES_JW_YY,string(STR_JR,string(STR_JR_WEST)));
+    1: return string(STR_123_SERIES_JW_BW,string(STR_JR,string(STR_JR_WEST)));
+    2: return string(STR_123_SERIES_JC_W_2_DOOR,string(STR_JR,string(STR_JR_CENTRAL)));
+    3: return string(STR_123_SERIES_JC_W_3_DOOR,string(STR_JR,string(STR_JR_CENTRAL)));
+    4: return string(STR_123_SERIES_JE_RW,string(STR_JR,string(STR_JR_EAST)));
     return CB_RESULT_NO_TEXT;
 }
-switch(FEAT_TRAINS, SELF, switch_123_series_graphics, cargo_subtype){
+switch(FEAT_TRAINS, SELF, sw_123_series_graphics, cargo_subtype){
     0: return spriteset_123_series_JW_YY;
     1: return spriteset_123_series_JW_BW;
     2: return spriteset_123_series_JC_W_2_DOOR;
     3: return spriteset_123_series_JC_W_3_DOOR;
     4: return spriteset_123_series_JE_RW;
 }
-switch(FEAT_TRAINS, SELF, switch_123_series_purchase_cost, param_purchase_cost){
+switch(FEAT_TRAINS, SELF, sw_123_series_purchase_cost, param_purchase_cost){
     0: return 2;
     1: return 5;
     2: return 11;
     3: return 21;
+}
+switch(FEAT_TRAINS, SELF, sw_123_series_running_cost, param_running_cost){
+    0: return 80;
+    1: return 160;
+    2: return 320;
+    3: return 640;
 }
 item(FEAT_TRAINS, item_123_series){
     property{
@@ -230,7 +246,6 @@ item(FEAT_TRAINS, item_123_series){
         reliability_decay: 25;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         loading_speed: 20;
-        running_cost_factor: 51;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         speed: 100 km/h;
         misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
@@ -252,9 +267,17 @@ item(FEAT_TRAINS, item_123_series){
         bitmask_vehicle_info: 1;
     }
     graphics{
-        cost_factor :switch_123_series_purchase_cost;
-        cargo_subtype_text: switch_123_serise_cargo_subtype_text;
+        additional_text:
+        string(STR_TRAIN_DESC,
+        string(STR_NARROWGAUGE),
+        string(STR_DENKI, string(STR_DC_N, 1500)),
+        string(STR_LOAD_SPEED, string(STR_CONCAT_2_DASH,string(STR_DOORS, 2),string(STR_DOORS,3))),
+        string(STR_USAGE, string(STR_USE_REGIO)),
+        string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JNR),string(STR_JR,string(STR_CONCAT_3,string(STR_JR_EAST),string(STR_JR_CENTRAL),string(STR_JR_WEST))))));
+        cost_factor :sw_123_series_purchase_cost;
+        running_cost_factor: sw_123_series_running_cost;
+        cargo_subtype_text: sw_123_serise_cargo_subtype_text;
         purchase: spriteset_123_series_purchase;
-        default: switch_123_series_graphics;
+        default: sw_123_series_graphics;
     }
 }
