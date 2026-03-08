@@ -20,6 +20,21 @@ grf {
             };
         }
     }
+    param 1 {
+        param_running_cost {
+            type: int;
+            name: string(STR_NGFT_RUNNING_COST_NAME);
+            desc: string(STR_NGFT_RUNNING_COST_DESC);
+            min_value: 0;
+            max_value: 3;
+            names: {
+                0: string(STR_NGFT_RUNNING_COST_VERY_LOW);
+                1: string(STR_NGFT_RUNNING_COST_LOW);
+                2: string(STR_NGFT_RUNNING_COST_NOMAL);
+                3: string(STR_NGFT_RUNNING_COST_HIGH);
+            };
+        }
+    }
 }
 // traininfo offset
 traininfo_y_offset = 2;
