@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 30;
+	version: 42;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -33,6 +33,22 @@ grf {
                 1: string(STR_NGFT_RUNNING_COST_LOW);
                 2: string(STR_NGFT_RUNNING_COST_NOMAL);
                 3: string(STR_NGFT_RUNNING_COST_HIGH);
+            };
+        }
+    }
+    param 2 {
+        param_loading_speed {
+            type: int;
+            name: string(STR_NGFT_LOADING_SPEED_NAME);
+            desc: string(STR_NGFT_LOADING_SPEED_DESC);
+            min_value: 0;
+            max_value: 3;
+            def_value: 2;
+            names: {
+                0: string(STR_NGFT_LOADING_SPEED_VERY_SLOW);
+                1: string(STR_NGFT_LOADING_SPEED_SLOW);
+                2: string(STR_NGFT_LOADING_SPEED_NOMAL);
+                3: string(STR_NGFT_LOADING_SPEED_FAST);
             };
         }
     }
@@ -82,7 +98,39 @@ railtypetable {
 }
 
 //parameters
-
+/*	LOADING SPEEDS	*/
+if (param_loading_speed == 0) {
+    param_loading_1D = 5; // 1 door
+	param_loading_2D = 10; // 2 doors
+	param_loading_3D = 20; // 3 doors
+	param_loading_4D = 40; // 4 doors
+	param_loading_5D = 45; // 5 doors
+	param_loading_6D = 55; // 6 doors
+}
+if (param_loading_speed == 1) {
+    param_loading_1D = 10; // 1 door
+	param_loading_2D = 20; // 2 doors
+	param_loading_3D = 30; // 3 doors
+	param_loading_4D = 50; // 4 doors
+	param_loading_5D = 55; // 5 doors
+	param_loading_6D = 65; // 6 doors
+}
+if (param_loading_speed == 2) {
+    param_loading_1D = 20; // 1 door
+	param_loading_2D = 30; // 2 doors
+	param_loading_3D = 40; // 3 doors
+	param_loading_4D = 60; // 4 doors
+	param_loading_5D = 65; // 5 doors
+	param_loading_6D = 75; // 6 doors
+}
+if (param_loading_speed >= 3) {
+    param_loading_1D = 30; // 1 door
+	param_loading_2D = 40; // 2 doors
+	param_loading_3D = 50; // 3 doors
+	param_loading_4D = 80; // 4 doors
+	param_loading_5D = 85; // 5 doors
+	param_loading_6D = 95; // 6 doors
+}
 //template
 template tmpl_32_train(x, y) {
     // arguments x, y: coordinates of top-left corner of first sprite
@@ -115,7 +163,18 @@ template tmpl_32_train_basic(x, y){
     [x+120, y, 32, 16, -16, -12]
     [x+153, y, 22, 20,  -6, -12]
 }
-template templ_purchase(x, y) {
+template tmpl_32_train_main(x, y){
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 28,  -3, -15]
+    [x+9  , y, 22, 21, -15, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -3, -12]
+    [x+88 , y,  8, 28,  -3, -14]
+    [x+97 , y, 22, 21, -16, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -4, -12]
+}
+template tmpl_purchase(x, y) {
     //[left_x, upper_y, width, height, offset_x, offset_y]
     [x, y,  87, 15, -25, -9]
 }
@@ -153,7 +212,7 @@ item(FEAT_TRAINS, item_600_series){
         vehicle_life: 30;
         reliability_decay: 20;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
-        loading_speed: 20;
+        loading_speed: param_loading_2D;
         cost_factor: 40;
         running_cost_factor: 50;
         sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -191,24 +250,12 @@ item(FEAT_TRAINS, item_600_series){
     }
 }
 //123series
-spriteset(spriteset_123_series_JW_YY, "gfx/123_series.png"){
-    tmpl_32_train_basic(0, 0)
-}
-spriteset(spriteset_123_series_JW_BW, "gfx/123_series.png"){
-    tmpl_32_train_basic(0, 31)
-}
-spriteset(spriteset_123_series_JC_W_2_DOOR, "gfx/123_series.png"){
-    tmpl_32_train_basic(0, 63)
-}
-spriteset(spriteset_123_series_JC_W_3_DOOR, "gfx/123_series.png"){
-    tmpl_32_train_basic(0, 95)
-}
-spriteset(spriteset_123_series_JE_RW, "gfx/123_series.png"){
-    tmpl_32_train_basic(0, 127)
-}
-spriteset(spriteset_123_series_purchase, "gfx/123_series.png"){
-    templ_purchase(0, 153)
-}
+spriteset(spriteset_123_series_JW_YY, "gfx/123_series.png"){tmpl_32_train_basic(0, 0)}
+spriteset(spriteset_123_series_JW_BW, "gfx/123_series.png"){tmpl_32_train_basic(0, 31)}
+spriteset(spriteset_123_series_JC_W_2_DOOR, "gfx/123_series.png"){tmpl_32_train_basic(0, 63)}
+spriteset(spriteset_123_series_JC_W_3_DOOR, "gfx/123_series.png"){tmpl_32_train_basic(0, 95)}
+spriteset(spriteset_123_series_JE_RW, "gfx/123_series.png"){tmpl_32_train_basic(0, 127)}
+spriteset(spriteset_123_series_purchase, "gfx/123_series.png"){tmpl_purchase(0, 153)}
 switch(FEAT_TRAINS, SELF, sw_123_serise_cargo_subtype_text, cargo_subtype){
     0: return string(STR_123_SERIES_JW_YY,string(STR_JR,string(STR_JR_WEST)));
     1: return string(STR_123_SERIES_JW_BW,string(STR_JR,string(STR_JR_WEST)));
@@ -237,7 +284,7 @@ switch(FEAT_TRAINS, SELF, sw_123_series_running_cost, param_running_cost){
     3: return 640;
 }
 item(FEAT_TRAINS, item_123_series){
-    property{
+    property {
         name: string(STR_NAME_123_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date: date(1987,01,01);
@@ -245,7 +292,7 @@ item(FEAT_TRAINS, item_123_series){
         vehicle_life: 30;
         reliability_decay: 25;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
-        loading_speed: 20;
+        loading_speed: param_loading_2D;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         speed: 100 km/h;
         misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
@@ -261,12 +308,12 @@ item(FEAT_TRAINS, item_123_series){
         engine_class: ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon: 0 kW;
         tractive_effort_coefficient: 0.6;
-        air_drag_coefficient: 0.3;
+        air_drag_coefficient: 0.7;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 1;
     }
-    graphics{
+    graphics {
         additional_text:
         string(STR_TRAIN_DESC,
         string(STR_NARROWGAUGE),
@@ -279,5 +326,57 @@ item(FEAT_TRAINS, item_123_series){
         cargo_subtype_text: sw_123_serise_cargo_subtype_text;
         purchase: spriteset_123_series_purchase;
         default: sw_123_series_graphics;
+    }
+}
+//521series
+spriteset(spriteset_521_0_series_1_2_0, "gfx/521_0_series.png"){tmpl_32_train_main(1, 2)}
+spriteset(spriteset_521_0_series_1_2_1, "gfx/521_0_series.png"){tmpl_32_train_main(1, 32)}
+spriteset(spriteset_521_0_series_3_4_0, "gfx/521_0_series.png"){tmpl_32_train_main(1, 62)}
+spriteset(spriteset_521_0_series_3_4_1, "gfx/521_0_series.png"){tmpl_32_train_main(1, 92)}
+spriteset(spriteset_521_0_series_purchase, "gfx/521_0_series.png"){tmpl_purchase(1, 122)}
+switch(FEAT_TRAINS, SELF, sw_521_series_articulated, extra_callback_info1){
+    1:return item_521_series;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, sw_521_series_graphics, position_in_consist % 2) { 
+    0: spriteset_521_0_series_1_2_0; 
+    1: spriteset_521_0_series_1_2_1; 
+}
+item(FEAT_TRAINS, item_521_series){
+    property {
+        name: string(STR_NAME_521_TRAINS);
+        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date: date(2006,10,21);
+        model_life: 45;
+        vehicle_life: 30;
+        reliability_decay: 20;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        loading_speed: param_loading_3D;
+        cost_factor: 40;
+        running_cost_factor: 50;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        speed: 120 km/h;
+        misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
+        refit_cost: 0;
+        track_type: TR_1067_ACDC;
+        ai_special_flag: AI_FLAG_PASSENGER;
+        power: 2000 hp;
+        running_cost_base: RUNNING_COST_ELECTRIC;
+        dual_headed: 0;
+        cargo_capacity: 40;
+        weight: 85 ton;
+        ai_engine_rank: 0;
+        engine_class: ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon: 0 kW;
+        tractive_effort_coefficient: 0.9 / 10;
+        air_drag_coefficient: 0.06;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon: 0 ton;
+        bitmask_vehicle_info: 0;
+    }
+    graphics {
+        articulated_part: sw_521_series_articulated;
+        purchase: spriteset_521_0_series_purchase;
+        default: sw_521_series_graphics;
     }
 }

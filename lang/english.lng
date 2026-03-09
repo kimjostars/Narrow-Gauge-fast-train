@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 #desc
-STR_NGFT_NAME :Narrow Gauge fast train SET 0.2 alpha
+STR_NGFT_NAME :Narrow Gauge fast train SET 0.2.1 alpha
 STR_NGFT_DESC :Narrow Gauge fast train SET is a set of trains that can run over 200 km/h on 1067mm narrow guage. {}{RED}JP+ Track {BLACK}is required to run this newGRF.
 
 #parameters
@@ -17,6 +17,12 @@ STR_NGFT_RUNNING_COST_VERY_LOW :Very Low
 STR_NGFT_RUNNING_COST_LOW :Low
 STR_NGFT_RUNNING_COST_NOMAL :Nomal
 STR_NGFT_RUNNING_COST_HIGH :High
+STR_NGFT_LOADING_SPEED_NAME :Loading Speed
+STR_NGFT_LOADING_SPEED_DESC :It is Loading Speed Defind
+STR_NGFT_LOADING_SPEED_VERY_SLOW :Very Slow
+STR_NGFT_LOADING_SPEED_SLOW :Slow
+STR_NGFT_LOADING_SPEED_NOMAL :Nomal
+STR_NGFT_LOADING_SPEED_FAST :Fast
 
 #trains
 #commonness
@@ -93,3 +99,5 @@ STR_123_SERIES_JW_BW :{STRING} {WHITE}Renewal Livery
 STR_123_SERIES_JC_W_2_DOOR :{STRING} {GREEN}Shonan Livery 2doors
 STR_123_SERIES_JC_W_3_DOOR :{STRING} {GREEN}Shonan Livery 3doors
 STR_123_SERIES_JE_RW :{STRING} {RED}Livery
+
+STR_NAME_521_TRAINS :521 series
