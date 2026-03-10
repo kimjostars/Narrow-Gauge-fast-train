@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 42;
+	version: 49;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -198,7 +198,7 @@ switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, vehicle_type_id){
     item_600_series: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_600_series_CANNOT_ATTACH_OTHER);
 }
-switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9) { 
+switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9){ 
     0: spriteset_600_series_front_lighted; 
     8: spriteset_600_series_rear_lighted; 
     spriteset_600_series_middle; 
@@ -283,6 +283,11 @@ switch(FEAT_TRAINS, SELF, sw_123_series_running_cost, param_running_cost){
     2: return 320;
     3: return 640;
 }
+switch(FEAT_TRAINS, SELF, sw_123_series_loading_speed, cargo_subtype){
+    0..2: param_loading_2D; 
+    3: param_loading_3D;
+    4: param_loading_2D;
+}
 item(FEAT_TRAINS, item_123_series){
     property {
         name: string(STR_NAME_123_TRAINS);
@@ -292,7 +297,6 @@ item(FEAT_TRAINS, item_123_series){
         vehicle_life: 30;
         reliability_decay: 25;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
-        loading_speed: param_loading_2D;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         speed: 100 km/h;
         misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
@@ -318,11 +322,12 @@ item(FEAT_TRAINS, item_123_series){
         string(STR_TRAIN_DESC,
         string(STR_NARROWGAUGE),
         string(STR_DENKI, string(STR_DC_N, 1500)),
-        string(STR_LOAD_SPEED, string(STR_CONCAT_2_DASH,string(STR_DOORS, 2),string(STR_DOORS,3))),
+        string(STR_LOAD_SPEED, string(STR_DOORS_REFIT, 2, 3)),
         string(STR_USAGE, string(STR_USE_REGIO)),
         string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JNR),string(STR_JR,string(STR_CONCAT_3,string(STR_JR_EAST),string(STR_JR_CENTRAL),string(STR_JR_WEST))))));
         cost_factor :sw_123_series_purchase_cost;
         running_cost_factor: sw_123_series_running_cost;
+        loading_speed: sw_123_series_loading_speed;
         cargo_subtype_text: sw_123_serise_cargo_subtype_text;
         purchase: spriteset_123_series_purchase;
         default: sw_123_series_graphics;
@@ -338,9 +343,21 @@ switch(FEAT_TRAINS, SELF, sw_521_series_articulated, extra_callback_info1){
     1:return item_521_series;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch(FEAT_TRAINS, SELF, sw_521_series_graphics, position_in_consist % 2) { 
-    0: spriteset_521_0_series_1_2_0; 
-    1: spriteset_521_0_series_1_2_1; 
+switch(FEAT_TRAINS, SELF, sw_521_1_2_series_graphics, position_in_consist % 2){ 
+    0: return spriteset_521_0_series_1_2_0; 
+    1: return spriteset_521_0_series_1_2_1; 
+}
+switch(FEAT_TRAINS, SELF, sw_521_3_4_series_graphics, position_in_consist % 2){ 
+    0: return spriteset_521_0_series_3_4_0; 
+    1: return spriteset_521_0_series_3_4_1; 
+}
+switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
+    0: return sw_521_1_2_series_graphics;
+    1: return sw_521_3_4_series_graphics;
+}
+switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_521_1_2_SERIES);
+    1: return string(STR_521_3_4_SERIES);
 }
 item(FEAT_TRAINS, item_521_series){
     property {
@@ -373,9 +390,11 @@ item(FEAT_TRAINS, item_521_series){
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 0;
+        dual_headed: 0;
     }
     graphics {
         articulated_part: sw_521_series_articulated;
+        cargo_subtype_text: sw_521_series_cargo_subtype_text;
         purchase: spriteset_521_0_series_purchase;
         default: sw_521_series_graphics;
     }
