@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 49;
+	version: 53;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -50,6 +50,14 @@ grf {
                 2: string(STR_NGFT_LOADING_SPEED_NOMAL);
                 3: string(STR_NGFT_LOADING_SPEED_FAST);
             };
+        }
+    }
+    param 4 {
+        param_high_speed {
+            type: bool;
+            name: string(STR_NGFT_HGIH_SPEED_NAME);
+            desc: string(STR_NGFT_HGIH_SPEED_DESC);
+            bit: 0;
         }
     }
 }
@@ -299,7 +307,7 @@ item(FEAT_TRAINS, item_123_series){
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         sprite_id: SPRITE_ID_NEW_TRAIN;
         speed: 100 km/h;
-        misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
+        misc_flags: bitmask(TRAIN_FLAG_MU); 
         refit_cost: 0;
         track_type: TR_1067_DC;
         ai_special_flag: AI_FLAG_PASSENGER;
@@ -336,8 +344,8 @@ item(FEAT_TRAINS, item_123_series){
 //521series
 spriteset(spriteset_521_0_series_1_2_0, "gfx/521_0_series.png"){tmpl_32_train_main(1, 2)}
 spriteset(spriteset_521_0_series_1_2_1, "gfx/521_0_series.png"){tmpl_32_train_main(1, 32)}
-spriteset(spriteset_521_0_series_3_4_0, "gfx/521_0_series.png"){tmpl_32_train_main(1, 62)}
-spriteset(spriteset_521_0_series_3_4_1, "gfx/521_0_series.png"){tmpl_32_train_main(1, 92)}
+spriteset(spriteset_521_0_series_3_0, "gfx/521_0_series.png"){tmpl_32_train_main(1, 62)}
+spriteset(spriteset_521_0_series_3_1, "gfx/521_0_series.png"){tmpl_32_train_main(1, 92)}
 spriteset(spriteset_521_0_series_purchase, "gfx/521_0_series.png"){tmpl_purchase(1, 122)}
 switch(FEAT_TRAINS, SELF, sw_521_series_articulated, extra_callback_info1){
     1:return item_521_series;
@@ -347,17 +355,29 @@ switch(FEAT_TRAINS, SELF, sw_521_1_2_series_graphics, position_in_consist % 2){
     0: return spriteset_521_0_series_1_2_0; 
     1: return spriteset_521_0_series_1_2_1; 
 }
-switch(FEAT_TRAINS, SELF, sw_521_3_4_series_graphics, position_in_consist % 2){ 
-    0: return spriteset_521_0_series_3_4_0; 
-    1: return spriteset_521_0_series_3_4_1; 
+switch(FEAT_TRAINS, SELF, sw_521_3_series_graphics, position_in_consist % 2){ 
+    0: return spriteset_521_0_series_3_0; 
+    1: return spriteset_521_0_series_3_1; 
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
     0: return sw_521_1_2_series_graphics;
-    1: return sw_521_3_4_series_graphics;
+    1: return sw_521_3_series_graphics;
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
     0: return string(STR_521_1_2_SERIES);
-    1: return string(STR_521_3_4_SERIES);
+    1: return string(STR_521_3_SERIES);
+}
+switch(FEAT_TRAINS, SELF, sw_521_series_purchase_cost, param_purchase_cost){
+    0: return 5;
+    1: return 10;
+    2: return 20;
+    3: return 40;
+}
+switch(FEAT_TRAINS, SELF, sw_521_series_running_cost, param_running_cost){
+    0: return 100;
+    1: return 200;
+    2: return 400;
+    3: return 800;
 }
 item(FEAT_TRAINS, item_521_series){
     property {
@@ -366,26 +386,23 @@ item(FEAT_TRAINS, item_521_series){
         introduction_date: date(2006,10,21);
         model_life: 45;
         vehicle_life: 30;
-        reliability_decay: 20;
+        reliability_decay: 10;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         loading_speed: param_loading_3D;
-        cost_factor: 40;
-        running_cost_factor: 50;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         speed: 120 km/h;
-        misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
+        misc_flags: bitmask(TRAIN_FLAG_MU); 
         refit_cost: 0;
         track_type: TR_1067_ACDC;
         ai_special_flag: AI_FLAG_PASSENGER;
-        power: 2000 hp;
+        power: 1233 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 0;
-        cargo_capacity: 40;
-        weight: 85 ton;
+        cargo_capacity: 180;
+        weight: 87 ton;
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon: 0 kW;
-        tractive_effort_coefficient: 0.9 / 10;
         air_drag_coefficient: 0.06;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
@@ -395,6 +412,8 @@ item(FEAT_TRAINS, item_521_series){
     graphics {
         articulated_part: sw_521_series_articulated;
         cargo_subtype_text: sw_521_series_cargo_subtype_text;
+        cost_factor: sw_521_series_purchase_cost;
+        running_cost_factor: sw_521_series_running_cost;
         purchase: spriteset_521_0_series_purchase;
         default: sw_521_series_graphics;
     }
