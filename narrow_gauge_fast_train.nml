@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 53;
+	version: 75;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -182,9 +182,18 @@ template tmpl_32_train_main(x, y){
     [x+120, y, 32, 16, -16, -12]
     [x+153, y, 22, 21,  -4, -12]
 }
-template tmpl_purchase(x, y) {
-    //[left_x, upper_y, width, height, offset_x, offset_y]
-    [x, y,  87, 15, -25, -9]
+template tmpl_purchase(x, y){
+    [x, y, 87, 15, -25, -9]
+}
+template tmpl_purchase_dual_head(x, y){
+	[1 , 1, 1, 1, 0, 0, "gfx/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty.png"]
+    [x, y, 74, 15, -13, -10]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty.png"]
 }
 //trains
 //empty
@@ -346,11 +355,11 @@ spriteset(spriteset_521_0_series_1_2_0, "gfx/521_0_series.png"){tmpl_32_train_ma
 spriteset(spriteset_521_0_series_1_2_1, "gfx/521_0_series.png"){tmpl_32_train_main(1, 32)}
 spriteset(spriteset_521_0_series_3_0, "gfx/521_0_series.png"){tmpl_32_train_main(1, 62)}
 spriteset(spriteset_521_0_series_3_1, "gfx/521_0_series.png"){tmpl_32_train_main(1, 92)}
-spriteset(spriteset_521_0_series_purchase, "gfx/521_0_series.png"){tmpl_purchase(1, 122)}
-switch(FEAT_TRAINS, SELF, sw_521_series_articulated, extra_callback_info1){
+spriteset(spriteset_521_0_series_purchase, "gfx/521_0_series.png"){tmpl_purchase_dual_head(1, 122)}
+/**switch(FEAT_TRAINS, SELF, sw_521_series_articulated, extra_callback_info1){
     1:return item_521_series;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
+}**/
 switch(FEAT_TRAINS, SELF, sw_521_1_2_series_graphics, position_in_consist % 2){ 
     0: return spriteset_521_0_series_1_2_0; 
     1: return spriteset_521_0_series_1_2_1; 
@@ -403,18 +412,18 @@ item(FEAT_TRAINS, item_521_series){
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon: 0 kW;
-        air_drag_coefficient: 0.06;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        tractive_effort_coefficient: 0.1;
+        air_drag_coefficient: 0.07;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 1, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 0;
-        dual_headed: 0;
+        dual_headed: 1;
     }
     graphics {
-        articulated_part: sw_521_series_articulated;
+        default: sw_521_series_graphics;
         cargo_subtype_text: sw_521_series_cargo_subtype_text;
         cost_factor: sw_521_series_purchase_cost;
         running_cost_factor: sw_521_series_running_cost;
         purchase: spriteset_521_0_series_purchase;
-        default: sw_521_series_graphics;
     }
 }
