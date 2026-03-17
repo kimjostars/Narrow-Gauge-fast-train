@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 79;
+	version: 80;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -419,11 +419,13 @@ switch(FEAT_TRAINS, SELF, sw_521_3_series_graphics, position_in_consist % 2){
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
     0: return sw_521_1_2_series_graphics;
-    1: return sw_521_3_series_graphics;
+    1: return sw_521_1_2_series_graphics;
+    2: return sw_521_3_series_graphics;
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_521_1_2_SERIES);
-    1: return string(STR_521_3_SERIES);
+    0: return string(STR_521_0_SERIES,string(STR_JR,string(STR_JR_WEST)));
+    1: return string(STR_521_0_1_2_SERIES);
+    2: return string(STR_521_0_3_SERIES);
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_purchase_cost, param_purchase_cost){
     0: return 5;
