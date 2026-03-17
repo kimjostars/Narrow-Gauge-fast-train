@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 75;
+	version: 79;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -52,6 +52,23 @@ grf {
             };
         }
     }
+    param 3 {
+        param_cargo_capacity {
+            type: int;
+            name: string(STR_NGFT_CARGO_CAPACITY_NAME);
+            desc: string(STR_NGFT_CARGO_CAPACITY_DESC);
+            min_value: 0;
+            max_value: 5;
+            def_value: 2;
+            names: {
+                0: string(STR_NGFT_CARGO_CAPACITY_quarter);
+                1: string(STR_NGFT_CARGO_CAPACITY_half);
+                2: string(STR_NGFT_CARGO_CAPACITY_default);
+                3: string(STR_NGFT_CARGO_CAPACITY_X2);
+                4: string(STR_NGFT_CARGO_CAPACITY_X4);
+            };
+        }
+    }
     param 4 {
         param_high_speed {
             type: bool;
@@ -90,24 +107,24 @@ cargotable {
 	NUKF, NUKW, NWST, YETI, YETY
 }
 railtypetable {
-    TR_1067_NE:       [NAAN, RAIL], //Non-Electrified
-    TR_1067_DC:       [NAAD, NAAE, NABE, ELNG, ELRL],
-    TR_1067_AC:       [NAAA, NAAE, NABE, ELNG, ELRL],
-    TR_1067_ACDC:     [NAAE, NABE, ELNG, ELRL],
-    TR_1372_DC:       [sAAD, sAAE, SAAD, SAAE, ELRL],
-    TR_1435_NE:       [SAAN, RAIL],
-    TR_1435_DC:       [SAAD, ELRL],
-    TR_1435_AC:       [SAAA, ELRL],
-    TR_1435_ACDC:     [SAAE, ELRL],
-    TR_1435_M:        [SAA3, SAB3, "3RDR", MTRO, ELRL],
-    TR_1435_LINEAR:   [SAAI, ELRL],
-    TR_RUBBER:        [rAA3,rAAE, ELRL],
-    TR_UNIVERSAL:     [_AAE,NAAN, RAIL], //for mu cars
+    TR_1067_NE: [NAAN, RAIL], //Non-Electrified
+    TR_1067_DC: [NAAD, NAAE, NABE, ELNG, ELRL],
+    TR_1067_AC: [NAAA, NAAE, NABE, ELNG, ELRL],
+    TR_1067_AC_DC: [NAAE, NABE, ELNG, ELRL],
+    TR_1372_DC: [sAAD, sAAE, SAAD, SAAE, ELRL],
+    TR_1435_NE: [SAAN, RAIL],
+    TR_1435_DC: [SAAD, ELRL],
+    TR_1435_AC: [SAAA, ELRL],
+    TR_1435_AC_DC: [SAAE, ELRL],
+    TR_1435_M: [SAA3, SAB3, "3RDR", MTRO, ELRL],
+    TR_1435_LINEAR: [SAAI, ELRL],
+    TR_RUBBER: [rAA3,rAAE, ELRL],
+    TR_UNIVERSAL: [_AAE,NAAN, RAIL], //for mu cars
 }
 
 //parameters
-/*	LOADING SPEEDS	*/
-if (param_loading_speed == 0) {
+//loading speed
+if(param_loading_speed == 0){
     param_loading_1D = 5; // 1 door
 	param_loading_2D = 10; // 2 doors
 	param_loading_3D = 20; // 3 doors
@@ -115,7 +132,7 @@ if (param_loading_speed == 0) {
 	param_loading_5D = 45; // 5 doors
 	param_loading_6D = 55; // 6 doors
 }
-if (param_loading_speed == 1) {
+if(param_loading_speed == 1){
     param_loading_1D = 10; // 1 door
 	param_loading_2D = 20; // 2 doors
 	param_loading_3D = 30; // 3 doors
@@ -123,7 +140,7 @@ if (param_loading_speed == 1) {
 	param_loading_5D = 55; // 5 doors
 	param_loading_6D = 65; // 6 doors
 }
-if (param_loading_speed == 2) {
+if(param_loading_speed == 2){
     param_loading_1D = 20; // 1 door
 	param_loading_2D = 30; // 2 doors
 	param_loading_3D = 40; // 3 doors
@@ -131,7 +148,7 @@ if (param_loading_speed == 2) {
 	param_loading_5D = 65; // 5 doors
 	param_loading_6D = 75; // 6 doors
 }
-if (param_loading_speed >= 3) {
+if(param_loading_speed >= 3){
     param_loading_1D = 30; // 1 door
 	param_loading_2D = 40; // 2 doors
 	param_loading_3D = 50; // 3 doors
@@ -139,19 +156,55 @@ if (param_loading_speed >= 3) {
 	param_loading_5D = 85; // 5 doors
 	param_loading_6D = 95; // 6 doors
 }
+//cargo capacity
+if(param_cargo_capacity == 0){
+    param_cargo_capacity_commuter = 40;
+    param_cargo_capacity_regional = 35;
+    param_cargo_capacity_local = 30;
+    param_cargo_capacity_general = 45;
+    param_cargo_capacity_express = 15;
+}
+if(param_cargo_capacity == 1){
+    param_cargo_capacity_commuter = 80;
+    param_cargo_capacity_regional = 70;
+    param_cargo_capacity_local = 60;
+    param_cargo_capacity_general = 90;
+    param_cargo_capacity_express = 30;
+}
+if(param_cargo_capacity == 2){
+    param_cargo_capacity_commuter = 160;
+    param_cargo_capacity_regional = 170;
+    param_cargo_capacity_local = 120;
+    param_cargo_capacity_general = 155;
+    param_cargo_capacity_express = 60;
+}
+if(param_cargo_capacity == 3){
+    param_cargo_capacity_commuter = 320;
+    param_cargo_capacity_regional = 340;
+    param_cargo_capacity_local = 240;
+    param_cargo_capacity_general = 310;
+    param_cargo_capacity_express = 120;
+}
+if(param_cargo_capacity >= 4){
+    param_cargo_capacity_commuter =  640;
+    param_cargo_capacity_regional = 680;
+    param_cargo_capacity_local = 480;
+    param_cargo_capacity_general = 620;
+    param_cargo_capacity_express = 240;
+}
 //template
-template tmpl_32_train(x, y) {
+template tmpl_32_train(x, y){
     // arguments x, y: coordinates of top-left corner of first sprite
     [x,      y,  8, 24,  -3, -12] //xpos ypos xsize ysize xoff yoff
     [x +  9, y, 22, 20, -14, -12]
     [x + 32, y, 32, 16, -16, -12]
     [x + 65, y, 22, 20,  -6, -12]
 }
-template tmpl_32_train_4_views(num) {
+template tmpl_32_train_4_views(num){
     // argument num: Index in the graphics file, assuming vertical ordering of vehicles
     tmpl_32_train(1, 1 + 32 * num)
 }
-template tmpl_32_train_8_views(num, reversed) {
+template tmpl_32_train_8_views(num, reversed){
     // argument num: Index in the graphics file, assuming vertical ordering of vehicles
     // argument reversed: Reverse visible orientation of vehicle, if set to 1
     tmpl_32_train(reversed ? 89 : 1, 1 + 32 * num)
@@ -241,7 +294,7 @@ item(FEAT_TRAINS, item_600_series){
         power: 2000 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 0;
-        cargo_capacity: 40;
+        cargo_capacity: param_cargo_capacity_express;
         weight: 200 ton;
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
@@ -254,12 +307,12 @@ item(FEAT_TRAINS, item_600_series){
     }
     graphics {
         additional_text:
-        string(STR_TRAIN_DESC,
-        string(STR_NARROWGAUGE),
-        string(STR_DENKI,string(STR_AC_KV_2_HZ,20,50,60)),
-        string(STR_LOAD_SPEED,string(STR_DOORS,2)),
-        string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
-        string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))));
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_DENKI,string(STR_AC_KV_2_HZ,20,50,60)),
+            string(STR_LOAD_SPEED,string(STR_DOORS,2)),
+            string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
+            string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))));
         articulated_part: switch_600_series_articulated_part;
         can_attach_wagon: switch_600_series_attach_wagon;
         purchase: spriteset_600_series_purchase;
@@ -323,7 +376,7 @@ item(FEAT_TRAINS, item_123_series){
         power: 598 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 0;
-        cargo_capacity: 85;
+        cargo_capacity: param_cargo_capacity_local;
         weight: 44 ton;
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
@@ -336,12 +389,12 @@ item(FEAT_TRAINS, item_123_series){
     }
     graphics {
         additional_text:
-        string(STR_TRAIN_DESC,
-        string(STR_NARROWGAUGE),
-        string(STR_DENKI, string(STR_DC_N, 1500)),
-        string(STR_LOAD_SPEED, string(STR_DOORS_REFIT, 2, 3)),
-        string(STR_USAGE, string(STR_USE_REGIO)),
-        string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JNR),string(STR_JR,string(STR_CONCAT_3,string(STR_JR_EAST),string(STR_JR_CENTRAL),string(STR_JR_WEST))))));
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_DENKI, string(STR_DC_N, 1500)),
+            string(STR_LOAD_SPEED, string(STR_DOORS_REFIT, 2, 3)),
+            string(STR_USAGE, string(STR_USE_REGIO)),
+            string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JNR),string(STR_JR,string(STR_CONCAT_3,string(STR_JR_EAST),string(STR_JR_CENTRAL),string(STR_JR_WEST))))));
         cost_factor :sw_123_series_purchase_cost;
         running_cost_factor: sw_123_series_running_cost;
         loading_speed: sw_123_series_loading_speed;
@@ -402,12 +455,13 @@ item(FEAT_TRAINS, item_521_series){
         speed: 120 km/h;
         misc_flags: bitmask(TRAIN_FLAG_MU); 
         refit_cost: 0;
-        track_type: TR_1067_ACDC;
+        track_type: TR_1067_AC_DC;
         ai_special_flag: AI_FLAG_PASSENGER;
         power: 1233 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 0;
-        cargo_capacity: 180;
+        //cargo_capacity: 180;
+        cargo_capacity: param_cargo_capacity_regional;
         weight: 87 ton;
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
@@ -420,10 +474,17 @@ item(FEAT_TRAINS, item_521_series){
         dual_headed: 1;
     }
     graphics {
-        default: sw_521_series_graphics;
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_DENKI, string(STR_AC_DC, 20, 60, 1500)),
+            string(STR_LOAD_SPEED, string(STR_DOORS, 2)),
+            string(STR_USAGE, string(STR_USE_GENERAL)),
+            string(STR_OPERATOR,string(STR_JR,string(STR_JR_WEST))));
         cargo_subtype_text: sw_521_series_cargo_subtype_text;
         cost_factor: sw_521_series_purchase_cost;
         running_cost_factor: sw_521_series_running_cost;
         purchase: spriteset_521_0_series_purchase;
+        default: sw_521_series_graphics;
     }
 }
