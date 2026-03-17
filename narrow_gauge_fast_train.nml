@@ -475,7 +475,7 @@ item(FEAT_TRAINS, item_521_series){
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
             string(STR_DENKI, string(STR_AC_DC, 20, 60, 1500)),
-            string(STR_LOAD_SPEED, string(STR_DOORS, 2)),
+            string(STR_LOAD_SPEED, string(STR_DOORS, 3)),
             string(STR_USAGE, string(STR_USE_GENERAL)),
             string(STR_OPERATOR,string(STR_JR,string(STR_JR_WEST))));
         cargo_subtype_text: sw_521_series_cargo_subtype_text;
