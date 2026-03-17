@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 80;
+	version: 81;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -58,7 +58,7 @@ grf {
             name: string(STR_NGFT_CARGO_CAPACITY_NAME);
             desc: string(STR_NGFT_CARGO_CAPACITY_DESC);
             min_value: 0;
-            max_value: 5;
+            max_value: 4;
             def_value: 2;
             names: {
                 0: string(STR_NGFT_CARGO_CAPACITY_quarter);
