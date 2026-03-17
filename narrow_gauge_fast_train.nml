@@ -409,10 +409,6 @@ spriteset(spriteset_521_0_series_1_2_1, "gfx/521_0_series.png"){tmpl_32_train_ma
 spriteset(spriteset_521_0_series_3_0, "gfx/521_0_series.png"){tmpl_32_train_main(1, 62)}
 spriteset(spriteset_521_0_series_3_1, "gfx/521_0_series.png"){tmpl_32_train_main(1, 92)}
 spriteset(spriteset_521_0_series_purchase, "gfx/521_0_series.png"){tmpl_purchase_dual_head(1, 122)}
-/**switch(FEAT_TRAINS, SELF, sw_521_series_articulated, extra_callback_info1){
-    1:return item_521_series;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}**/
 switch(FEAT_TRAINS, SELF, sw_521_1_2_series_graphics, position_in_consist % 2){ 
     0: return spriteset_521_0_series_1_2_0; 
     1: return spriteset_521_0_series_1_2_1; 
@@ -460,7 +456,6 @@ item(FEAT_TRAINS, item_521_series){
         power: 1233 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 0;
-        //cargo_capacity: 180;
         cargo_capacity: param_cargo_capacity_regional;
         weight: 87 ton;
         ai_engine_rank: 0;
