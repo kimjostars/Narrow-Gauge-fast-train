@@ -274,8 +274,8 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9){
     spriteset_600_series_middle; 
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
-    0: 160 km/h;
-    1: 201 km/h;
+    0: return 160;
+    1: return 201;
 }
 item(FEAT_TRAINS, item_600_series){
     property {
