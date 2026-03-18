@@ -30,7 +30,7 @@ STR_NGFT_CARGO_CAPACITY_half :x1/2
 STR_NGFT_CARGO_CAPACITY_default :x1 (Default)
 STR_NGFT_CARGO_CAPACITY_X2 :x2
 STR_NGFT_CARGO_CAPACITY_X4 :x4
-STR_NGFT_HGIH_SPEED_NAME :Improvement of train speed limits (develop)
+STR_NGFT_HGIH_SPEED_NAME :Improvement of train speed limits
 STR_NGFT_HGIH_SPEED_DESC :Enabling this setting increases the train speed limit.{}default value is disabled.
 
 #trains
