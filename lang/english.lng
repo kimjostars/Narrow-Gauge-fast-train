@@ -99,6 +99,9 @@ STR_NUM_CARS_6:{COMMA},{COMMA},{COMMA},{COMMA},{COMMA},{COMMA} cars
 STR_NUM_CARS_RANGE:{COMMA}~{COMMA} cars
 
 #individual
+STR_MUCAR_NAME :Multiful Car
+STR_MU_DESC :It can be attached to a self-propelled vehicle and used as a passenger car for the corresponding train.
+
 STR_NAME_600_TRAINS :600 series {WHITE}(EMU){BLACK}
 STR_600_series_CANNOT_ATTACH_OTHER :Unable to connect!
 
@@ -113,3 +116,5 @@ STR_NAME_521_TRAINS :521 series {WHITE}(EMU){BLACK}
 STR_521_0_SERIES :{STRING} {BLACK}0s
 STR_521_0_1_2_SERIES :├ 1,2 batch
 STR_521_0_3_SERIES :└ 3 batch
+
+STR_NAME_2000_TRAINS :2000 serise {WHITE}(DMU){BLACK}
