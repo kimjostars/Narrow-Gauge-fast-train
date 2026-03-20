@@ -253,7 +253,7 @@ template tmpl_purchase_dual_head(x, y){
 spriteset(spriteset_empty, "gfx/empty.png") {[0,0,1,1,0,0]}
 //mucar
 spriteset(spriteset_mucar, "gfx/mucar/mucar.png") {tmpl_32_train_basic(0, 0)}
-item(FEAT_TRAINS, item_mucar, 1000){
+item(FEAT_TRAINS, item_mucar){
     property {
         name: string(STR_MUCAR_NAME);
         climates_available: ALL_CLIMATES;
@@ -316,7 +316,7 @@ switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
     0: return 160;
     1: return 201;
 }
-item(FEAT_TRAINS, item_600_series,2){
+item(FEAT_TRAINS, item_600_series){
     property {
         name: string(STR_NAME_600_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -401,7 +401,7 @@ switch(FEAT_TRAINS, SELF, sw_123_series_loading_speed, cargo_subtype){
     3: param_loading_3D;
     4: param_loading_2D;
 }
-item(FEAT_TRAINS, item_123_series,0){
+item(FEAT_TRAINS, item_123_series){
     property {
         name: string(STR_NAME_123_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -482,7 +482,7 @@ switch(FEAT_TRAINS, SELF, sw_521_series_running_cost, param_running_cost){
     2: return 400;
     3: return 800;
 }
-item(FEAT_TRAINS, item_521_series,1){
+item(FEAT_TRAINS, item_521_series){
     property {
         name: string(STR_NAME_521_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -531,7 +531,11 @@ item(FEAT_TRAINS, item_521_series,1){
 //2000series
 spriteset(spriteset_2000_series_1_2_0, "gfx/mucar/mucar.png") {tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_1_2_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000_series.png"){tmpl_32_train_main(0, 1)}
-item(FEAT_TRAINS, item_2000_series, 3){
+switch(FEAT_TRAINS, SELF, sw_2000_series_speed, param_high_speed){
+    0: return 120;
+    1: return 160;
+}
+item(FEAT_TRAINS, item_2000_series){
     property {
         name: string(STR_NAME_2000_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -543,24 +547,24 @@ item(FEAT_TRAINS, item_2000_series, 3){
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         loading_speed: param_loading_2D;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        speed: 130 km/h;
         refit_cost: 0;
         dual_headed: 1;
         track_type: TR_1067_NE;
         weight: 39 ton;
-        power: 1233 hp;
+        power: 660 hp;
         cargo_capacity: param_cargo_capacity_express;
         tractive_effort_coefficient: 0.1;
         ai_engine_rank: 0;
         running_cost_base: RUNNING_COST_DIESEL;
         air_drag_coefficient: 0.05;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
-        extra_weight_per_wagon: 0 ton;
+        extra_weight_per_wagon: 1;
         bitmask_vehicle_info: 0;
         cost_factor: 1;
         running_cost_factor: 1;
     }
     graphics {
+        speed: sw_2000_series_speed;
         default: spriteset_2000_series_1_2_0;
     }
 }
