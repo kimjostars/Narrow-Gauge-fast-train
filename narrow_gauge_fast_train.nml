@@ -305,7 +305,7 @@ switch(FEAT_TRAINS, SELF, switch_600_series_articulated_part, extra_callback_inf
 }
 switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, vehicle_type_id){
     item_600_series: return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_600_series_CANNOT_ATTACH_OTHER);
+    return string(STR_CANNOT_ATTACH_OTHER);
 }
 switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9){ 
     0: spriteset_600_series_front_lighted; 
@@ -530,10 +530,20 @@ item(FEAT_TRAINS, item_521_series){
 }
 //2000series
 spriteset(spriteset_2000_series_1_2_0, "gfx/mucar/mucar.png") {tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_2000_series_1_2_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000_series.png"){tmpl_32_train_main(0, 1)}
+alternative_sprites(spriteset_2000_series_1_2_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main(0, 1)}
 switch(FEAT_TRAINS, SELF, sw_2000_series_speed, param_high_speed){
     0: return 120;
     1: return 160;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_purchase_cost, param_purchase_cost){
+    0: return 5;
+    1: return 10;
+    2: return 20;
+    3: return 40;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_attach_vehid, [vehicle_type_id == item_2000_series || vehicle_type_id == item_mucar]) {
+    0: return string(STR_CANNOT_ATTACH_OTHER);
+    1: return CB_RESULT_ATTACH_ALLOW;
 }
 item(FEAT_TRAINS, item_2000_series){
     property {
@@ -558,13 +568,15 @@ item(FEAT_TRAINS, item_2000_series){
         running_cost_base: RUNNING_COST_DIESEL;
         air_drag_coefficient: 0.05;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
-        extra_weight_per_wagon: 1;
+        extra_weight_per_wagon: 150;
+        curve_speed_mod: 30;
         bitmask_vehicle_info: 0;
-        cost_factor: 1;
         running_cost_factor: 1;
     }
     graphics {
+        can_attach_wagon: sw_2000_series_attach_vehid;
         speed: sw_2000_series_speed;
+        cost_factor: sw_2000_series_purchase_cost;
         default: spriteset_2000_series_1_2_0;
     }
 }

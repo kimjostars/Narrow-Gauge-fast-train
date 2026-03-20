@@ -98,12 +98,14 @@ STR_NUM_CARS_5:{COMMA},{COMMA},{COMMA},{COMMA},{COMMA} cars
 STR_NUM_CARS_6:{COMMA},{COMMA},{COMMA},{COMMA},{COMMA},{COMMA} cars
 STR_NUM_CARS_RANGE:{COMMA}~{COMMA} cars
 
+###Waring
+STR_CANNOT_ATTACH_OTHER :Unable to connect!
+
 #individual
 STR_MUCAR_NAME :Multiful Car
 STR_MU_DESC :It can be attached to a self-propelled vehicle and used as a passenger car for the corresponding train.
 
 STR_NAME_600_TRAINS :600 series {WHITE}(EMU){BLACK}
-STR_600_series_CANNOT_ATTACH_OTHER :Unable to connect!
 
 STR_NAME_123_TRAINS :123 series {WHITE}(EMU){BLACK}
 STR_123_SERIES_JW_YY :{STRING} {YELLOW}Regional Livery
