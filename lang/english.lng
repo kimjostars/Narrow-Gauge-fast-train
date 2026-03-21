@@ -102,7 +102,7 @@ STR_NUM_CARS_RANGE:{COMMA}~{COMMA} cars
 STR_CANNOT_ATTACH_OTHER :Unable to connect!
 
 #individual
-STR_MUCAR_NAME :Multiful Car
+STR_MUCAR_NAME :[NGFT] Multi Unit Car (MU)
 STR_MU_DESC :It can be attached to a self-propelled vehicle and used as a passenger car for the corresponding train.
 
 STR_NAME_600_TRAINS :600 series {WHITE}(EMU){BLACK}
