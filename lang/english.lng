@@ -69,6 +69,7 @@ STR_JR_HOKKAIDO:{DKGREEN}Hokkaido
 STR_JR_SHIKOKU:{LTBLUE}Shikoku
 STR_JR_KYUSHU:{RED}Kyushu
 STR_PRIVATE:{SILVER}Private Railway(s) {STRING}
+STR_TOSA:{DKBLUE}Tosa Kuroshio
 STR_VIRTUAL:{SILVER}Virtual Train
 
 ###Usage

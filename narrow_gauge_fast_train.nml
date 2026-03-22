@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 92;
+	version: 93;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -599,7 +599,7 @@ item(FEAT_TRAINS, item_2000_series){
             string(STR_DIESEL),
             string(STR_LOAD_SPEED, string(STR_DOORS, 2)),
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
-            string(STR_OPERATOR,string(STR_JR,string(STR_JR_SHIKOKU))));
+            string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JR,string(STR_JR_SHIKOKU)),string(STR_TOSA))));
         can_attach_wagon: sw_2000_series_attach_vehid;
         speed: sw_2000_series_speed;
         running_cost_factor: sw_2000_series_running_cost;
