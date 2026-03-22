@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 93;
+	version: 94;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -541,8 +541,8 @@ item(FEAT_TRAINS, item_521_series){
     }
 }
 //2000series
-spriteset(spriteset_2000_series_1_2_0, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_2000_series_1_2_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_2000_series_1_front, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_2000_series_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_2000_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_dual_head(0, 0)}
 alternative_sprites(spriteset_2000_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_series_purchase.png"){tmpl_purchase_dual_head_32bpp(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_2000_series_speed, param_high_speed){
@@ -571,6 +571,7 @@ item(FEAT_TRAINS, item_2000_series){
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
         introduction_date: date(1990,07,01);
+        engine_class: ENGINE_CLASS_DIESEL;
         model_life: 45;
         vehicle_life: 30;
         reliability_decay: 10;
@@ -578,7 +579,7 @@ item(FEAT_TRAINS, item_2000_series){
         loading_speed: param_loading_2D;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         refit_cost: 0;
-        dual_headed: 1;
+        dual_headed: 0;
         track_type: TR_1067_NE;
         weight: 39 ton;
         power: 660 hp;
@@ -605,14 +606,14 @@ item(FEAT_TRAINS, item_2000_series){
         running_cost_factor: sw_2000_series_running_cost;
         cost_factor: sw_2000_series_purchase_cost;
         purchase: spriteset_2000_series_purchase;
-        default: spriteset_2000_series_1_2_0;
+        default: spriteset_2000_series_1_front;
     }
     livery_override(item_mucar){
         speed: sw_2000_series_speed;
         curve_speed_mod: 50;
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
-        default: spriteset_2000_series_1_2_0;
+        default: spriteset_2000_series_1_front;
     }
 }
 
