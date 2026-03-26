@@ -101,6 +101,7 @@ STR_NUM_CARS_RANGE:{COMMA}~{COMMA} cars
 
 ###Waring
 STR_CANNOT_ATTACH_OTHER :Unable to connect!
+STR_CANNOT_CAR :{COMMA}Car Must Connect.
 
 #individual
 STR_MUCAR_NAME :[NGFT] Multi Unit Car (MU)
