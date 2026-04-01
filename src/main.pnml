@@ -20,3 +20,8 @@
 #include "DL_DMU/2000/2000.pnml"
 //sort
 #include "sort.pnml"
+
+/*command list
+    build: python3 build.py --entry src/main.pnml --merge Narrow-Gauge-fast-train/ngft.nml
+    compile: nmlc -l ./lang/ ./ngft.nml
+*/
