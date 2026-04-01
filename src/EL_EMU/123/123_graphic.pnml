@@ -1,0 +1,6 @@
+spriteset(spriteset_123_series_JW_YY, "gfx/123_series.png"){tmpl_32_train_basic(0, 0)}
+spriteset(spriteset_123_series_JW_BW, "gfx/123_series.png"){tmpl_32_train_basic(0, 31)}
+spriteset(spriteset_123_series_JC_W_2_DOOR, "gfx/123_series.png"){tmpl_32_train_basic(0, 63)}
+spriteset(spriteset_123_series_JC_W_3_DOOR, "gfx/123_series.png"){tmpl_32_train_basic(0, 95)}
+spriteset(spriteset_123_series_JE_RW, "gfx/123_series.png"){tmpl_32_train_basic(0, 127)}
+spriteset(spriteset_123_series_purchase, "gfx/123_series.png"){tmpl_purchase(0, 153)}

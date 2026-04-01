@@ -1,0 +1,56 @@
+#include "2000_graphic.pnml"
+#include "2000_switch.pnml"
+item(FEAT_TRAINS, item_2000_series){
+    property {
+        name: string(STR_NAME_2000_TRAINS);
+        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
+        introduction_date: date(1990,07,01);
+        engine_class: ENGINE_CLASS_DIESEL;
+        model_life: 45;
+        vehicle_life: 30;
+        reliability_decay: 10;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        loading_speed: param_loading_2D;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        cost_factor: 21;
+        running_cost_factor: 47;
+        refit_cost: 0;
+        dual_headed: 0;
+        track_type: TR_1067_NE;
+        speed: 120 km/h;
+        weight: 39 ton;
+        power: 660 hp;
+        cargo_capacity: param_cargo_capacity_express;
+        tractive_effort_coefficient: 0.2;
+        ai_engine_rank: 0;
+        running_cost_base: RUNNING_COST_DIESEL;
+        air_drag_coefficient: 0.05;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon: 0;
+        curve_speed_mod: 50;
+        bitmask_vehicle_info: 0;
+    }
+    graphics {
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_NOT_DENKI,string(STR_DIESEL)),
+            string(STR_LOAD_SPEED, string(STR_DOORS, 2)),
+            string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
+            string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JR,string(STR_JR_SHIKOKU)),string(STR_TOSA))));
+        can_attach_wagon: sw_2000_series_attach_vehid;
+        speed: sw_2000_series_speed;
+        start_stop: sw_2000_series_start_stop;
+        purchase: spriteset_2000_series_purchase;
+        default: sw_2000_series_graphics;
+    }
+    livery_override(item_mucar){
+        weight: 38;
+        curve_speed_mod: 50;
+        cargo_capacity: param_cargo_capacity_express;
+        loading_speed: param_loading_2D;
+        power: 660;
+        default: sw_2000_series_graphics;
+    }
+}

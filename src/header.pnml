@@ -1,0 +1,80 @@
+grf {
+	grfid: "NGFT";
+	name: string(STR_NGFT_NAME);
+	desc: string(STR_NGFT_DESC);
+	version: 101;
+	min_compatible_version: 0;
+    param 0 {
+        param_purchase_cost {
+            type: int;
+            name: string(STR_NGFT_PURCHASE_COST_NAME);
+            desc: string(STR_NGFT_PURCHASE_COST_DESC);
+            min_value: 0;
+            max_value: 3;
+            def_value: 2;
+            names: {
+                0: string(STR_NGFT_PURCHASE_COST_VERY_LOW);
+                1: string(STR_NGFT_PURCHASE_COST_LOW);
+                2: string(STR_NGFT_PURCHASE_COST_NOMAL);
+                3: string(STR_NGFT_PURCHASE_COST_HIGH);
+            };
+        }
+    }
+    param 1 {
+        param_running_cost {
+            type: int;
+            name: string(STR_NGFT_RUNNING_COST_NAME);
+            desc: string(STR_NGFT_RUNNING_COST_DESC);
+            min_value: 0;
+            max_value: 3;
+            def_value: 2;
+            names: {
+                0: string(STR_NGFT_RUNNING_COST_VERY_LOW);
+                1: string(STR_NGFT_RUNNING_COST_LOW);
+                2: string(STR_NGFT_RUNNING_COST_NOMAL);
+                3: string(STR_NGFT_RUNNING_COST_HIGH);
+            };
+        }
+    }
+    param 2 {
+        param_loading_speed {
+            type: int;
+            name: string(STR_NGFT_LOADING_SPEED_NAME);
+            desc: string(STR_NGFT_LOADING_SPEED_DESC);
+            min_value: 0;
+            max_value: 3;
+            def_value: 2;
+            names: {
+                0: string(STR_NGFT_LOADING_SPEED_VERY_SLOW);
+                1: string(STR_NGFT_LOADING_SPEED_SLOW);
+                2: string(STR_NGFT_LOADING_SPEED_NOMAL);
+                3: string(STR_NGFT_LOADING_SPEED_FAST);
+            };
+        }
+    }
+    param 3 {
+        param_cargo_capacity {
+            type: int;
+            name: string(STR_NGFT_CARGO_CAPACITY_NAME);
+            desc: string(STR_NGFT_CARGO_CAPACITY_DESC);
+            min_value: 0;
+            max_value: 4;
+            def_value: 2;
+            names: {
+                0: string(STR_NGFT_CARGO_CAPACITY_quarter);
+                1: string(STR_NGFT_CARGO_CAPACITY_half);
+                2: string(STR_NGFT_CARGO_CAPACITY_default);
+                3: string(STR_NGFT_CARGO_CAPACITY_X2);
+                4: string(STR_NGFT_CARGO_CAPACITY_X4);
+            };
+        }
+    }
+    param 4 {
+        param_high_speed {
+            type: bool;
+            name: string(STR_NGFT_HGIH_SPEED_NAME);
+            desc: string(STR_NGFT_HGIH_SPEED_DESC);
+            bit: 0;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+sort(FEAT_TRAINS, [
+    item_mucar,
+    item_123_series,
+    item_521_series,
+    item_600_series,
+    item_2000_series
+]);

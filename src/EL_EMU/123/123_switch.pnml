@@ -1,0 +1,20 @@
+switch(FEAT_TRAINS, SELF, sw_123_serise_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_123_SERIES_JW_YY,string(STR_JR,string(STR_JR_WEST)));
+    1: return string(STR_123_SERIES_JW_BW,string(STR_JR,string(STR_JR_WEST)));
+    2: return string(STR_123_SERIES_JC_W_2_DOOR,string(STR_JR,string(STR_JR_CENTRAL)));
+    3: return string(STR_123_SERIES_JC_W_3_DOOR,string(STR_JR,string(STR_JR_CENTRAL)));
+    4: return string(STR_123_SERIES_JE_RW,string(STR_JR,string(STR_JR_EAST)));
+    return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_TRAINS, SELF, sw_123_series_graphics, cargo_subtype){
+    0: return spriteset_123_series_JW_YY;
+    1: return spriteset_123_series_JW_BW;
+    2: return spriteset_123_series_JC_W_2_DOOR;
+    3: return spriteset_123_series_JC_W_3_DOOR;
+    4: return spriteset_123_series_JE_RW;
+}
+switch(FEAT_TRAINS, SELF, sw_123_series_loading_speed, cargo_subtype){
+    0..2: param_loading_2D; 
+    3: param_loading_3D;
+    4: param_loading_2D;
+}

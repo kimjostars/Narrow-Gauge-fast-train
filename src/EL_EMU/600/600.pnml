@@ -1,0 +1,49 @@
+#include "600_graphic.pnml"
+#include "600_switch"
+item(FEAT_TRAINS, item_600_series){
+    property {
+        name: string(STR_NAME_600_TRAINS);
+        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date: date(2000,01,01);
+        model_life: 45;
+        vehicle_life: 30;
+        reliability_decay: 20;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        loading_speed: param_loading_2D;
+        cost_factor: 40;
+        running_cost_factor: 50;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
+        refit_cost: 0;
+        track_type: TR_1067_AC;
+        speed: 160 km/h;
+        ai_special_flag: AI_FLAG_PASSENGER;
+        power: 2000 hp;
+        running_cost_base: RUNNING_COST_ELECTRIC;
+        dual_headed: 0;
+        cargo_capacity: param_cargo_capacity_express;
+        weight: 200 ton;
+        ai_engine_rank: 0;
+        engine_class: ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon: 0 kW;
+        tractive_effort_coefficient: 0.9 / 10;
+        air_drag_coefficient: 0.06;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon: 0 ton;
+        bitmask_vehicle_info: 0;
+    }
+    graphics {
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_DENKI,string(STR_AC_KV_2_HZ,20,50,60)),
+            string(STR_LOAD_SPEED,string(STR_DOORS,2)),
+            string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
+            string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))));
+        articulated_part: switch_600_series_articulated_part;
+        can_attach_wagon: switch_600_series_attach_wagon;
+        speed: sw_600_series_speed;
+        purchase: spriteset_600_series_purchase;
+        default: switch_600_series_graphics;
+    }
+}

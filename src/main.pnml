@@ -1,0 +1,22 @@
+#include "header.pnml"
+//tables
+#include "cargotable.pnml"
+#include "railtypetable.pnml"
+//parameters
+#include "parameter.pnml"
+//base cost
+#include "basecost.pnml"
+//template
+#include "template.pnml"
+//trains
+#include "WAGON/MU/mucar.pnml"
+//123
+#include "EL_EMU/123/123.pnml"
+//521
+#include "EL_EMU/521/521.pnml"
+//600,to do : remake
+#include "EL_EMU/600/600.pnml"
+//2000
+#include "DL_DMU/2000/2000.pnml"
+//sort
+#include "sort.pnml"

@@ -1,0 +1,68 @@
+template tmpl_32_train(x, y){
+    // arguments x, y: coordinates of top-left corner of first sprite
+    [x,      y,  8, 24,  -3, -12] //xpos ypos xsize ysize xoff yoff
+    [x +  9, y, 22, 20, -14, -12]
+    [x + 32, y, 32, 16, -16, -12]
+    [x + 65, y, 22, 20,  -6, -12]
+}
+template tmpl_32_train_4_views(num){
+    // argument num: Index in the graphics file, assuming vertical ordering of vehicles
+    tmpl_32_train(1, 1 + 32 * num)
+}
+template tmpl_32_train_8_views(num, reversed){
+    // argument num: Index in the graphics file, assuming vertical ordering of vehicles
+    // argument reversed: Reverse visible orientation of vehicle, if set to 1
+    tmpl_32_train(reversed ? 89 : 1, 1 + 32 * num)
+    tmpl_32_train(reversed ? 1 : 89, 1 + 32 * num)
+}
+template tmpl_32_train_single(num, xsize, ysize, xoff, yoff) { 
+    [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
+}
+template tmpl_32_train_basic(x, y){
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -12]
+    [x+9  , y, 22, 20, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 20,  -6, -12]
+    [x+88 , y,  8, 24,  -3, -12]
+    [x+97 , y, 22, 20, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 20,  -6, -12]
+}
+template tmpl_32_train_main(x, y){
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 28,  -3, -15]
+    [x+9  , y, 22, 21, -15, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -3, -12]
+    [x+88 , y,  8, 28,  -3, -14]
+    [x+97 , y, 22, 21, -16, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -4, -12]
+}
+template tmpl_purchase(x, y){
+    [x, y, 87, 15, -25, -10]
+}
+template tmpl_purchase_32bpp(x, y){
+    [x, y, 74, 15, -26, -10]
+}
+template tmpl_purchase_dual_head(x, y){
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty.png"]
+    [x, y, 74, 15, -13, -10]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty.png"]
+}
+template tmpl_purchase_dual_head_32bpp(x, y){
+    [1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
+    [x, y, 74, 15, -13, -10]
+	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
+}
