@@ -1,5 +1,5 @@
 #include "600_graphic.pnml"
-#include "600_switch"
+#include "600_switch.pnml"
 item(FEAT_TRAINS, item_600_series){
     property {
         name: string(STR_NAME_600_TRAINS);
