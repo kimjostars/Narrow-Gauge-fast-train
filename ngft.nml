@@ -605,3 +605,7 @@ sort(FEAT_TRAINS, [
     item_600_series,
     item_2000_series
 ]);
+/*command list
+    build: python3 build.py --entry src/main.pnml --merge Narrow-Gauge-fast-train/ngft.nml
+    compile: nmlc -l ./lang/ ./ngft.nml
+*/
