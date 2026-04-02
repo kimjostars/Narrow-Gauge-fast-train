@@ -5,7 +5,6 @@ BUILD_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(BUILD_DIR, ".."))
 
 SRC_DIR = os.path.join(PROJECT_ROOT, "src")
-DEFAULT_ENTRY = os.path.join(SRC_DIR, "main.pnml")
 
 included_files = set()
 
@@ -54,8 +53,8 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--entry",
-        default=DEFAULT_ENTRY,
-        help="Top-level PNML file (default: src/main.pnml)"
+        default="src/main.pnml",
+        help="Top-level PNML file (default: )"
     )
 
     parser.add_argument(
