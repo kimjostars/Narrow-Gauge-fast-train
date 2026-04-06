@@ -43,7 +43,7 @@ template tmpl_32_train_main(x, y){
 template tmpl_purchase(x, y){
     [x, y, 87, 15, -25, -10]
 }
-template tmpl_purchase_32bpp(x, y){
+template tmpl_purchase_single_head(x, y){
     [x, y, 74, 15, -26, -10]
 }
 template tmpl_purchase_dual_head(x, y){

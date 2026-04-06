@@ -1,7 +1,7 @@
-spriteset(spriteset_600_series_front_lighted, "gfx/600_series.png") { tmpl_32_train_8_views(0, 0) } 
-spriteset(spriteset_600_series_rear_lighted, "gfx/600_series.png") { tmpl_32_train_8_views(1, 1) } 
-spriteset(spriteset_600_series_front, "gfx/600_series.png") { tmpl_32_train_8_views(2, 0) } 
-spriteset(spriteset_600_series_rear, "gfx/600_series.png") { tmpl_32_train_8_views(3, 1) } 
-spriteset(spriteset_600_series_middle, "gfx/600_series.png") { tmpl_32_train_4_views(4) } 
-spriteset(spriteset_600_series_purchase, "gfx/600_series.png") { tmpl_32_train_single(5, 53, 14, -25, -10) } 
-spriteset(spriteset_600_series_invisible, "gfx/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
+spriteset(spriteset_600_series_front_lighted, "gfx/600/600_series.png") { tmpl_32_train_8_views(0, 0) } 
+spriteset(spriteset_600_series_rear_lighted, "gfx/600/600_series.png") { tmpl_32_train_8_views(1, 0) } 
+spriteset(spriteset_600_series_front, "gfx/600/600_series.png") { tmpl_32_train_8_views(2, 0) } 
+spriteset(spriteset_600_series_rear, "gfx/600/600_series.png") { tmpl_32_train_8_views(3, 0) } 
+spriteset(spriteset_600_series_middle, "gfx/600/600_series.png") { tmpl_32_train_4_views(4) } 
+spriteset(spriteset_600_series_purchase, "gfx/600/600_series_purchase.png") {tmpl_purchase_dual_head(0, 0)} 
+spriteset(spriteset_600_series_invisible, "gfx/600/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }

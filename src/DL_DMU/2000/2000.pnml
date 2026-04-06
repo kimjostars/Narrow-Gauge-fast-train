@@ -37,6 +37,7 @@ item(FEAT_TRAINS, item_2000_series){
             string(STR_NARROWGAUGE),
             string(STR_NOT_DENKI,string(STR_DIESEL)),
             string(STR_LOAD_SPEED, string(STR_DOORS, 2)),
+            string(STR_FORMATION, string(STR_NUM_CARS_RANGE, 2, 4)),
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JR,string(STR_JR_SHIKOKU)),string(STR_TOSA))));
         can_attach_wagon: sw_2000_series_attach_vehid;

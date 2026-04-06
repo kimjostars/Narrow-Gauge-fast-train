@@ -7,7 +7,7 @@ item(FEAT_TRAINS, item_mucar){
         introduction_date: date(1800,01,01);
         track_type: [TR_1067_NE,TR_1435_NE];
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_AUTOREFIT);
+        misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_MU,TRAIN_FLAG_AUTOREFIT,TRAIN_FLAG_2CC);
         refit_cost: 0;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         ai_special_flag: AI_FLAG_PASSENGER;

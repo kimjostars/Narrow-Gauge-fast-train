@@ -37,8 +37,10 @@ item(FEAT_TRAINS, item_123_series){
             string(STR_NARROWGAUGE),
             string(STR_DENKI, string(STR_DC_N, 1500)),
             string(STR_LOAD_SPEED, string(STR_DOORS_REFIT, 2, 3)),
+            string(STR_FORMATION, string(STR_NUM_CARS_SINGLE)),
             string(STR_USAGE, string(STR_USE_REGIO)),
-            string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JNR),string(STR_JR,string(STR_CONCAT_3,string(STR_JR_EAST),string(STR_JR_CENTRAL),string(STR_JR_WEST))))));
+            string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JNR),string(STR_JR,string(STR_CONCAT_3,string(STR_JR_EAST),string(STR_JR_CENTRAL),string(STR_JR_WEST))))),
+            string(STR_LIVERIES,string(LV_VARIOUS)));
         
         loading_speed: sw_123_series_loading_speed;
         cargo_subtype_text: sw_123_serise_cargo_subtype_text;

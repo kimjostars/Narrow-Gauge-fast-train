@@ -38,6 +38,7 @@ item(FEAT_TRAINS, item_521_series){
             string(STR_NARROWGAUGE),
             string(STR_DENKI, string(STR_AC_DC, 20, 60, 1500)),
             string(STR_LOAD_SPEED, string(STR_DOORS, 3)),
+            string(STR_FORMATION, string(STR_NUM_CARS_1, 2)),
             string(STR_USAGE, string(STR_USE_GENERAL)),
             string(STR_OPERATOR,string(STR_CONCAT_2_DASH_BL,string(STR_JR,string(STR_JR_WEST)),string(STR_PRIVATE))));
         cargo_subtype_text: sw_521_series_cargo_subtype_text;

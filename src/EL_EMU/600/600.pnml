@@ -18,11 +18,11 @@ item(FEAT_TRAINS, item_600_series){
         track_type: TR_1067_AC;
         speed: 160 km/h;
         ai_special_flag: AI_FLAG_PASSENGER;
-        power: 2000 hp;
+        power: 300 hp;
         running_cost_base: RUNNING_COST_ELECTRIC;
-        dual_headed: 0;
+        dual_headed: 1;
         cargo_capacity: param_cargo_capacity_express;
-        weight: 200 ton;
+        weight: 40 ton;
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon: 0 kW;
@@ -38,12 +38,19 @@ item(FEAT_TRAINS, item_600_series){
             string(STR_NARROWGAUGE),
             string(STR_DENKI,string(STR_AC_KV_2_HZ,20,50,60)),
             string(STR_LOAD_SPEED,string(STR_DOORS,2)),
+            string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))));
-        articulated_part: switch_600_series_articulated_part;
         can_attach_wagon: switch_600_series_attach_wagon;
         speed: sw_600_series_speed;
         purchase: spriteset_600_series_purchase;
         default: switch_600_series_graphics;
+    }
+    livery_override(item_mucar){
+        weight: 40;
+        cargo_capacity: param_cargo_capacity_express;
+        loading_speed: param_loading_2D;
+        power: 100;
+        default: spriteset_600_series_middle;
     }
 }

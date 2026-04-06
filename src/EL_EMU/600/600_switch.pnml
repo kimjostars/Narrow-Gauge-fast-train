@@ -1,15 +1,10 @@
-switch(FEAT_TRAINS, SELF, switch_600_series_articulated_part, extra_callback_info1){
-    1..8: return item_600_series;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, [vehicle_type_id == item_600_series || vehicle_type_id == item_mucar]){
+    0: return string(STR_CANNOT_ATTACH_OTHER);
+    1: return CB_RESULT_ATTACH_ALLOW;
 }
-switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, vehicle_type_id){
-    item_600_series: return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_CANNOT_ATTACH_OTHER);
-}
-switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_consist % 9){ 
+switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_vehid_chain % 2){ 
     0: spriteset_600_series_front_lighted; 
-    8: spriteset_600_series_rear_lighted; 
-    spriteset_600_series_middle; 
+    1: spriteset_600_series_rear_lighted;
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
     0: return 160;
