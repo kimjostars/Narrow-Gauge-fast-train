@@ -10,9 +10,21 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_attach_vehid, [vehicle_type_id == item_
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
 }
-switch(FEAT_TRAINS, SELF, sw_2000_series_head_graphics, position_in_consist){
+switch(FEAT_TRAINS, SELF, sw_2000_serise_head_cargo_subtype_text, cargo_subtype){
+    0: string(STR_DASH,string(STR_2000_1_STREAMLINED));
+    1: string(STR_DASH,string(STR_2000_1_PENETRATING));
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_1_cargo_subtype, cargo_subtype){
     0: spriteset_2000_series_1_front_light;
-    default: spriteset_2000_series_3_front_light;
+    1: spriteset_2000_series_3_back_light_revers;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_3_cargo_subtype, cargo_subtype){
+    0: spriteset_2000_series_1_back_light_revers;
+    1: spriteset_2000_series_3_front_light;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_head_graphics, position_in_consist){
+    0: sw_2000_series_1_cargo_subtype;
+    default: sw_2000_series_3_cargo_subtype;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_graphics, vehicle_type_id){
     item_2000_series: sw_2000_series_head_graphics;

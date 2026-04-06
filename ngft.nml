@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 108;
+	version: 112;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -238,6 +238,17 @@ template tmpl_32_train_main(x, y){
     [x+120, y, 32, 16, -16, -12]
     [x+153, y, 22, 21,  -4, -12]
 }
+template tmpl_32_train_main_harf(x, y, num1, num2){
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 28,  -3, -14-num1]
+    [x+9  , y, 22, 21, -15-num1, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -3-num2, -12]
+}
+template tmpl_32_train_main_reversing(x, y, revers){
+    tmpl_32_train_main_harf(revers ? x+88 : x, y, revers ? 1 : 0, revers ? 1 : 0)
+    tmpl_32_train_main_harf(revers ? x : x+88, y, revers ? 0 : 1, revers ? 0 : 1)
+}
 template tmpl_purchase(x, y){
     [x, y, 87, 15, -25, -10]
 }
@@ -310,11 +321,11 @@ spriteset(spriteset_123_series_JC_W_2_DOOR, "gfx/123_series.png"){tmpl_32_train_
 spriteset(spriteset_123_series_JC_W_3_DOOR, "gfx/123_series.png"){tmpl_32_train_basic(0, 95)}
 spriteset(spriteset_123_series_JE_RW, "gfx/123_series.png"){tmpl_32_train_basic(0, 127)}
 spriteset(spriteset_123_series_purchase, "gfx/123_series.png"){tmpl_purchase(0, 153)}switch(FEAT_TRAINS, SELF, sw_123_serise_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_123_SERIES_JW_YY,string(STR_JR,string(STR_JR_WEST)));
-    1: return string(STR_123_SERIES_JW_BW,string(STR_JR,string(STR_JR_WEST)));
-    2: return string(STR_123_SERIES_JC_W_2_DOOR,string(STR_JR,string(STR_JR_CENTRAL)));
-    3: return string(STR_123_SERIES_JC_W_3_DOOR,string(STR_JR,string(STR_JR_CENTRAL)));
-    4: return string(STR_123_SERIES_JE_RW,string(STR_JR,string(STR_JR_EAST)));
+    0: return string(STR_DASH,string(STR_123_SERIES_JW_YY,string(STR_JR,string(STR_JR_WEST))));
+    1: return string(STR_DASH,string(STR_123_SERIES_JW_BW,string(STR_JR,string(STR_JR_WEST))));
+    2: return string(STR_DASH,string(STR_123_SERIES_JC_W_2_DOOR,string(STR_JR,string(STR_JR_CENTRAL))));
+    3: return string(STR_DASH,string(STR_123_SERIES_JC_W_3_DOOR,string(STR_JR,string(STR_JR_CENTRAL))));
+    4: return string(STR_DASH,string(STR_123_SERIES_JE_RW,string(STR_JR,string(STR_JR_EAST))));
     return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_TRAINS, SELF, sw_123_series_graphics, cargo_subtype){
@@ -394,7 +405,7 @@ switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
     2: return sw_521_3_series_graphics;
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_521_0_SERIES,string(STR_JR,string(STR_JR_WEST)));
+    0: return string(STR_DASH,string(STR_521_0_SERIES,string(STR_JR,string(STR_JR_WEST))));
     1: return string(STR_521_0_1_2_SERIES);
     2: return string(STR_521_0_3_SERIES);
 }item(FEAT_TRAINS, item_521_series){
@@ -525,14 +536,22 @@ spriteset(spriteset_2000_series_1_front_light, "gfx/mucar/mucar.png"){tmpl_32_tr
 alternative_sprites(spriteset_2000_series_1_front_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_2000_series_1_back_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_1_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main(0, 31)}
+spriteset(spriteset_2000_series_1_front_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_2000_series_1_front_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main_reversing(0, 1, 0)}
+spriteset(spriteset_2000_series_1_back_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_2000_series_1_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main_reversing(0, 31, 1)}
 spriteset(spriteset_2000_series_2_front, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_2_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_2_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_2000_series_2_back, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_2_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_2_series.png"){tmpl_32_train_main(0, 31)}
 spriteset(spriteset_2000_series_3_front_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_3_front_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_2000_series_3_front_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_2000_series_3_front_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 1, 1)}
 spriteset(spriteset_2000_series_3_back_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_3_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main(0, 31)}
+spriteset(spriteset_2000_series_3_back_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_2000_series_3_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 31, 1)}
 spriteset(spriteset_2000_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_single_head(0, 0)}
 alternative_sprites(spriteset_2000_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_series_purchase.png"){tmpl_purchase_single_head(0, 0)}switch(FEAT_TRAINS, SELF, sw_2000_series_speed, param_high_speed){
     0: 120;
@@ -546,9 +565,21 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_attach_vehid, [vehicle_type_id == item_
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
 }
-switch(FEAT_TRAINS, SELF, sw_2000_series_head_graphics, position_in_consist){
+switch(FEAT_TRAINS, SELF, sw_2000_serise_head_cargo_subtype_text, cargo_subtype){
+    0: string(STR_DASH,string(STR_2000_1_STREAMLINED));
+    1: string(STR_DASH,string(STR_2000_1_PENETRATING));
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_1_cargo_subtype, cargo_subtype){
     0: spriteset_2000_series_1_front_light;
-    default: spriteset_2000_series_3_front_light;
+    1: spriteset_2000_series_3_back_light_revers;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_3_cargo_subtype, cargo_subtype){
+    0: spriteset_2000_series_1_back_light_revers;
+    1: spriteset_2000_series_3_front_light;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_head_graphics, position_in_consist){
+    0: sw_2000_series_1_cargo_subtype;
+    default: sw_2000_series_3_cargo_subtype;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_graphics, vehicle_type_id){
     item_2000_series: sw_2000_series_head_graphics;
@@ -594,6 +625,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_graphics, vehicle_type_id){
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JR,string(STR_JR_SHIKOKU)),string(STR_TOSA))));
         can_attach_wagon: sw_2000_series_attach_vehid;
+        cargo_subtype_text: sw_2000_serise_head_cargo_subtype_text;
         speed: sw_2000_series_speed;
         start_stop: sw_2000_series_start_stop;
         purchase: spriteset_2000_series_purchase;

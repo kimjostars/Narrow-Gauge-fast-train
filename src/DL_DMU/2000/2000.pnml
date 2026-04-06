@@ -41,6 +41,7 @@ item(FEAT_TRAINS, item_2000_series){
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JR,string(STR_JR_SHIKOKU)),string(STR_TOSA))));
         can_attach_wagon: sw_2000_series_attach_vehid;
+        cargo_subtype_text: sw_2000_serise_head_cargo_subtype_text;
         speed: sw_2000_series_speed;
         start_stop: sw_2000_series_start_stop;
         purchase: spriteset_2000_series_purchase;

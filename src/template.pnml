@@ -40,6 +40,17 @@ template tmpl_32_train_main(x, y){
     [x+120, y, 32, 16, -16, -12]
     [x+153, y, 22, 21,  -4, -12]
 }
+template tmpl_32_train_main_harf(x, y, num1, num2){
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 28,  -3, -14-num1]
+    [x+9  , y, 22, 21, -15-num1, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -3-num2, -12]
+}
+template tmpl_32_train_main_reversing(x, y, revers){
+    tmpl_32_train_main_harf(revers ? x+88 : x, y, revers ? 1 : 0, revers ? 1 : 0)
+    tmpl_32_train_main_harf(revers ? x : x+88, y, revers ? 0 : 1, revers ? 0 : 1)
+}
 template tmpl_purchase(x, y){
     [x, y, 87, 15, -25, -10]
 }
