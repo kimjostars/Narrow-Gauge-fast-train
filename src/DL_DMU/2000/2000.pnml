@@ -45,7 +45,7 @@ item(FEAT_TRAINS, item_2000_series){
         speed: sw_2000_series_speed;
         start_stop: sw_2000_series_start_stop;
         purchase: spriteset_2000_series_purchase;
-        default: sw_2000_series_graphics;
+        default: sw_2000_series_head_graphics;
     }
     livery_override(item_mucar){
         weight: 38;
@@ -53,6 +53,6 @@ item(FEAT_TRAINS, item_2000_series){
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
         power: 660;
-        default: sw_2000_series_graphics;
+        default: spriteset_2000_series_2_front;
     }
 }

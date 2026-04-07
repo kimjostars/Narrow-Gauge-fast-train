@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 112;
+	version: 114;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -544,14 +544,12 @@ spriteset(spriteset_2000_series_1_back_light_revers, "gfx/mucar/mucar.png"){tmpl
 alternative_sprites(spriteset_2000_series_1_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main_reversing(0, 31, 1)}
 spriteset(spriteset_2000_series_2_front, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_2_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_2_series.png"){tmpl_32_train_main(0, 1)}
-spriteset(spriteset_2000_series_2_back, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_2000_series_2_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_2_series.png"){tmpl_32_train_main(0, 31)}
 spriteset(spriteset_2000_series_3_front_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_3_front_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_2000_series_3_front_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_3_front_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 1, 1)}
 spriteset(spriteset_2000_series_3_back_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_2000_series_3_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main(0, 31)}
+alternative_sprites(spriteset_2000_series_3_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 31, 0)}
 spriteset(spriteset_2000_series_3_back_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_3_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 31, 1)}
 spriteset(spriteset_2000_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_single_head(0, 0)}
@@ -571,21 +569,25 @@ switch(FEAT_TRAINS, SELF, sw_2000_serise_head_cargo_subtype_text, cargo_subtype)
     0: string(STR_DASH,string(STR_2000_1_STREAMLINED));
     1: string(STR_DASH,string(STR_2000_1_PENETRATING));
 }
+switch(FEAT_TRAINS, SELF, sw_2000_series_1_graphics_rev, vehicle_is_flipped){
+    0: spriteset_2000_series_1_back_light_revers;
+    1: spriteset_2000_series_1_front_light;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_3_graphics_rev, vehicle_is_flipped){
+    0: spriteset_2000_series_3_front_light;
+    1: spriteset_2000_series_3_back_light;
+}
 switch(FEAT_TRAINS, SELF, sw_2000_series_1_cargo_subtype, cargo_subtype){
     0: spriteset_2000_series_1_front_light;
     1: spriteset_2000_series_3_back_light_revers;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_3_cargo_subtype, cargo_subtype){
-    0: spriteset_2000_series_1_back_light_revers;
-    1: spriteset_2000_series_3_front_light;
+    0: sw_2000_series_3_graphics_rev;
+    default: sw_2000_series_1_graphics_rev;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_head_graphics, position_in_consist){
     0: sw_2000_series_1_cargo_subtype;
     default: sw_2000_series_3_cargo_subtype;
-}
-switch(FEAT_TRAINS, SELF, sw_2000_series_graphics, vehicle_type_id){
-    item_2000_series: sw_2000_series_head_graphics;
-    item_mucar: spriteset_2000_series_2_front;
 }item(FEAT_TRAINS, item_2000_series){
     property {
         name: string(STR_NAME_2000_TRAINS);
@@ -631,7 +633,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_graphics, vehicle_type_id){
         speed: sw_2000_series_speed;
         start_stop: sw_2000_series_start_stop;
         purchase: spriteset_2000_series_purchase;
-        default: sw_2000_series_graphics;
+        default: sw_2000_series_head_graphics;
     }
     livery_override(item_mucar){
         weight: 38;
@@ -639,7 +641,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_graphics, vehicle_type_id){
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
         power: 660;
-        default: sw_2000_series_graphics;
+        default: spriteset_2000_series_2_front;
     }
 }//sort
 sort(FEAT_TRAINS, [
