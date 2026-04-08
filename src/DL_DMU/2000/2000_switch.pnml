@@ -27,7 +27,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_1_cargo_subtype, cargo_subtype){
     1: spriteset_2000_series_3_back_light_revers;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_3_cargo_subtype, cargo_subtype){
-    0: sw_2000_series_3_graphics_rev;
+    1: sw_2000_series_3_graphics_rev;
     default: sw_2000_series_1_graphics_rev;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_head_graphics, position_in_consist){

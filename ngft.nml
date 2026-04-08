@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 114;
+	version: 116;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -391,25 +391,32 @@ spriteset(spriteset_521_0_series_1_2_0, "gfx/521/521_0_series.png"){tmpl_32_trai
 spriteset(spriteset_521_0_series_1_2_1, "gfx/521/521_0_series.png"){tmpl_32_train_main(1, 32)}
 spriteset(spriteset_521_0_series_3_0, "gfx/521/521_0_series.png"){tmpl_32_train_main(1, 62)}
 spriteset(spriteset_521_0_series_3_1, "gfx/521/521_0_series.png"){tmpl_32_train_main(1, 92)}
+spriteset(spriteset_521_100_series_0, "gfx/521/521_100_series.png"){tmpl_32_train_main(1, 1)}
+spriteset(spriteset_521_100_series_1, "gfx/521/521_100_series.png"){tmpl_32_train_main(1, 31)}
+
 spriteset(spriteset_521_0_series_purchase, "gfx/521/521_0_series.png"){tmpl_purchase_dual_head(1, 122)}switch(FEAT_TRAINS, SELF, sw_521_1_2_series_graphics, position_in_consist % 2){ 
-    0: return spriteset_521_0_series_1_2_0; 
-    1: return spriteset_521_0_series_1_2_1; 
+    0: spriteset_521_0_series_1_2_0; 
+    1: spriteset_521_0_series_1_2_1; 
 }
 switch(FEAT_TRAINS, SELF, sw_521_3_series_graphics, position_in_consist % 2){ 
-    0: return spriteset_521_0_series_3_0; 
-    1: return spriteset_521_0_series_3_1; 
+    0: spriteset_521_0_series_3_0; 
+    1: spriteset_521_0_series_3_1; 
+}
+switch(FEAT_TRAINS, SELF, sw_521_100_series_graphics, position_in_consist % 2){ 
+    0: spriteset_521_100_series_0; 
+    1: spriteset_521_100_series_1; 
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
-    0: return sw_521_1_2_series_graphics;
-    1: return sw_521_1_2_series_graphics;
-    2: return sw_521_3_series_graphics;
-    //3: return sw_521_100_series_graphics;
+    0: sw_521_1_2_series_graphics;
+    1: sw_521_1_2_series_graphics;
+    2: sw_521_3_series_graphics;
+    3: sw_521_100_series_graphics;
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH,string(STR_521_0_SERIES,string(STR_JR,string(STR_JR_WEST))));
     1: return string(STR_521_0_1_2_SERIES);
     2: return string(STR_521_0_3_SERIES);
-    //3: return string(STR_DASH,string(STR_521_100_SERIES,string(STR_JR,string(STR_JR_WEST))));
+    3: return string(STR_DASH,string(STR_521_100_SERIES,string(STR_JR,string(STR_JR_WEST))));
 }item(FEAT_TRAINS, item_521_series){
     property {
         name: string(STR_NAME_521_TRAINS);
@@ -552,6 +559,7 @@ spriteset(spriteset_2000_series_3_back_light, "gfx/mucar/mucar.png"){tmpl_32_tra
 alternative_sprites(spriteset_2000_series_3_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 31, 0)}
 spriteset(spriteset_2000_series_3_back_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_3_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 31, 1)}
+
 spriteset(spriteset_2000_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_single_head(0, 0)}
 alternative_sprites(spriteset_2000_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_series_purchase.png"){tmpl_purchase_single_head(0, 0)}switch(FEAT_TRAINS, SELF, sw_2000_series_speed, param_high_speed){
     0: 120;
@@ -582,7 +590,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_1_cargo_subtype, cargo_subtype){
     1: spriteset_2000_series_3_back_light_revers;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_3_cargo_subtype, cargo_subtype){
-    0: sw_2000_series_3_graphics_rev;
+    1: sw_2000_series_3_graphics_rev;
     default: sw_2000_series_1_graphics_rev;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_head_graphics, position_in_consist){
