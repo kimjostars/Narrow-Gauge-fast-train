@@ -14,7 +14,7 @@ switch(FEAT_TRAINS, SELF, sw_123_series_graphics, cargo_subtype){
     4: return spriteset_123_series_JE_RW;
 }
 switch(FEAT_TRAINS, SELF, sw_123_series_loading_speed, cargo_subtype){
-    0..2: param_loading_2D; 
-    3: param_loading_3D;
-    4: param_loading_2D;
+    0..2: return param_loading_2D; 
+    3: return param_loading_3D;
+    4: return param_loading_2D;
 }

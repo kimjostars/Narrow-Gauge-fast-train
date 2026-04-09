@@ -3,8 +3,8 @@ switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, [vehicle_type_id == it
     1: return CB_RESULT_ATTACH_ALLOW;
 }
 switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_vehid_chain % 2){ 
-    0: spriteset_600_series_front_lighted; 
-    1: spriteset_600_series_rear_lighted;
+    0: return spriteset_600_series_front_lighted; 
+    1: return spriteset_600_series_rear_lighted;
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
     0: return 160;
