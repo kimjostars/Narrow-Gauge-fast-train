@@ -18,6 +18,8 @@
 #include "EL_EMU/600/600.pnml"
 //2000
 #include "DL_DMU/2000/2000.pnml"
+//N2000
+#include "DL_DMU/2000/N2000.pnml"
 //sort
 #include "sort.pnml"
 
