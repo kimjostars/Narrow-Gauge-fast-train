@@ -1,21 +1,21 @@
-# 협궤 고속열차 세트
-협궤 고속열차 세트는 가상의 1067mm궤간의 200km이상의 열차와 그외의 열차를 추가해주는 OpenTTD NewGRF입니다.
-**[Github release 페이지](https://github.com/kimjostars/Narrow-Gauge-fast-train/releases)** 에서 다운로드 할수있습니다.
-이세트를 게임에 적용할때 **[JP+ Track](https://github.com/OpenTTD-JPplus/JPplusTracks)** 도 같이 적용되어야합니다.
-## 개발
-### 빌드하는 방법
-이 NewGRF를 빌드하려면 [NML](https://github.com/OpenTTD/nml)(>= 0.8.1), **Python 3**이 필요합니다.  
-파일 합치기 `build.py --entry src/main.pnml --merge Narrow-Gauge-fast-train/ngft.nml`
-컴파일 `nmlc -l ./lang/ ./ngft.nml1`
-### 번역
-이세트의 기본언어는 한국어 입니다.
-다른언어로 번역하고 싶으시다면 이 Github 프로젝트에 Pull Request를 열어주세요.
-Pull Request를 열 줄 모르신다면, Issues에 올리셔도 괜찮습니다. 이 파일을 번역하시면 됩니다.
-- **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : 한국어 korean
-- **[src/lang/english.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/english.lng)** : 영어 english
+# Narrow Gauge Fast Train Set
+[English](./README.md) | [한국어](./README.ko.md)
 
-## 라이선스
-이 NewGRF는 **[커먼스 라이선스 v3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)** (CC-BY-NC-SA v3.0)을 따릅니다.
-이 프로젝트에 기여함은 이 라이선스에 동의함을 의미합니다.
+Narrow Gauge Fast Train Set is an OpenTTD NewGRF that adds fictional 1067 mm gauge trains capable of speeds over 200 km/h, along with other rolling stock.
+You can download it from the **[Github release page](https://github.com/kimjostars/Narrow-Gauge-fast-train/releases)**.
+It is recommended to use this set together with **[JP+ Track](https://github.com/OpenTTD-JPplus/JPplusTracks)** when applying it to the game.
+## Development
+### How to Build
+To build this NewGRF, you need [NML](https://github.com/OpenTTD/nml) (>= 0.8.1) and **Python 3**.
+Merge files: `build.py --entry src/{main file}.pnml --merge {project name}/{main file}.nml`
+Compile: `nmlc -l ./lang/ ./{main file}.nml`
+### Translation
+The default language of this set is Korean.
+If you would like to translate it into another language, please open a Pull Request on this GitHub project.
+If you are not familiar with creating a Pull Request, you may also submit it via Issues. Please translate the following file:
+* **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : Korean
+Translations are always welcome.
+## License
+This NewGRF is licensed under the **[Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)** (CC BY-NC-SA 3.0).
 
-본프로젝트에 기여함은 라이선스에 동의함을 의미합니다.
+Contributing to this project implies agreement with this license.
