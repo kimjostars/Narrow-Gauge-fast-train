@@ -374,7 +374,7 @@ switch(FEAT_TRAINS, SELF, sw_123_series_loading_speed, cargo_subtype){
         extra_power_per_wagon: 0 kW;
         tractive_effort_coefficient: 0.6;
         air_drag_coefficient: 0.7;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 1, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 1;
     }
@@ -452,7 +452,7 @@ switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
         extra_power_per_wagon: 0 kW;
         tractive_effort_coefficient: 0.07;
         air_drag_coefficient: 0.07;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 1, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 4, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 0;
         dual_headed: 1;
@@ -523,7 +523,7 @@ switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
         extra_power_per_wagon: 0 kW;
         tractive_effort_coefficient: 0.9 / 10;
         air_drag_coefficient: 0.06;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 0;
     }
@@ -632,7 +632,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_2_graphics_rev, vehicle_is_reversed){
         ai_engine_rank: 0;
         running_cost_base: RUNNING_COST_DIESEL;
         air_drag_coefficient: 0.05;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0;
         curve_speed_mod: 50;
         bitmask_vehicle_info: 0;
@@ -702,7 +702,7 @@ switch(FEAT_TRAINS, SELF, sw_N2000_series_head_graphic, position_in_consist){
         ai_engine_rank: 0;
         running_cost_base: RUNNING_COST_DIESEL;
         air_drag_coefficient: 0.05;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0;
         curve_speed_mod: 50;
         bitmask_vehicle_info: 0;

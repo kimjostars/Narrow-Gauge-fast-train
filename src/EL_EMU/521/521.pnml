@@ -27,7 +27,7 @@ item(FEAT_TRAINS, item_521_series){
         extra_power_per_wagon: 0 kW;
         tractive_effort_coefficient: 0.07;
         air_drag_coefficient: 0.07;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 1, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 4, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 0;
         dual_headed: 1;

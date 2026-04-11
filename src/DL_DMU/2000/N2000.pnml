@@ -26,7 +26,7 @@ item(FEAT_TRAINS, item_N2000_series){
         ai_engine_rank: 0;
         running_cost_base: RUNNING_COST_DIESEL;
         air_drag_coefficient: 0.05;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0;
         curve_speed_mod: 50;
         bitmask_vehicle_info: 0;
