@@ -1,0 +1,5 @@
+build.bat
+*.cacheindex
+*.cache
+*.vs
+backups/
