@@ -131,7 +131,7 @@ STR_521_0_3_SERIES :{WHITE}└ {BLACK}3 batch
 STR_521_100_SERIES :{STRING} {CREAM}100s
 
 STR_NAME_2000_TRAINS :2000 serise {WHITE}(DMU){BLACK}
-STR_2000_1_STREAMLINED :streamlined type {WHITE}(When operating a vehicle with multiple connected cars, do not apply this setting to any vehicles other than the front and rear cars.)
+STR_2000_1_STREAMLINED :streamlined type
 STR_2000_1_PENETRATING :penetrating type
 
 STR_NAME_N2000_TRAINS :N2000 serise {WHITE}(DMU){BLACK}

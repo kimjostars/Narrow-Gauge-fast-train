@@ -3,9 +3,9 @@ alternative_sprites(spriteset_2000_series_1_front_light, ZOOM_LEVEL_NORMAL, BIT_
 spriteset(spriteset_2000_series_1_back_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_1_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main(0, 31)}
 spriteset(spriteset_2000_series_1_front_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_2000_series_1_front_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main_reversing(0, 1, 0)}
+alternative_sprites(spriteset_2000_series_1_front_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main_reversing(0, 1, 1)}
 spriteset(spriteset_2000_series_1_back_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_2000_series_1_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main_reversing(0, 31, 1)}
+alternative_sprites(spriteset_2000_series_1_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_1_series.png"){tmpl_32_train_main_revers(0, 31)}
 spriteset(spriteset_2000_series_2_front, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_2_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_2_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_2000_series_2_back, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
@@ -13,11 +13,11 @@ alternative_sprites(spriteset_2000_series_2_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_3
 spriteset(spriteset_2000_series_3_front_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_3_front_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_2000_series_3_front_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_2000_series_3_front_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 1, 1)}
+alternative_sprites(spriteset_2000_series_3_front_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_revers(0, 1)}
 spriteset(spriteset_2000_series_3_back_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_2000_series_3_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 31, 0)}
 spriteset(spriteset_2000_series_3_back_light_revers, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_2000_series_3_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_reversing(0, 31, 1)}
+alternative_sprites(spriteset_2000_series_3_back_light_revers, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_3_series.png"){tmpl_32_train_main_revers(0, 31)}
 
 spriteset(spriteset_2000_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_single_head(0, 0)}
 alternative_sprites(spriteset_2000_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/2000_series_purchase.png"){tmpl_purchase_single_head(0, 0)}

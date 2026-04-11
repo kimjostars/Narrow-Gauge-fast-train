@@ -27,7 +27,7 @@ STR_NGFT_CARGO_CAPACITY_NAME :수송량
 STR_NGFT_CARGO_CAPACITY_DESC :수송량를 설정합니다. {}"x1"로 설정하면 현실의 수송량과 같아집니다.
 STR_NGFT_CARGO_CAPACITY_default :x1 (기본값)
 STR_NGFT_HGIH_SPEED_NAME :열차 제한속도 향상
-STR_NGFT_HGIH_SPEED_DESC :이설정을 활성화하면 {RED}특급{BLACK}열차의 제한속도가 200km/h혹은 160km/h급으로 설정됩니다.{}기본값은 비활성입니다.
+STR_NGFT_HGIH_SPEED_DESC :이설정을 활성화하면 {RED}특급{BLACK}열차의 제한속도가 열차에 따라 200km/h혹은 160km/h급으로 설정됩니다.{}기본값은 비활성입니다.
 
 #maintrain
 #commonness
@@ -127,7 +127,7 @@ STR_521_0_3_SERIES :{WHITE}└ {BLACK}3차분
 STR_521_100_SERIES :{STRING} {CREAM}100번대
 
 STR_NAME_2000_TRAINS :2000계 {WHITE}(DMU){BLACK}
-STR_2000_1_STREAMLINED :유선형 선두부 {WHITE}(병결시 전후부 말단 차량에만 사용가능합니다.)
+STR_2000_1_STREAMLINED :유선형 선두부
 STR_2000_1_PENETRATING :관통형 선두부
 
 STR_NAME_N2000_TRAINS :N2000계 {WHITE}(DMU){BLACK}

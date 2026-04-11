@@ -6,7 +6,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_start_stop, num_vehs_in_consist){
     1: return string(STR_CANNOT_CAR,2);
     return CB_RESULT_NO_TEXT;
 }
-switch(FEAT_TRAINS, SELF, sw_2000_series_attach_vehid, [vehicle_type_id == item_2000_series || vehicle_type_id == item_mucar]) {
+switch(FEAT_TRAINS, SELF, sw_2000_series_attach_vehid, [vehicle_type_id == item_2000_series || vehicle_type_id == item_mucar || vehicle_type_id == item_N2000_series]) {
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
 }

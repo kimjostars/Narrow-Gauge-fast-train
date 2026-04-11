@@ -1,8 +1,8 @@
-spriteset(spriteset_521_0_series_1_2_0, "gfx/521/521_0_series.png"){tmpl_32_train_main(1, 2)}
-spriteset(spriteset_521_0_series_1_2_1, "gfx/521/521_0_series.png"){tmpl_32_train_main(1, 32)}
-spriteset(spriteset_521_0_series_3_0, "gfx/521/521_0_series.png"){tmpl_32_train_main(1, 62)}
-spriteset(spriteset_521_0_series_3_1, "gfx/521/521_0_series.png"){tmpl_32_train_main(1, 92)}
-spriteset(spriteset_521_100_series_0, "gfx/521/521_100_series.png"){tmpl_32_train_main(1, 1)}
-spriteset(spriteset_521_100_series_1, "gfx/521/521_100_series.png"){tmpl_32_train_main(1, 31)}
+spriteset(spriteset_521_0_series_1_2_0, "gfx/521/521_0_series.png"){tmpl_32_train_main_227and521(1, 2)}
+spriteset(spriteset_521_0_series_1_2_1, "gfx/521/521_0_series.png"){tmpl_32_train_main_227and521(1, 32)}
+spriteset(spriteset_521_0_series_3_0, "gfx/521/521_0_series.png"){tmpl_32_train_main_227and521(1, 62)}
+spriteset(spriteset_521_0_series_3_1, "gfx/521/521_0_series.png"){tmpl_32_train_main_227and521(1, 92)}
+spriteset(spriteset_521_100_series_0, "gfx/521/521_100_series.png"){tmpl_32_train_main_227and521(1, 1)}
+spriteset(spriteset_521_100_series_1, "gfx/521/521_100_series.png"){tmpl_32_train_main_227and521(1, 31)}
 
 spriteset(spriteset_521_0_series_purchase, "gfx/521/521_0_series.png"){tmpl_purchase_dual_head(1, 122)}

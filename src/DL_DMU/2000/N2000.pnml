@@ -1,3 +1,5 @@
+#include "N2000_graphic.pnml"
+#include "N2000_switch.pnml"
 item(FEAT_TRAINS, item_N2000_series){
     property {
         name: string(STR_NAME_N2000_TRAINS);
@@ -14,7 +16,7 @@ item(FEAT_TRAINS, item_N2000_series){
         cost_factor: 21;
         running_cost_factor: 47;
         refit_cost: 0;
-        dual_headed: 0;
+        dual_headed: 1;
         track_type: TR_1067_NE;
         speed: 130 km/h;
         weight: 39 ton;
@@ -39,13 +41,12 @@ item(FEAT_TRAINS, item_N2000_series){
             string(STR_LOAD_SPEED, string(STR_DOORS, 2)),
             string(STR_FORMATION, string(STR_NUM_CARS_RANGE, 2, 4)),
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
-            string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JR,string(STR_JR_SHIKOKU)),string(STR_TOSA))));
+            string(STR_OPERATOR,string(STR_JR,string(STR_JR_SHIKOKU))));
         can_attach_wagon: sw_2000_series_attach_vehid;
-        cargo_subtype_text: sw_2000_serise_head_cargo_subtype_text;
-        speed: sw_2000_series_speed;
+        speed: sw_N2000_series_speed;
         start_stop: sw_2000_series_start_stop;
-        purchase: spriteset_2000_series_purchase;
-        default: sw_2000_series_head_graphics;
+        purchase: spriteset_N2000_series_purchase;
+        default: sw_N2000_series_head_graphic;
     }
     livery_override(item_mucar){
         weight: 38;
