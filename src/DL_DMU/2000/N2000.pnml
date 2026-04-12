@@ -28,7 +28,7 @@ item(FEAT_TRAINS, item_N2000_series){
         air_drag_coefficient: 0.05;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0;
-        curve_speed_mod: 50;
+        curve_speed_mod: 70;
         bitmask_vehicle_info: 0;
         length: 8;
         variant_group: item_2000_series;
@@ -50,11 +50,11 @@ item(FEAT_TRAINS, item_N2000_series){
     }
     livery_override(item_mucar){
         weight: 38;
-        curve_speed_mod: 50;
+        curve_speed_mod: 70;
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
         power: 710;
         length: 8;
-        default: sw_2000_series_2_graphics_rev;
+        default: spriteset_N2000_series_2;
     }
 }

@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 118;
+	version: 120;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {
@@ -634,7 +634,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_2_graphics_rev, vehicle_is_reversed){
         air_drag_coefficient: 0.05;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0;
-        curve_speed_mod: 50;
+        curve_speed_mod: 70;
         bitmask_vehicle_info: 0;
         length: 8;
     }
@@ -656,7 +656,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_2_graphics_rev, vehicle_is_reversed){
     }
     livery_override(item_mucar){
         weight: 38;
-        curve_speed_mod: 50;
+        curve_speed_mod: 70;
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
         power: 660;
@@ -668,6 +668,8 @@ spriteset(spriteset_N2000_series_1_front_light, "gfx/mucar/mucar.png"){tmpl_32_t
 alternative_sprites(spriteset_N2000_series_1_front_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_1_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_N2000_series_1_back_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_N2000_series_1_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_1_series.png"){tmpl_32_train_main(0, 31)}
+spriteset(spriteset_N2000_series_2, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_N2000_series_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_2_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_N2000_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_dual_head(0, 0)}
 alternative_sprites(spriteset_N2000_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_series_purchase.png"){tmpl_purchase_dual_head_32bpp(0, 0)}switch(FEAT_TRAINS, SELF, sw_N2000_series_speed, param_high_speed){
     0: 130;
@@ -704,7 +706,7 @@ switch(FEAT_TRAINS, SELF, sw_N2000_series_head_graphic, position_in_consist){
         air_drag_coefficient: 0.05;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0;
-        curve_speed_mod: 50;
+        curve_speed_mod: 70;
         bitmask_vehicle_info: 0;
         length: 8;
         variant_group: item_2000_series;
@@ -726,12 +728,12 @@ switch(FEAT_TRAINS, SELF, sw_N2000_series_head_graphic, position_in_consist){
     }
     livery_override(item_mucar){
         weight: 38;
-        curve_speed_mod: 50;
+        curve_speed_mod: 70;
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
         power: 710;
         length: 8;
-        default: sw_2000_series_2_graphics_rev;
+        default: spriteset_N2000_series_2;
     }
 }//sort
 sort(FEAT_TRAINS, [
