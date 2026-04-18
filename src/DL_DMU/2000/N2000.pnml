@@ -1,5 +1,7 @@
 #include "N2000_graphic.pnml"
+
 #include "N2000_switch.pnml"
+
 item(FEAT_TRAINS, item_N2000_series){
     property {
         name: string(STR_NAME_N2000_TRAINS);

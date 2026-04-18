@@ -1,6 +1,7 @@
 #include "header.pnml"
 //tables
 #include "cargotable.pnml"
+
 #include "railtypetable.pnml"
 //parameters
 #include "parameter.pnml"
@@ -20,6 +21,8 @@
 #include "DL_DMU/2000/2000.pnml"
 //N2000
 #include "DL_DMU/2000/N2000.pnml"
+//EH1000
+#include "EL_EMU/EH1000/EH1000.pnml"
 //sort
 #include "sort.pnml"
 

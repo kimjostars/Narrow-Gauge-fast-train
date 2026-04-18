@@ -1,0 +1,45 @@
+#include "EH1000_graphic.pnml"
+
+#include "EH1000_switch.pnml"
+
+item(FEAT_TRAINS, item_EH1000_series){
+    property {
+        name: string(STR_NAME_EH1000_TRAINS);
+        track_type: TR_1067_AC_DC;
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2020,01,01);
+        model_life: 45;
+        vehicle_life: 50;
+        reliability_decay: 25;
+        cargo_allow_refit: [PASS];
+        refit_cost: 0;
+        dual_headed: 0;
+        cargo_capacity: 1;
+        air_drag_coefficient: 0;
+        tractive_effort_coefficient: 0.25;
+        power: 5000 kW;
+        weight: 160 ton;
+        ai_special_flag: AI_FLAG_PASSENGER;
+        engine_class: ENGINE_CLASS_ELECTRIC;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        cost_factor: 110;
+        running_cost_factor: 118;
+        running_cost_base: RUNNING_COST_ELECTRIC;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 4, DISABLE_WAGON_POWER);
+        length: 8;
+        misc_flags: bitmask(TRAIN_FLAG_2CC);
+    }
+    graphics {
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_DENKI, string(STR_AC_DC, 20, 60, 1500)),
+            string(STR_USE, string(STR_CONCAT_2_COMMA,string(STR_LIGHT),string(STR_HIGH_SPEED))),
+            string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))),
+            string(STR_LIVERIES,string(LV_VARIOUS)));
+        speed: sw_EH1000_series_speed;
+        cargo_capacity: return 0;
+        purchase: spriteset_EH1000_series_purchase;
+        default: spriteset_EH1000_series_main;
+    }
+}

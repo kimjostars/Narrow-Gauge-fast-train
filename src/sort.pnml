@@ -4,5 +4,6 @@ sort(FEAT_TRAINS, [
     item_521_series,
     item_600_series,
     item_2000_series,
-    item_N2000_series
+    item_N2000_series,
+    item_EH1000_series
 ]);

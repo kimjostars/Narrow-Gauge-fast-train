@@ -1,0 +1,4 @@
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, param_high_speed){
+    0: return 130;
+    1: return 160;
+}

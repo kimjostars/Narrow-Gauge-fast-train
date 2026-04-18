@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 #desc
-STR_NGFT_NAME :Narrow Gauge Fast Train SET 0.2.2 alpha
+STR_NGFT_NAME :Narrow Gauge Fast Train SET 0.2.3 alpha
 STR_NGFT_DESC :Narrow Gauge Fast Train SET is a set of trains that can run over 200 km/h on 1067mm narrow guage. {}{RED}JP+ Track {BLACK}is required to run this newGRF.
 
 #parameters
@@ -36,11 +36,12 @@ STR_NGFT_HGIH_SPEED_DESC :Enabling this setting increases the train speed limit.
 #trains
 #commonness
 ###String templates stuff
-STR_TRAIN_DESC:{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{STRING}
+STR_TRAIN_DESC:{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{STRING}
 STR_CONCAT_2:{STRING} {STRING}
 STR_CONCAT_2_DASH:{STRING} / {STRING}
 STR_CONCAT_2_DASH_BL:{STRING}{BLACK} / {STRING}
 STR_CONCAT_2_OR:{STRING}{BLACK} or {STRING}
+STR_CONCAT_2_COMMA:{STRING}{BLACK}, {STRING}
 STR_CONCAT_3:{STRING} {STRING} {STRING}
 STR_CONCAT_4:{STRING} {STRING} {STRING} {STRING}
 STR_CONCAT_5:{STRING} {STRING} {STRING} {STRING} {STRING}
@@ -80,6 +81,12 @@ STR_USE_GENERAL:{SILVER}General Passengers
 STR_USE_EXPRESS:{LTBLUE}Express Passengers
 STR_USE_LTDEXPRESS:{RED}Limited Express Passengers
 
+STR_USE:{BLACK}Use: {STRING} {STRING}
+STR_HIGH_SPEED :{SILVER}High speed type
+STR_SHUNTING :{SILVER}Shunting
+STR_LIGHT :{SILVER}Light Cargo
+STR_HEAVY :{SILVER}Heavy Cargo
+
 ###Gauge
 STR_NARROWGAUGE:Gauge:{GOLD} Narrow (1,067mm)
 STR_STANDARDGAUGE:Gauge:{GOLD} Standard (1,435mm)
@@ -104,7 +111,7 @@ STR_NUM_CARS_RANGE:{COMMA}~{COMMA} cars
 STR_DASH:{WHITE} • {BLACK}{STRING}
 
 ### Desc Liveries
-STR_LIVERIES:{}{BLACK}Liveries: {STRING}
+STR_LIVERIES:{BLACK}Liveries: {STRING}
 LV_VARIOUS:{GOLD}Various {GREEN}(refittable)
 
 ###Waring
@@ -135,3 +142,5 @@ STR_2000_1_STREAMLINED :streamlined type
 STR_2000_1_PENETRATING :penetrating type
 
 STR_NAME_N2000_TRAINS :N2000 serise {WHITE}(DMU){BLACK}
+
+STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}

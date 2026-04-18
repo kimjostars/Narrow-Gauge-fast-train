@@ -1,5 +1,7 @@
 #include "521_graphic.pnml"
+
 #include "521_switch.pnml"
+
 item(FEAT_TRAINS, item_521_series){
     property {
         name: string(STR_NAME_521_TRAINS);
@@ -40,7 +42,8 @@ item(FEAT_TRAINS, item_521_series){
             string(STR_LOAD_SPEED, string(STR_DOORS, 3)),
             string(STR_FORMATION, string(STR_NUM_CARS_1, 2)),
             string(STR_USAGE, string(STR_USE_GENERAL)),
-            string(STR_OPERATOR,string(STR_CONCAT_2_DASH_BL,string(STR_JR,string(STR_JR_WEST)),string(STR_PRIVATE))));
+            string(STR_OPERATOR,string(STR_CONCAT_2_DASH_BL,string(STR_JR,string(STR_JR_WEST)),string(STR_PRIVATE))),
+            string(STR_LIVERIES,string(LV_VARIOUS)));
         cargo_subtype_text: sw_521_series_cargo_subtype_text;
         purchase: spriteset_521_0_series_purchase;
         default: sw_521_series_graphics;

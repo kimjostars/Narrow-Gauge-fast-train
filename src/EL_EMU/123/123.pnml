@@ -1,5 +1,7 @@
 #include "123_graphic.pnml"
+
 #include "123_switch.pnml"
+
 item(FEAT_TRAINS, item_123_series){
     property {
         name: string(STR_NAME_123_TRAINS);
@@ -41,7 +43,6 @@ item(FEAT_TRAINS, item_123_series){
             string(STR_USAGE, string(STR_USE_REGIO)),
             string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JNR),string(STR_JR,string(STR_CONCAT_3,string(STR_JR_EAST),string(STR_JR_CENTRAL),string(STR_JR_WEST))))),
             string(STR_LIVERIES,string(LV_VARIOUS)));
-        
         loading_speed: sw_123_series_loading_speed;
         cargo_subtype_text: sw_123_serise_cargo_subtype_text;
         purchase: spriteset_123_series_purchase;
