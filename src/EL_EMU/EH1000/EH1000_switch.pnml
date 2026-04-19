@@ -2,3 +2,11 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, param_high_speed){
     0: return 130;
     1: return 160;
 }
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info1){
+    1: return item_EH1000_series;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic, position_in_articulated_veh%2){
+    0:return spriteset_EH1000_series_1;
+    1:return spriteset_EH1000_series_2;
+}

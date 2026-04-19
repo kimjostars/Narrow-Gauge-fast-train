@@ -33,13 +33,15 @@ item(FEAT_TRAINS, item_EH1000_series){
         additional_text:
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
-            string(STR_DENKI, string(STR_AC_DC, 20, 60, 1500)),
-            string(STR_USE, string(STR_CONCAT_2_COMMA,string(STR_LIGHT),string(STR_HIGH_SPEED))),
+            string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
+            string(STR_USE, string(STR_CONCAT_2_COMMA,string(STR_HEAVY),string(STR_HIGH_SPEED))),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))),
-            string(STR_LIVERIES,string(LV_VARIOUS)));
+            string(STR_LIVERIES,string(LV_VARIOUS)),
+            string(STR_EH1000_CONCEPT));
         speed: sw_EH1000_series_speed;
+        articulated_part: sw_EH1000_series_articulated_part;
         cargo_capacity: return 0;
         purchase: spriteset_EH1000_series_purchase;
-        default: spriteset_EH1000_series_main;
+        default: sw_EH1000_series_graphic;
     }
 }

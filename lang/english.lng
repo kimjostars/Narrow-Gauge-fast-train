@@ -144,3 +144,5 @@ STR_2000_1_PENETRATING :penetrating type
 STR_NAME_N2000_TRAINS :N2000 serise {WHITE}(DMU){BLACK}
 
 STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}
+
+STR_EH1000_CONCEPT :EH1000 is a train designed for the high-speed operation of long-distance trains. Due to its high power output and heavy weight, it would be difficult to operate on railways with wooden sleepers.
