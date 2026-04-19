@@ -20,7 +20,7 @@ item(FEAT_TRAINS, item_600_series){
         track_type: TR_1067_AC;
         speed: 160 km/h;
         ai_special_flag: AI_FLAG_PASSENGER;
-        power: 300 hp;
+        power: 900 kW;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 1;
         cargo_capacity: param_cargo_capacity_express;
@@ -52,7 +52,7 @@ item(FEAT_TRAINS, item_600_series){
         weight: 40;
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
-        power: 100;
+        power: 350;
         default: spriteset_600_series_middle;
     }
 }

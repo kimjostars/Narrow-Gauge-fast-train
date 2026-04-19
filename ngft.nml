@@ -520,7 +520,7 @@ item(FEAT_TRAINS, item_600_series){
         track_type: TR_1067_AC;
         speed: 160 km/h;
         ai_special_flag: AI_FLAG_PASSENGER;
-        power: 300 hp;
+        power: 900 kW;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 1;
         cargo_capacity: param_cargo_capacity_express;
@@ -552,7 +552,7 @@ item(FEAT_TRAINS, item_600_series){
         weight: 40;
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
-        power: 100;
+        power: 350;
         default: spriteset_600_series_middle;
     }
 }//2000
@@ -747,8 +747,8 @@ item(FEAT_TRAINS, item_N2000_series){
         default: spriteset_N2000_series_2;
     }
 }//EH1000
-spriteset(spriteset_EH1000_series_1, "gfx/EH1000/EH1000_series.png"){tmpl_32_train_main(0, 1)}
-spriteset(spriteset_EH1000_series_2, "gfx/EH1000/EH1000_series.png"){tmpl_32_train_main(0, 31)}
+spriteset(spriteset_EH1000_series_main_1, "gfx/EH1000/EH1000_series_main.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_EH1000_series_main_2, "gfx/EH1000/EH1000_series_main.png"){tmpl_32_train_main(0, 31)}
 spriteset(spriteset_EH1000_series_purchase, "gfx/EH1000/EH1000_series_purchase.png"){tmpl_purchase(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, param_high_speed){
     0: return 130;
@@ -759,8 +759,8 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic, position_in_articulated_veh%2){
-    0:return spriteset_EH1000_series_1;
-    1:return spriteset_EH1000_series_2;
+    0:return spriteset_EH1000_series_main_1;
+    1:return spriteset_EH1000_series_main_2;
 }
 item(FEAT_TRAINS, item_EH1000_series){
     property {
@@ -776,7 +776,7 @@ item(FEAT_TRAINS, item_EH1000_series){
         dual_headed: 0;
         cargo_capacity: 1;
         air_drag_coefficient: 0;
-        tractive_effort_coefficient: 0.25;
+        tractive_effort_coefficient: 0.3;
         power: 5000 kW;
         weight: 160 ton;
         ai_special_flag: AI_FLAG_PASSENGER;
@@ -794,7 +794,7 @@ item(FEAT_TRAINS, item_EH1000_series){
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
             string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
-            string(STR_USE, string(STR_CONCAT_2_COMMA,string(STR_HEAVY),string(STR_HIGH_SPEED))),
+            string(STR_USE, string(STR_CONCAT_2_COMMA,string(STR_HEAVY),string(STR_CONCAT_2_COMMA,string(STR_LONG),string(STR_HIGH_SPEED)))),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))),
             string(STR_LIVERIES,string(LV_VARIOUS)),
             string(STR_EH1000_CONCEPT));
