@@ -15,6 +15,7 @@ switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
     1: sw_521_1_2_series_graphics;
     2: sw_521_3_series_graphics;
     3: sw_521_100_series_graphics;
+    return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH,string(STR_521_0_SERIES,string(STR_JR,string(STR_JR_WEST))));

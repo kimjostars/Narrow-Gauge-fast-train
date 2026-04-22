@@ -422,6 +422,7 @@ switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
     1: sw_521_1_2_series_graphics;
     2: sw_521_3_series_graphics;
     3: sw_521_100_series_graphics;
+    return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH,string(STR_521_0_SERIES,string(STR_JR,string(STR_JR_WEST))));
@@ -542,7 +543,7 @@ item(FEAT_TRAINS, item_600_series){
             string(STR_LOAD_SPEED,string(STR_DOORS,2)),
             string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
-            string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))));
+            string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL,string(STR_JR_PASSENGER)))));
         can_attach_wagon: switch_600_series_attach_wagon;
         speed: sw_600_series_speed;
         purchase: spriteset_600_series_purchase;
@@ -747,64 +748,8 @@ item(FEAT_TRAINS, item_N2000_series){
         default: spriteset_N2000_series_2;
     }
 }//EH1000
-spriteset(spriteset_EH1000_series_main_1, "gfx/EH1000/EH1000_series_main.png"){tmpl_32_train_main(0, 1)}
-spriteset(spriteset_EH1000_series_main_2, "gfx/EH1000/EH1000_series_main.png"){tmpl_32_train_main(0, 31)}
-spriteset(spriteset_EH1000_series_purchase, "gfx/EH1000/EH1000_series_purchase.png"){tmpl_purchase(0, 0)}
-switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, param_high_speed){
-    0: return 130;
-    1: return 160;
-}
-switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info1){
-    1: return item_EH1000_series;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic, position_in_articulated_veh%2){
-    0:return spriteset_EH1000_series_main_1;
-    1:return spriteset_EH1000_series_main_2;
-}
-item(FEAT_TRAINS, item_EH1000_series){
-    property {
-        name: string(STR_NAME_EH1000_TRAINS);
-        track_type: TR_1067_AC_DC;
-        climates_available: ALL_CLIMATES;
-        introduction_date: date(2020,01,01);
-        model_life: 45;
-        vehicle_life: 50;
-        reliability_decay: 25;
-        cargo_allow_refit: [PASS];
-        refit_cost: 0;
-        dual_headed: 0;
-        cargo_capacity: 1;
-        air_drag_coefficient: 0;
-        tractive_effort_coefficient: 0.3;
-        power: 5000 kW;
-        weight: 160 ton;
-        ai_special_flag: AI_FLAG_PASSENGER;
-        engine_class: ENGINE_CLASS_ELECTRIC;
-        sprite_id: SPRITE_ID_NEW_TRAIN;
-        cost_factor: 110;
-        running_cost_factor: 118;
-        running_cost_base: RUNNING_COST_ELECTRIC;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 4, DISABLE_WAGON_POWER);
-        length: 8;
-        misc_flags: bitmask(TRAIN_FLAG_2CC);
-    }
-    graphics {
-        additional_text:
-            string(STR_TRAIN_DESC,
-            string(STR_NARROWGAUGE),
-            string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
-            string(STR_USE, string(STR_CONCAT_2_COMMA,string(STR_HEAVY),string(STR_CONCAT_2_COMMA,string(STR_LONG),string(STR_HIGH_SPEED)))),
-            string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))),
-            string(STR_LIVERIES,string(LV_VARIOUS)),
-            string(STR_EH1000_CONCEPT));
-        speed: sw_EH1000_series_speed;
-        articulated_part: sw_EH1000_series_articulated_part;
-        cargo_capacity: return 0;
-        purchase: spriteset_EH1000_series_purchase;
-        default: sw_EH1000_series_graphic;
-    }
-}//sort
+//#include "EL_EMU/EH1000/EH1000.pnml"
+//sort
 sort(FEAT_TRAINS, [
     item_mucar,
     item_123_series,
@@ -812,7 +757,7 @@ sort(FEAT_TRAINS, [
     item_600_series,
     item_2000_series,
     item_N2000_series,
-    item_EH1000_series
+    //item_EH1000_series
 ]);
 /*command list
     build: python3 build.py --entry src/main.pnml --merge Narrow-Gauge-fast-train/ngft.nml

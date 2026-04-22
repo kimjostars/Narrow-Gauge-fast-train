@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 #desc
-STR_NGFT_NAME :Narrow Gauge Fast Train SET 0.2.3 alpha
+STR_NGFT_NAME :Narrow Gauge Fast Train SET 0.2.2 Gamma
 STR_NGFT_DESC :Narrow Gauge Fast Train SET is a set of trains that can run over 200 km/h on 1067mm narrow guage. {}{RED}JP+ Track {BLACK}is required to run this newGRF.
 
 #parameters
@@ -69,9 +69,11 @@ STR_JR_WEST:{BLUE}West
 STR_JR_HOKKAIDO:{DKGREEN}Hokkaido
 STR_JR_SHIKOKU:{LTBLUE}Shikoku
 STR_JR_KYUSHU:{RED}Kyushu
+STR_JR_FREIGFT:{SILVER}FREIGFT
+STR_JR_PASSENGER:of Passenger
 STR_PRIVATE:{SILVER}Private Railway(s) {STRING}
 STR_TOSA:{DKBLUE}Tosa Kuroshio
-STR_VIRTUAL:{SILVER}Virtual Train
+STR_VIRTUAL:{STRING} of {SILVER}Virtual Train
 
 ###Usage
 STR_USAGE:Usage: {STRING} {STRING}
@@ -86,6 +88,7 @@ STR_HIGH_SPEED :{SILVER}High speed type
 STR_SHUNTING :{SILVER}Shunting
 STR_LIGHT :{SILVER}Light Cargo
 STR_HEAVY :{SILVER}Heavy Cargo
+STR_LONG :{SILVER}Long cargo
 
 ###Gauge
 STR_NARROWGAUGE:Gauge:{GOLD} Narrow (1,067mm)
@@ -144,5 +147,7 @@ STR_2000_1_PENETRATING :penetrating type
 STR_NAME_N2000_TRAINS :N2000 serise {WHITE}(DMU){BLACK}
 
 STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}
+STR_EH1000_SERIES_JF_R :{STRING} {RED}Default Livery
+STR_EH1000_SERIES_JF_R_HIGH_SPEED :{STRING} {RED}Default Livery {BLACK}(High speed type) is set to a maximum speed of 160 km/h.
 
-STR_EH1000_CONCEPT :EH1000 is a train designed for the high-speed operation of long-distance trains. Due to its high power output and heavy weight, it would be difficult to operate on railways with wooden sleepers.
+STR_EH1000_CONCEPT :EH1000 is a train designed for high-speed operation of long trains. It features a co-co+co-co bogie arrangement and is heavy. Due to this, it has high power output and exerts high pressure on the tracks, making it difficult to operate on low-grade railways.

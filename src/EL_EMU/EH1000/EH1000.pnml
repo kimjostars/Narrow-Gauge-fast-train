@@ -16,7 +16,7 @@ item(FEAT_TRAINS, item_EH1000_series){
         dual_headed: 0;
         cargo_capacity: 1;
         air_drag_coefficient: 0;
-        tractive_effort_coefficient: 0.25;
+        tractive_effort_coefficient: 0.3;
         power: 5000 kW;
         weight: 160 ton;
         ai_special_flag: AI_FLAG_PASSENGER;
@@ -34,13 +34,14 @@ item(FEAT_TRAINS, item_EH1000_series){
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
             string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
-            string(STR_USE, string(STR_CONCAT_2_COMMA,string(STR_HEAVY),string(STR_HIGH_SPEED))),
-            string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL))),
+            string(STR_USE, string(STR_CONCAT_2_COMMA,string(STR_HEAVY),string(STR_CONCAT_2_COMMA,string(STR_LONG),string(STR_HIGH_SPEED)))),
+            string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL, string(STR_JR_FREIGFT)))),
             string(STR_LIVERIES,string(LV_VARIOUS)),
             string(STR_EH1000_CONCEPT));
         speed: sw_EH1000_series_speed;
         articulated_part: sw_EH1000_series_articulated_part;
         cargo_capacity: return 0;
+        cargo_subtype_text: sw_EF1000_series_cargo_subtype_text;
         purchase: spriteset_EH1000_series_purchase;
         default: sw_EH1000_series_graphic;
     }
