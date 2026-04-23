@@ -501,7 +501,7 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_vehid_chain % 
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
     0: return 160;
-    1: return 201;
+    1: return 199;
 }
 item(FEAT_TRAINS, item_600_series){
     property {
@@ -754,7 +754,7 @@ spriteset(spriteset_EH1000_series_purchase, "gfx/EH1000/EH1000_series_purchase.p
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, [param_high_speed + cargo_subtype%2]){
     0: return 130;
     1: return 160;
-    2: return 200;
+    2: return 199;
 }
 switch(FEAT_TRAINS, SELF, sw_EF1000_series_cargo_subtype_text, cargo_subtype){
     0: return string(STR_EH1000_SERIES_JF_R, string(STR_JR, string(STR_JR_FREIGFT)));

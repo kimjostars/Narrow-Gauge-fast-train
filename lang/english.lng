@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 #desc
-STR_NGFT_NAME :Narrow Gauge Fast Train SET 0.2.2 Gamma
+STR_NGFT_NAME :Narrow Gauge Fast Train SET 0.2.3 Alpha
 STR_NGFT_DESC :Narrow Gauge Fast Train SET is a set of trains that can run over 200 km/h on 1067mm narrow guage. {}{RED}JP+ Track {BLACK}is required to run this newGRF.
 
 #parameters

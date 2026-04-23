@@ -8,5 +8,5 @@ switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_vehid_chain % 
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
     0: return 160;
-    1: return 201;
+    1: return 199;
 }
