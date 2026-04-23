@@ -15,6 +15,9 @@
 Pull Request를 열 줄 모르신다면, Issues에 올리셔도 괜찮습니다. 이 파일을 번역하시면 됩니다.
 - **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : 한국어
 번역은 언제나 환영입니다.
+### Contributors
+코드 : kimjostars, irice7350
+그래픽 : kimjostars, raeun_cos
 
 ## 라이선스
 이 NewGRF는 **[커먼스 라이선스 v3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)** (CC-BY-NC-SA v3.0)을 따릅니다.

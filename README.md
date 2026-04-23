@@ -15,6 +15,9 @@ If you would like to translate it into another language, please open a Pull Requ
 If you are not familiar with creating a Pull Request, you may also submit it via Issues. Please translate the following file:
 * **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : Korean
 Translations are always welcome.
+### Contributors
+code : kimjostars, irice7350
+graghic : kimjostars, raeun_cos 
 ## License
 This NewGRF is licensed under the **[Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)** (CC BY-NC-SA 3.0).
 
