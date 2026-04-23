@@ -17,6 +17,7 @@ If you are not familiar with creating a Pull Request, you may also submit it via
 Translations are always welcome.
 ### Contributors
 code : kimjostars, irice7350
+
 graghic : kimjostars, raeun_cos 
 ## License
 This NewGRF is licensed under the **[Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)** (CC BY-NC-SA 3.0).
