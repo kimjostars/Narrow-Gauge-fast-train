@@ -23,7 +23,7 @@ item(FEAT_TRAINS, item_EH1000_series){
         engine_class: ENGINE_CLASS_ELECTRIC;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         cost_factor: 111;
-        running_cost_factor: 119;
+        running_cost_factor: 220;
         running_cost_base: RUNNING_COST_ELECTRIC;
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 4, DISABLE_WAGON_POWER);
         length: 8;
