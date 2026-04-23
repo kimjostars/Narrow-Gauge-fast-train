@@ -1,6 +1,7 @@
-switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, [param_high_speed || cargo_subtype%2]){
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, [param_high_speed + cargo_subtype%2]){
     0: return 130;
     1: return 160;
+    2: return 200;
 }
 switch(FEAT_TRAINS, SELF, sw_EF1000_series_cargo_subtype_text, cargo_subtype){
     0: return string(STR_EH1000_SERIES_JF_R, string(STR_JR, string(STR_JR_FREIGFT)));
