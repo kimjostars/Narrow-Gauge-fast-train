@@ -1,3 +1,3 @@
 spriteset(spriteset_EH1000_series_main_1, "gfx/EH1000/EH1000_series_main.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_EH1000_series_main_2, "gfx/EH1000/EH1000_series_main.png"){tmpl_32_train_main(0, 31)}
-spriteset(spriteset_EH1000_series_purchase, "gfx/EH1000/EH1000_series_purchase.png"){tmpl_purchase(0, 0)}
+spriteset(spriteset_EH1000_series_purchase, "gfx/EH1000/EH1000_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
