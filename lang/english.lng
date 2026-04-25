@@ -100,7 +100,7 @@ STR_DOORS:{COMMA} Door
 STR_DOORS_REFIT:{COMMA} Door (refit to {COMMA} available)
 
 ###Formations
-STR_FORMATION:Real Formations: {GOLD}{STRING}
+STR_FORMATION:Real/Recommended Formation: {GOLD}{STRING}
 STR_NUM_CARS_SINGLE: Single car
 STR_NUM_CARS_1:{COMMA} car
 STR_NUM_CARS_2:{COMMA},{COMMA} cars
