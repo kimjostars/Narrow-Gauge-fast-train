@@ -2,7 +2,7 @@ grf {
 	grfid: "NGFT";
 	name: string(STR_NGFT_NAME);
 	desc: string(STR_NGFT_DESC);
-	version: 124;
+	version: 125;
 	min_compatible_version: 0;
     param 0 {
         param_purchase_cost {

@@ -127,6 +127,9 @@ STR_CANNOT_CAR :{COMMA}Car Must Connect.
 STR_MUCAR_NAME :[NGFT] Multi Unit Car (MU)
 STR_MU_DESC :It can be attached to a self-propelled vehicle and used as a passenger car for the corresponding train.
 
+STR_COMPANY :{GREEN}Company Color {STRING}{BLACK}
+STR_HIGH_SPEED_TYPE :{BLACK}(High speed type) is set to a maximum speed of {COMMA}km/h.
+
 STR_NAME_600_TRAINS :600 series {WHITE}(EMU){BLACK}
 
 STR_NAME_123_TRAINS :123 series {WHITE}(EMU){BLACK}
@@ -149,7 +152,6 @@ STR_2000_1_PENETRATING :penetrating type
 STR_NAME_N2000_TRAINS :N2000 serise {WHITE}(DMU){BLACK}
 
 STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}
-STR_EH1000_SERIES_JF_R :{STRING} {RED}Default Livery
-STR_EH1000_SERIES_JF_R_HIGH_SPEED :{STRING} {RED}Default Livery {BLACK}(High speed type) is set to a maximum speed of 160 km/h.
+STR_EH1000_SERIES_JF_R :{STRING} {RED}Default Livery {STRING}
 
 STR_EH1000_CONCEPT :EH1000 is a train designed for high-speed operation of long trains. It features a co-co+co-co bogie arrangement and is heavy. Due to this, it has high power output and exerts high pressure on the tracks, making it difficult to operate on low-grade railways.

@@ -122,6 +122,9 @@ STR_CANNOT_CAR :{COMMA}량 이상연결하여야 합니다.
 STR_MUCAR_NAME :[NGFT] 공통객차 (MU)
 STR_MU_DESC :동차형 차량에 붙여서 해당열차의 객차로 사용가능합니다.
 
+STR_COMPANY :{GREEN}회사색상 {STRING}{BLACK}
+STR_HIGH_SPEED_TYPE :{BLACK}(고속형) 최고속도 {COMMA}km/h로 설정됩니다
+
 STR_NAME_600_TRAINS :600계 {WHITE}(EMU){BLACK}
 
 STR_NAME_123_TRAINS :123계 {WHITE}(EMU){BLACK}
@@ -144,7 +147,6 @@ STR_2000_1_PENETRATING :관통형 선두부
 STR_NAME_N2000_TRAINS :N2000계 {WHITE}(DMU){BLACK}
 
 STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}
-STR_EH1000_SERIES_JF_R :{STRING} {RED}기본도색
-STR_EH1000_SERIES_JF_R_HIGH_SPEED :{STRING} {RED}기본도색 {BLACK}(고속형) 최고속도 160km/h로 설정됩니다.
+STR_EH1000_SERIES_JF_R :{STRING} {RED}기본도색 {STRING}
 
 STR_EH1000_CONCEPT :EH1000은 장대열차의 고속운행을 위해 만들어진 열차입니다. co-co+co-co 배열의 대차를 가지며 중량이 높습니다. 이로인해 출력이 높고 선로에 가해지는 부하가 높아 저수준의 철도에는 운행이 힘들것입니다.
