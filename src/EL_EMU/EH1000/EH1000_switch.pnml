@@ -4,10 +4,10 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, [param_high_speed + cargo_subt
     2: return 199;
 }
 switch(FEAT_TRAINS, SELF, sw_EF1000_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_EH1000_SERIES_JF_R, string(STR_JR, string(STR_JR_FREIGFT)));
-    1: return string(STR_EH1000_SERIES_JF_R, string(STR_JR, string(STR_JR_FREIGFT)),string(STR_HIGH_SPEED_TYPE,160));
-    2: return string(STR_COMPANY, string(STR_HIGH_SPEED_TYPE,160));
-    3: return string(STR_COMPANY);
+    0: return string(STR_DASH, string(STR_EH1000_SERIES_JF_R, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_SPACE)));
+    1: return string(STR_DASH, string(STR_EH1000_SERIES_JF_R, string(STR_JR, string(STR_JR_FREIGFT)),string(STR_HIGH_SPEED_TYPE,160)));
+    2: return string(STR_DASH, string(STR_COMPANY, string(STR_SPACE)));
+    3: return string(STR_DASH, string(STR_COMPANY, string(STR_HIGH_SPEED_TYPE,160)));
     return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info1){

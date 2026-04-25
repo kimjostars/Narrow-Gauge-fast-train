@@ -46,6 +46,8 @@ STR_CONCAT_3:{STRING} {STRING} {STRING}
 STR_CONCAT_4:{STRING} {STRING} {STRING} {STRING}
 STR_CONCAT_5:{STRING} {STRING} {STRING} {STRING} {STRING}
 STR_CONCAT_6:{STRING} {STRING} {STRING} {STRING} {STRING} {STRING}
+STR_DASH:{WHITE} • {BLACK}{STRING}
+STR_SPACE: 
 
 ###Electro system
 STR_DENKI:Electric System: {STRING}
@@ -112,9 +114,6 @@ STR_NUM_CARS_5:{COMMA},{COMMA},{COMMA},{COMMA},{COMMA} cars
 STR_NUM_CARS_6:{COMMA},{COMMA},{COMMA},{COMMA},{COMMA},{COMMA} cars
 STR_NUM_CARS_RANGE:{COMMA}~{COMMA} cars
 
-###Dash
-STR_DASH:{WHITE} • {BLACK}{STRING}
-
 ### Desc Liveries
 STR_LIVERIES:{BLACK}Liveries: {STRING}
 LV_VARIOUS:{GOLD}Various {GREEN}(refittable)
@@ -127,7 +126,7 @@ STR_CANNOT_CAR :{COMMA}Car Must Connect.
 STR_MUCAR_NAME :[NGFT] Multi Unit Car (MU)
 STR_MU_DESC :It can be attached to a self-propelled vehicle and used as a passenger car for the corresponding train.
 
-STR_COMPANY :{GREEN}Company Color {STRING}{BLACK}
+STR_COMPANY :{GREEN}Company Color {STRING}
 STR_HIGH_SPEED_TYPE :{BLACK}(High speed type) is set to a maximum speed of {COMMA}km/h.
 
 STR_NAME_600_TRAINS :600 series {WHITE}(EMU){BLACK}
