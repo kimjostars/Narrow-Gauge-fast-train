@@ -14,13 +14,13 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info
     1: return item_EH1000_series;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic_front, cargo_subtype){
-    0..1: return spriteset_EH1000_series_default_front;
-    2..3: return spriteset_EH1000_series_2cc_front;
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic_front, cargo_subtype/2){
+    0: return spriteset_EH1000_series_default_front;
+    1: return spriteset_EH1000_series_2cc_front;
 }
-switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic_back, cargo_subtype){
-    0..1: return spriteset_EH1000_series_default_back;
-    2..3: return spriteset_EH1000_series_2cc_back;
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic_back, cargo_subtype/2){
+    0: return spriteset_EH1000_series_default_back;
+    1: return spriteset_EH1000_series_2cc_back;
 }
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic, position_in_articulated_veh%2){
     0: return sw_EH1000_series_graphic_front;
