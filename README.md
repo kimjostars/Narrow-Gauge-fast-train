@@ -6,7 +6,7 @@ You can download it from the **[Github release page](https://github.com/kimjosta
 It is recommended to use this set together with **[JP+ Track](https://github.com/OpenTTD-JPplus/JPplusTracks)** when applying it to the game.
 ## Development
 ### How to Build
-To build this NewGRF, you need [NML](https://github.com/OpenTTD/nml) (>= 0.8.1) and **Python 3**.
+To build this NewGRF, you need [NML](https://github.com/OpenTTD/nml) (>= 0.9.0) and **Python 3**.
 Merge files: `build.py --entry src/{main file}.pnml --merge {project name}/{main file}.nml`
 Compile: `nmlc -l ./lang/ ./{main file}.nml`
 ### Translation

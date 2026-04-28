@@ -6,7 +6,7 @@
 이세트를 게임에 적용할때 **[JP+ Track](https://github.com/OpenTTD-JPplus/JPplusTracks)** 과 같이 적용하는것을 추천합니다.
 ## 개발
 ### 빌드하는 방법
-이 NewGRF를 빌드하려면 [NML](https://github.com/OpenTTD/nml)(>= 0.8.1), **Python 3**이 필요합니다.  
+이 NewGRF를 빌드하려면 [NML](https://github.com/OpenTTD/nml)(>= 0.9.0), **Python 3**이 필요합니다.  
 파일 합치기 `build.py --entry src/{메인파일}.pnml --merge {프로젝트 파일명}/{메인파일}.nml`
 컴파일 `nmlc -l ./lang/ ./{메인파일}.nml`
 ### 번역
