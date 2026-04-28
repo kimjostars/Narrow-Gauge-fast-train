@@ -45,7 +45,7 @@ item(FEAT_TRAINS, item_521_series){
             string(STR_OPERATOR,string(STR_CONCAT_2_DASH_BL,string(STR_JR,string(STR_JR_WEST)),string(STR_PRIVATE))),
             string(STR_LIVERIES,string(LV_VARIOUS)));
         cargo_subtype_text: sw_521_series_cargo_subtype_text;
-        purchase: spriteset_521_0_series_purchase;
+        purchase: spriteset_521_series_purchase;
         default: sw_521_series_graphics;
     }
     livery_override(item_mucar){
