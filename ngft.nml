@@ -403,6 +403,8 @@ spriteset(spriteset_521_0_series_3_0, "gfx/521/521_0_series.png"){tmpl_32_train_
 spriteset(spriteset_521_0_series_3_1, "gfx/521/521_0_series.png"){tmpl_32_train_main_227and521(1, 92)}
 spriteset(spriteset_521_100_series_0, "gfx/521/521_100_series.png"){tmpl_32_train_main_227and521(1, 1)}
 spriteset(spriteset_521_100_series_1, "gfx/521/521_100_series.png"){tmpl_32_train_main_227and521(1, 31)}
+spriteset(spriteset_521_100_series_0_rev, "gfx/521/521_100_series.png"){tmpl_32_train_main_227and521(1, 61)}
+spriteset(spriteset_521_100_series_1_rev, "gfx/521/521_100_series.png"){tmpl_32_train_main_227and521(1, 91)}
 
 spriteset(spriteset_521_0_series_purchase, "gfx/521/521_0_series.png"){tmpl_purchase_dual_head(1, 122)}
 switch(FEAT_TRAINS, SELF, sw_521_1_2_series_graphics, position_in_consist % 2){ 
@@ -413,9 +415,17 @@ switch(FEAT_TRAINS, SELF, sw_521_3_series_graphics, position_in_consist % 2){
     0: return spriteset_521_0_series_3_0; 
     1: return spriteset_521_0_series_3_1; 
 }
+switch(FEAT_TRAINS, SELF, sw_521_100_series_graphics_0, train_is_driving_backwards){
+    0: return spriteset_521_100_series_0;
+    1: return spriteset_521_100_series_0_rev;
+}
+switch(FEAT_TRAINS, SELF, sw_521_100_series_graphics_1, train_is_driving_backwards){
+    0: return spriteset_521_100_series_1;
+    1: return spriteset_521_100_series_1_rev;
+}
 switch(FEAT_TRAINS, SELF, sw_521_100_series_graphics, position_in_consist % 2){ 
-    0: return spriteset_521_100_series_0; 
-    1: return spriteset_521_100_series_1; 
+    0: return sw_521_100_series_graphics_0; 
+    1: return sw_521_100_series_graphics_1; 
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
     0: sw_521_1_2_series_graphics;
