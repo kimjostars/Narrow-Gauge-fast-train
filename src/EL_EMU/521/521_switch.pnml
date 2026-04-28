@@ -8,7 +8,7 @@ switch(FEAT_TRAINS, SELF, sw_521_1_2_series_graphics_1, train_is_driving_backwar
 }
 switch(FEAT_TRAINS, SELF, sw_521_3_series_graphics_0, train_is_driving_backwards){
     0: return spriteset_521_0_series_3_0;
-    1: return spriteset_521_0_series_3_1_rev;
+    1: return spriteset_521_0_series_3_0_rev;
 }
 switch(FEAT_TRAINS, SELF, sw_521_3_series_graphics_1, train_is_driving_backwards){
     0: return spriteset_521_0_series_3_1;
