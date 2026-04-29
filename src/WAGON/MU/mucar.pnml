@@ -1,5 +1,5 @@
 spriteset(spriteset_mucar, "gfx/mucar/mucar.png") {tmpl_32_train_basic(0, 0)}
-spriteset(spriteset_mucar_purchase, "gfx/mucar/mucar_purchase.png"){tmpl_purchase(0, 0)}
+spriteset(spriteset_mucar_purchase, "gfx/mucar/mucar_purchase.png"){tmpl_purchase_single_head(0, 0)}
 item(FEAT_TRAINS, item_mucar){
     property {
         name: string(STR_MUCAR_NAME);
