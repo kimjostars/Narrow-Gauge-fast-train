@@ -258,9 +258,6 @@ template tmpl_32_train_main_227and521(x, y){
     tmpl_32_train_main_harf(x, y, 1, 0)
     tmpl_32_train_main_harf(x+88, y, 0, 1)
 }
-template tmpl_purchase(x, y){
-    [x, y, 87, 15, -25, -10]
-}
 template tmpl_purchase_single_head(x, y){
     [x, y, 74, 15, -26, -10]
 }
@@ -285,7 +282,7 @@ template tmpl_purchase_dual_head_32bpp(x, y){
 	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
 }//trains
 spriteset(spriteset_mucar, "gfx/mucar/mucar.png") {tmpl_32_train_basic(0, 0)}
-spriteset(spriteset_mucar_purchase, "gfx/mucar/mucar_purchase.png"){tmpl_purchase(0, 0)}
+spriteset(spriteset_mucar_purchase, "gfx/mucar/mucar_purchase.png"){tmpl_purchase_single_head(0, 0)}
 item(FEAT_TRAINS, item_mucar){
     property {
         name: string(STR_MUCAR_NAME);
@@ -324,12 +321,13 @@ item(FEAT_TRAINS, item_mucar){
         default: spriteset_mucar;
     }
 }//123
-spriteset(spriteset_123_series_JW_YY, "gfx/123_series.png"){tmpl_32_train_basic(0, 0)}
-spriteset(spriteset_123_series_JW_BW, "gfx/123_series.png"){tmpl_32_train_basic(0, 31)}
-spriteset(spriteset_123_series_JC_W_2_DOOR, "gfx/123_series.png"){tmpl_32_train_basic(0, 63)}
-spriteset(spriteset_123_series_JC_W_3_DOOR, "gfx/123_series.png"){tmpl_32_train_basic(0, 95)}
-spriteset(spriteset_123_series_JE_RW, "gfx/123_series.png"){tmpl_32_train_basic(0, 127)}
-spriteset(spriteset_123_series_purchase, "gfx/123_series.png"){tmpl_purchase(0, 153)}
+spriteset(spriteset_123_series_JW_YY, "gfx/123/123_series_JW_YY.png"){tmpl_32_train_basic(0, 1)}
+spriteset(spriteset_123_series_JW_YY_rev, "gfx/123/123_series_JW_YY.png"){tmpl_32_train_basic(0, 27)}
+spriteset(spriteset_123_series_JW_BW, "gfx/123/123_series_JW_BW.png"){tmpl_32_train_basic(0, 1)}
+spriteset(spriteset_123_series_JC_W_2_DOOR, "gfx/123/123_series_JC_W_2_DOOR.png"){tmpl_32_train_basic(0, 1)}
+spriteset(spriteset_123_series_JC_W_3_DOOR, "gfx/123/123_series_JC_W_3_DOOR.png"){tmpl_32_train_basic(0, 1)}
+spriteset(spriteset_123_series_JE_RW, "gfx/123/123_series_JE_RW.png"){tmpl_32_train_basic(0, 1)}
+spriteset(spriteset_123_series_purchase, "gfx/123/123_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_123_serise_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH,string(STR_123_SERIES_JW_YY,string(STR_JR,string(STR_JR_WEST))));
     1: return string(STR_DASH,string(STR_123_SERIES_JW_BW,string(STR_JR,string(STR_JR_WEST))));
@@ -866,6 +864,6 @@ sort(FEAT_TRAINS, [
     item_EH1000_series
 ]);
 /*command list
-    build: python3 build.py --entry src/main.pnml --merge Narrow-Gauge-fast-train/ngft.nml
+    build: python3 build.py --entry src/ngft.pnml --merge Narrow-Gauge-fast-train/ngft.nml
     compile: nmlc -l ./lang/ ./ngft.nml
 */
