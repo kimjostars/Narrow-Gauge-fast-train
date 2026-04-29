@@ -57,6 +57,6 @@ item(FEAT_TRAINS, item_2000_series){
         loading_speed: param_loading_2D;
         power: 660;
         length: 8;
-        default: sw_2000_series_2_graphics_rev;
+        default: sw_2000_series_2_graphics;
     }
 }

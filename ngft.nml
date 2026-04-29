@@ -647,23 +647,31 @@ switch(FEAT_TRAINS, SELF, sw_2000_serise_head_cargo_subtype_text, cargo_subtype)
     0: string(STR_DASH,string(STR_2000_1_STREAMLINED));
     1: string(STR_DASH,string(STR_2000_1_PENETRATING));
 }
-switch(FEAT_TRAINS, SELF, sw_2000_series_3_graphics_rev, vehicle_is_flipped){
+switch(FEAT_TRAINS, SELF, sw_2000_series_1_front_light_graphics, train_is_driving_backwards){
+    0: return spriteset_2000_series_1_front_light;
+    1: return spriteset_2000_series_1_back_light_revers;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_1_back_light_graphics, [vehicle_is_flipped^train_is_driving_backwards]){
+    0: return spriteset_2000_series_1_back_light;
+    1: return spriteset_2000_series_1_front_light_revers;
+}
+switch(FEAT_TRAINS, SELF, sw_2000_series_3_graphics_rev, [vehicle_is_flipped^train_is_driving_backwards]){
     0: return spriteset_2000_series_3_front_light;
     1: return spriteset_2000_series_3_back_light;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_1_cargo_subtype, cargo_subtype){
-    0: return spriteset_2000_series_1_front_light;
-    1: return spriteset_2000_series_3_back_light_revers;
+    0: return sw_2000_series_1_front_light_graphics;
+    1: return sw_2000_series_3_graphics_rev;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_3_cargo_subtype, cargo_subtype){
-    0: return spriteset_2000_series_1_back_light;
+    0: return sw_2000_series_1_back_light_graphics;
     1: sw_2000_series_3_graphics_rev;
 }
 switch(FEAT_TRAINS, SELF, sw_2000_series_head_graphics, position_in_consist){
     0: sw_2000_series_1_cargo_subtype;
     default: sw_2000_series_3_cargo_subtype;
 }
-switch(FEAT_TRAINS, SELF, sw_2000_series_2_graphics_rev, vehicle_is_reversed){
+switch(FEAT_TRAINS, SELF, sw_2000_series_2_graphics, train_is_driving_backwards){
     0: return spriteset_2000_series_2_front;
     1: return spriteset_2000_series_2_back;
 }
@@ -722,7 +730,7 @@ item(FEAT_TRAINS, item_2000_series){
         loading_speed: param_loading_2D;
         power: 660;
         length: 8;
-        default: sw_2000_series_2_graphics_rev;
+        default: sw_2000_series_2_graphics;
     }
 }//N2000
 spriteset(spriteset_N2000_series_1_front_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
