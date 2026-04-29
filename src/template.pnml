@@ -59,9 +59,6 @@ template tmpl_32_train_main_227and521(x, y){
     tmpl_32_train_main_harf(x, y, 1, 0)
     tmpl_32_train_main_harf(x+88, y, 0, 1)
 }
-template tmpl_purchase(x, y){
-    [x, y, 87, 15, -25, -10]
-}
 template tmpl_purchase_single_head(x, y){
     [x, y, 74, 15, -26, -10]
 }
