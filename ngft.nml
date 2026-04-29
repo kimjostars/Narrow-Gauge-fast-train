@@ -739,15 +739,28 @@ spriteset(spriteset_N2000_series_1_back_light, "gfx/mucar/mucar.png"){tmpl_32_tr
 alternative_sprites(spriteset_N2000_series_1_back_light, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_1_series.png"){tmpl_32_train_main(0, 31)}
 spriteset(spriteset_N2000_series_2, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_N2000_series_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_2_series.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_N2000_series_1_front_light_rev, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_N2000_series_1_front_light_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_1_series.png"){tmpl_32_train_main_revers(0, 1)}
+spriteset(spriteset_N2000_series_1_back_light_rev, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_N2000_series_1_back_light_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_1_series.png"){tmpl_32_train_main_revers(0, 31)}
+
 spriteset(spriteset_N2000_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_dual_head(0, 0)}
 alternative_sprites(spriteset_N2000_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/2000/N2000_series_purchase.png"){tmpl_purchase_dual_head_32bpp(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_N2000_series_speed, param_high_speed){
     0: 130;
     1: 160;
 }
-switch(FEAT_TRAINS, SELF, sw_N2000_series_head_graphic, position_in_consist){
+switch(FEAT_TRAINS, SELF, sw_N2000_series_head_1_front_graphic, train_is_driving_backwards){
     0: return spriteset_N2000_series_1_front_light;
-    default: return spriteset_N2000_series_1_back_light;
+    1: return spriteset_N2000_series_1_back_light;
+}
+switch(FEAT_TRAINS, SELF, sw_N2000_series_head_1_back_graphic, train_is_driving_backwards){
+    0: return spriteset_N2000_series_1_back_light;
+    1:return spriteset_N2000_series_1_front_light;
+}
+switch(FEAT_TRAINS, SELF, sw_N2000_series_head_graphic, position_in_consist){
+    0: return sw_N2000_series_head_1_front_graphic;
+    default: return sw_N2000_series_head_1_back_graphic;
 }
 item(FEAT_TRAINS, item_N2000_series){
     property {
