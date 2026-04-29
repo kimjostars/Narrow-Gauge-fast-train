@@ -4,3 +4,4 @@ build.bat
 *.vs
 *.xcf
 backups/
+.venv/
