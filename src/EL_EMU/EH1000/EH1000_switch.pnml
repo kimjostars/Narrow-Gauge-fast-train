@@ -14,13 +14,29 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info
     1: return item_EH1000_series;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic_front, cargo_subtype/2){
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_default_front_graphic, train_is_driving_backwards){
     0: return spriteset_EH1000_series_default_front;
-    1: return spriteset_EH1000_series_2cc_front;
+    1: return spriteset_EH1000_series_default_front_rev;
+}
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_default_back_graphic, train_is_driving_backwards){
+    0: return spriteset_EH1000_series_default_back;
+    1: return spriteset_EH1000_series_default_back_rev;
+}
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_2cc_front_graphic, train_is_driving_backwards){
+    0: return spriteset_EH1000_series_2cc_front;
+    1: return spriteset_EH1000_series_2cc_front_rev;
+}
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_2cc_back_graphic, train_is_driving_backwards){
+    0: return spriteset_EH1000_series_2cc_back;
+    1: return spriteset_EH1000_series_2cc_back_rev;
+}
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic_front, cargo_subtype/2){
+    0: return sw_EH1000_series_default_front_graphic;
+    1: return sw_EH1000_series_2cc_front_graphic;
 }
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic_back, cargo_subtype/2){
-    0: return spriteset_EH1000_series_default_back;
-    1: return spriteset_EH1000_series_2cc_back;
+    0: return sw_EH1000_series_default_back_graphic;
+    1: return sw_EH1000_series_2cc_back_graphic;
 }
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic, position_in_articulated_veh%2){
     0: return sw_EH1000_series_graphic_front;
