@@ -542,13 +542,21 @@ spriteset(spriteset_600_series_rear, "gfx/600/600_series.png") { tmpl_32_train_8
 spriteset(spriteset_600_series_middle, "gfx/600/600_series.png") { tmpl_32_train_4_views(4) } 
 spriteset(spriteset_600_series_purchase, "gfx/600/600_series_purchase.png") {tmpl_purchase_dual_head(0, 0)} 
 spriteset(spriteset_600_series_invisible, "gfx/600/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
-switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, [vehicle_type_id == item_600_series || vehicle_type_id == item_mucar]){
+switch(FEAT_TRAINS, SELF, sw_600_series_attach_wagon, [vehicle_type_id == item_600_series || vehicle_type_id == item_mucar]){
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
 }
-switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_vehid_chain % 2){ 
-    0: return spriteset_600_series_front_lighted; 
+switch(FEAT_TRAINS, SELF, sw_600_series_front_graphics, train_is_driving_backwards){
+    0: return spriteset_600_series_rear_lighted;
+    1: return spriteset_600_series_front_lighted;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_back_graphics, train_is_driving_backwards){
+    0: return spriteset_600_series_front_lighted;
     1: return spriteset_600_series_rear_lighted;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_graphics, position_in_vehid_chain % 2){ 
+    0: return sw_600_series_front_graphics; 
+    1: return sw_600_series_back_graphics;
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
     0: return 160;
@@ -595,10 +603,10 @@ item(FEAT_TRAINS, item_600_series){
             string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL,string(STR_JR_PASSENGER)))));
-        can_attach_wagon: switch_600_series_attach_wagon;
+        can_attach_wagon: sw_600_series_attach_wagon;
         speed: sw_600_series_speed;
         purchase: spriteset_600_series_purchase;
-        default: switch_600_series_graphics;
+        default: sw_600_series_graphics;
     }
     livery_override(item_mucar){
         weight: 40;

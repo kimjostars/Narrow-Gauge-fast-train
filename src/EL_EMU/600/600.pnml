@@ -43,10 +43,10 @@ item(FEAT_TRAINS, item_600_series){
             string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL,string(STR_JR_PASSENGER)))));
-        can_attach_wagon: switch_600_series_attach_wagon;
+        can_attach_wagon: sw_600_series_attach_wagon;
         speed: sw_600_series_speed;
         purchase: spriteset_600_series_purchase;
-        default: switch_600_series_graphics;
+        default: sw_600_series_graphics;
     }
     livery_override(item_mucar){
         weight: 40;

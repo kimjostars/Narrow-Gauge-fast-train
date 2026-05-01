@@ -1,10 +1,18 @@
-switch(FEAT_TRAINS, SELF, switch_600_series_attach_wagon, [vehicle_type_id == item_600_series || vehicle_type_id == item_mucar]){
+switch(FEAT_TRAINS, SELF, sw_600_series_attach_wagon, [vehicle_type_id == item_600_series || vehicle_type_id == item_mucar]){
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
 }
-switch(FEAT_TRAINS, SELF, switch_600_series_graphics, position_in_vehid_chain % 2){ 
-    0: return spriteset_600_series_front_lighted; 
+switch(FEAT_TRAINS, SELF, sw_600_series_front_graphics, train_is_driving_backwards){
+    0: return spriteset_600_series_rear_lighted;
+    1: return spriteset_600_series_front_lighted;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_back_graphics, train_is_driving_backwards){
+    0: return spriteset_600_series_front_lighted;
     1: return spriteset_600_series_rear_lighted;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_graphics, position_in_vehid_chain % 2){ 
+    0: return sw_600_series_front_graphics; 
+    1: return sw_600_series_back_graphics;
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
     0: return 160;
