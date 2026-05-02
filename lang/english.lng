@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 #desc
-STR_NGFT_NAME :Narrow Gauge Fast Train SET 0.2.3 Alpha
+STR_NGFT_NAME :Narrow Gauge Fast Train SET 0.2.4
 STR_NGFT_DESC :Narrow Gauge Fast Train SET is a set of trains that can run over 200 km/h on 1067mm narrow guage. {}{RED}JP+ Track {BLACK}is required to run this newGRF.
 
 #parameters
@@ -154,3 +154,5 @@ STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}
 STR_EH1000_SERIES_JF_R :{STRING} {RED}Default Livery {STRING}
 
 STR_EH1000_CONCEPT :EH1000 is a train designed for high-speed operation of long trains. It features a co-co+co-co bogie arrangement and is heavy. Due to this, it has high power output and exerts high pressure on the tracks, making it difficult to operate on low-grade railways.
+
+STR_NAME_80_SERIES :[NGFT] 80 series

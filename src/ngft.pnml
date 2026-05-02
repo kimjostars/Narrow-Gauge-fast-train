@@ -23,6 +23,8 @@
 #include "DL_DMU/2000/N2000.pnml"
 //EH1000
 #include "EL_EMU/EH1000/EH1000.pnml"
+//80
+#include "WAGON/80/80.pnml"
 //sort
 #include "sort.pnml"
 
