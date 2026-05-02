@@ -33,7 +33,12 @@ item(FEAT_TRAINS, item_80_series){
         bitmask_vehicle_info: 0;
     }
     graphics {
-        speed: 160;
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))));
+        speed: sw_80_series_speed;
         purchase: spriteset_mucar_purchase;
         default: spriteset_80_series_default;
     }
