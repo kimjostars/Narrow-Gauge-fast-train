@@ -74,6 +74,7 @@ grf {
             type: bool;
             name: string(STR_NGFT_HGIH_SPEED_NAME);
             desc: string(STR_NGFT_HGIH_SPEED_DESC);
+            def_value: 0;
             bit: 0;
         }
     }
@@ -920,7 +921,9 @@ item(FEAT_TRAINS, item_EH1000_series){
         default: sw_EH1000_series_graphic;
     }
 }//80
-spriteset(spriteset_80_series_default, "gfx/80/80_series.png"){tmpl_32_train_main(0,1)}
+spriteset(spriteset_80_series_default, "gfx/80/80_series_default.png"){tmpl_32_train_main(0, 1)}
+
+spriteset(spriteset_80_series_purchase, "gfx/80/80_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_80_series_speed, param_high_speed){
     0: return 160;
     1: return 200;
@@ -930,7 +933,7 @@ item(FEAT_TRAINS, item_80_series){
         name: string(STR_NAME_80_SERIES);
         climates_available: ALL_CLIMATES;
         introduction_date: date(2020,01,01);
-        track_type: [TR_1067_NE];
+        track_type: TR_1067_NE;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_AUTOREFIT,TRAIN_FLAG_2CC);
         refit_cost: 0;
@@ -962,7 +965,7 @@ item(FEAT_TRAINS, item_80_series){
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))));
         speed: sw_80_series_speed;
-        purchase: spriteset_mucar_purchase;
+        purchase: spriteset_80_series_purchase;
         default: spriteset_80_series_default;
     }
 }//sort

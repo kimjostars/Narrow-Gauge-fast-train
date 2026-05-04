@@ -74,6 +74,7 @@ grf {
             type: bool;
             name: string(STR_NGFT_HGIH_SPEED_NAME);
             desc: string(STR_NGFT_HGIH_SPEED_DESC);
+            def_value: 0;
             bit: 0;
         }
     }
