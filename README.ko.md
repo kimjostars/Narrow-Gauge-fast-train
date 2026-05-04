@@ -21,7 +21,7 @@ Pull Request를 열 줄 모르신다면, Issues에 올리셔도 괜찮습니다.
 그래픽 : kimjostars, raeun_cos
 
 ## 라이선스
-이 NewGRF는 **[커먼스 라이선스 v3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)** (CC-BY-NC-SA v3.0)을 따릅니다.
+이 NewGRF는 **[GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)**을 따릅니다.
 이 프로젝트에 기여함은 이 라이선스에 동의함을 의미합니다.
 
 본프로젝트에 기여함은 라이선스에 동의함을 의미합니다.

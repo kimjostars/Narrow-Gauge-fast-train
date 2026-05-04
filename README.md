@@ -20,6 +20,6 @@ code : kimjostars, irice7350
 
 graghic : kimjostars, raeun_cos 
 ## License
-This NewGRF is licensed under the **[Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)** (CC BY-NC-SA 3.0).
+This NewGRF is licensed under the **[GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)**
 
 Contributing to this project implies agreement with this license.
