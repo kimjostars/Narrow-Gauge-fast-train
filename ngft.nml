@@ -891,7 +891,7 @@ item(FEAT_TRAINS, item_EH1000_series){
         dual_headed: 0;
         cargo_capacity: 1;
         air_drag_coefficient: 0;
-        tractive_effort_coefficient: 0.3;
+        tractive_effort_coefficient: 0.4;
         power: 5000 kW;
         weight: 160 ton;
         ai_special_flag: AI_FLAG_PASSENGER;
