@@ -18,7 +18,7 @@ Pull Request를 열 줄 모르신다면, Issues에 올리셔도 괜찮습니다.
 ### Contributors
 코드 : kimjostars, irice7350
 
-그래픽 : kimjostars, raeun_cos
+그래픽 : kimjostars, raeun_cos, [JP+](https://github.com/OpenTTD-JPplus)(에셋 사용), [600계 스프라이트 출처](https://www.tt-wiki.net/wiki/NMLTutorial/Train_single_engine) 
 
 ## 라이선스
 이 NewGRF는 **[GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)**을 따릅니다.

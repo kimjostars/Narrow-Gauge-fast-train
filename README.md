@@ -18,7 +18,7 @@ Translations are always welcome.
 ### Contributors
 code : kimjostars, irice7350
 
-graghic : kimjostars, raeun_cos 
+graghic : kimjostars, raeun_cos, [JP+](https://github.com/OpenTTD-JPplus)(Asset usage), [600 series sprite source](https://www.tt-wiki.net/wiki/NMLTutorial/Train_single_engine) 
 ## License
 This NewGRF is licensed under the **[GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)**
 
