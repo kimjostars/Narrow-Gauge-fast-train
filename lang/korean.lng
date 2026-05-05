@@ -2,7 +2,7 @@
 
 #desc
 STR_NGFT_NAME :협궤고속열차 세트 0.2.4
-STR_NGFT_DESC :협궤고속열차 세트은 협궤에서 200이상 달릴수있는 열차세트입니다. {}{RED}JP+ Track{BLACK}이 필요합니다.
+STR_NGFT_DESC :협궤고속열차 세트은 협궤에서 200이상 달릴수있는 열차세트입니다. {}{RED}JP+ Track{BLACK}이 필요합니다. {}코드: 김조별 {}그래픽: 김조별, 라은, JP+ (에셋 사용) {}번역: 히카리
 
 #parameters
 STR_NGFT_PURCHASE_COST_NAME :구매비용
