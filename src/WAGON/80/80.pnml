@@ -15,7 +15,7 @@ item(FEAT_TRAINS, item_80_series){
         ai_special_flag: AI_FLAG_PASSENGER;
         ai_engine_rank: 0;
         vehicle_life: 60;
-        loading_speed: 0;
+        loading_speed: param_loading_1D;
         cost_factor: 64;
         running_cost_factor: 6;
         reliability_decay: 20;
