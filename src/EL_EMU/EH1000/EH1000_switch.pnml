@@ -10,10 +10,6 @@ switch(FEAT_TRAINS, SELF, sw_EF1000_series_cargo_subtype_text, cargo_subtype){
     3: return string(STR_DASH, string(STR_COMPANY, string(STR_HIGH_SPEED_TYPE,160)));
     return CB_RESULT_NO_TEXT;
 }
-switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info1){
-    1: return item_EH1000_series;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_default_front_graphic, train_is_driving_backwards){
     0: return spriteset_EH1000_series_default_front;
     1: return spriteset_EH1000_series_default_front_rev;
@@ -41,4 +37,8 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic_back, cargo_subtype/2){
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_graphic, position_in_articulated_veh%2){
     0: return sw_EH1000_series_graphic_front;
     1: return sw_EH1000_series_graphic_back;
+}
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info1){
+    1: return item_EH1000_series;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
