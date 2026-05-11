@@ -921,20 +921,103 @@ item(FEAT_TRAINS, item_EH1000_series){
         default: sw_EH1000_series_graphic;
     }
 }//80
-//#include "WAGON/80/80.pnml"
-//generater car
-//#include "WAGON/GENERATER_CAR/generater_car.pnml"
-//sort
+spriteset(spriteset_80_series_default, "gfx/80/80_series_default.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_80_series_default_generater_car, "gfx/80/80_series_default_generater_car.png"){tmpl_32_train_main(0, 1)}
+
+spriteset(spriteset_80_series_purchase, "gfx/80/80_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
+switch(FEAT_TRAINS, SELF, sw_80_series_speed, param_high_speed){
+    0: return 160;
+    1: return 200;
+}
+item(FEAT_TRAINS, item_80_series){
+    property {
+        name: string(STR_NAME_80_SERIES);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2020,01,01);
+        track_type: TR_1067_NE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_AUTOREFIT,TRAIN_FLAG_2CC);
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        ai_special_flag: AI_FLAG_PASSENGER;
+        ai_engine_rank: 0;
+        vehicle_life: 60;
+        loading_speed: param_loading_1D;
+        cost_factor: 64;
+        running_cost_factor: 6;
+        reliability_decay: 20;
+        power: 0 kW;
+        cargo_age_period: 185;
+        weight: 28 ton;
+        cargo_capacity: param_cargo_capacity_express;
+        tractive_effort_coefficient: 0;
+        air_drag_coefficient: 0.07;
+        reliability_decay: 20;
+        running_cost_base: RUNNING_COST_STEAM;
+        dual_headed: 0;
+        length: 8;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+    }
+    graphics {
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))));
+        speed: sw_80_series_speed;
+        purchase: spriteset_80_series_purchase;
+        default: spriteset_80_series_default;
+    }
+}//generater car
+item(FEAT_TRAINS, item_generater_car){
+    property {
+        name: string(STR_NAME_GERENATER_CAR_TRAIN);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2020,01,01);
+        track_type: TR_1067_NE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        ai_special_flag: AI_FLAG_PASSENGER;
+        ai_engine_rank: 0;
+        vehicle_life: 60;
+        loading_speed: 0;
+        cost_factor: 64;
+        running_cost_factor: 6;
+        reliability_decay: 20;
+        speed: 0 km/h;
+        power: 0 kW;
+        cargo_capacity: 100;
+        cargo_age_period: 185;
+        weight: 28 ton;
+        tractive_effort_coefficient: 0;
+        air_drag_coefficient: 0.07;
+        reliability_decay: 20;
+        running_cost_base: RUNNING_COST_STEAM;
+        dual_headed: 0;
+        length: 8;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 4, DISABLE_WAGON_POWER);
+        dual_headed: 0;
+    }
+    graphics {
+        purchase: spriteset_mucar_purchase;
+        default: spriteset_mucar;
+    }
+}//sort
 sort(FEAT_TRAINS, [
     item_mucar,
-    //item_generater_car,
+    item_generater_car,
     item_123_series,
     item_521_series,
     item_600_series,
     item_2000_series,
     item_N2000_series,
-    item_EH1000_series
-    //item_80_series
+    item_EH1000_series,
+    item_80_series
 ]);
 /*command list
     build: python3 build.py --entry src/ngft.pnml --merge Narrow-Gauge-fast-train/ngft.nml

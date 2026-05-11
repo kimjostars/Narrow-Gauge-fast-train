@@ -24,9 +24,9 @@
 //EH1000
 #include "EL_EMU/EH1000/EH1000.pnml"
 //80
-//#include "WAGON/80/80.pnml"
+#include "WAGON/80/80.pnml"
 //generater car
-//#include "WAGON/GENERATER_CAR/generater_car.pnml"
+#include "WAGON/GENERATER_CAR/generater_car.pnml"
 //sort
 #include "sort.pnml"
 
