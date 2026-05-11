@@ -17,7 +17,7 @@ item(FEAT_TRAINS, item_600_series){
         sprite_id: SPRITE_ID_NEW_TRAIN;
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
         refit_cost: 0;
-        track_type: TR_1067_AC;
+        track_type: TR_1067_AC_DC;
         speed: 160 km/h;
         ai_special_flag: AI_FLAG_PASSENGER;
         power: 900 kW;

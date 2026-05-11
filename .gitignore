@@ -5,3 +5,4 @@ build.bat
 *.xcf
 backups/
 .venv/
+gorender/
