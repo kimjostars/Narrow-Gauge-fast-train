@@ -1,3 +1,7 @@
+#include "generater_car_graphic.pnml"
+
+#include "generater_car_switch.pnml"
+
 item(FEAT_TRAINS, item_generater_car){
     property {
         name: string(STR_NAME_GERENATER_CAR_TRAIN);
@@ -32,7 +36,8 @@ item(FEAT_TRAINS, item_generater_car){
         dual_headed: 0;
     }
     graphics {
-        purchase: spriteset_mucar_purchase;
-        default: spriteset_mucar;
+        speed: sw_generater_car_speed;
+        purchase: spriteset_generater_car;
+        default: spriteset_80_series_default_generater_car;
     }
 }

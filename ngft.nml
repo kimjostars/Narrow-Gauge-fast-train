@@ -598,7 +598,7 @@ item(FEAT_TRAINS, item_600_series){
         additional_text:
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
-            string(STR_DENKI,string(STR_AC_KV_2_HZ,20,50,60)),
+            string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
             string(STR_LOAD_SPEED,string(STR_DOORS,2)),
             string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
@@ -922,7 +922,6 @@ item(FEAT_TRAINS, item_EH1000_series){
     }
 }//80
 spriteset(spriteset_80_series_default, "gfx/80/80_series_default.png"){tmpl_32_train_main(0, 1)}
-spriteset(spriteset_80_series_default_generater_car, "gfx/80/80_series_default_generater_car.png"){tmpl_32_train_main(0, 1)}
 
 spriteset(spriteset_80_series_purchase, "gfx/80/80_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_80_series_speed, param_high_speed){
@@ -970,6 +969,13 @@ item(FEAT_TRAINS, item_80_series){
         default: spriteset_80_series_default;
     }
 }//generater car
+spriteset(spriteset_80_series_default_generater_car, "gfx/GENERATER_CAR/80_series_default_generater_car.png"){tmpl_32_train_main(0, 1)}
+
+spriteset(spriteset_generater_car, "gfx/mucar/mucar_purchase.png"){tmpl_purchase_single_head(0, 0)}
+switch(FEAT_TRAINS, SELF, sw_generater_car_speed, param_high_speed){
+    0: return 160;
+    1: return 200;
+}
 item(FEAT_TRAINS, item_generater_car){
     property {
         name: string(STR_NAME_GERENATER_CAR_TRAIN);
@@ -1004,8 +1010,9 @@ item(FEAT_TRAINS, item_generater_car){
         dual_headed: 0;
     }
     graphics {
-        purchase: spriteset_mucar_purchase;
-        default: spriteset_mucar;
+        speed: sw_generater_car_speed;
+        purchase: spriteset_generater_car;
+        default: spriteset_80_series_default_generater_car;
     }
 }//sort
 sort(FEAT_TRAINS, [
