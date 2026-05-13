@@ -1,6 +1,8 @@
 # 협궤 고속열차 세트
 [English](./README.md) | [한국어](./README.ko.md)
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+
 협궤 고속열차 세트는 가상의 1067mm궤간의 200km이상의 열차와 그외의 열차를 추가해주는 OpenTTD NewGRF입니다.
 **[Github release 페이지](https://github.com/kimjostars/Narrow-Gauge-fast-train/releases)** 에서 다운로드 할수있습니다.
 이세트를 게임에 적용할때 **[JP+ Track](https://github.com/OpenTTD-JPplus/JPplusTracks)** 과 같이 적용하는것을 추천합니다.
@@ -19,9 +21,5 @@ Pull Request를 열 줄 모르신다면, Issues에 올리셔도 괜찮습니다.
 코드 : kimjostars, irice7350
 
 그래픽 : kimjostars, raeun_cos, [JP+](https://github.com/OpenTTD-JPplus)(에셋 사용), [600계 스프라이트 출처](https://www.tt-wiki.net/wiki/NMLTutorial/Train_single_engine) 
-
-## 라이선스
-이 NewGRF는 **[GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)**을 따릅니다.
-이 프로젝트에 기여함은 이 라이선스에 동의함을 의미합니다.
 
 본프로젝트에 기여함은 라이선스에 동의함을 의미합니다.

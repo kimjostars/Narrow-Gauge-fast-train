@@ -1,6 +1,8 @@
 # Narrow Gauge Fast Train Set
 [English](./README.md) | [한국어](./README.ko.md)
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+
 Narrow Gauge Fast Train Set is an OpenTTD NewGRF that adds fictional 1067 mm gauge trains capable of speeds over 200 km/h, along with other rolling stock.
 You can download it from the **[Github release page](https://github.com/kimjostars/Narrow-Gauge-fast-train/releases)**.
 It is recommended to use this set together with **[JP+ Track](https://github.com/OpenTTD-JPplus/JPplusTracks)** when applying it to the game.
@@ -19,7 +21,5 @@ Translations are always welcome.
 code : kimjostars, irice7350
 
 graghic : kimjostars, raeun_cos, [JP+](https://github.com/OpenTTD-JPplus)(Asset usage), [600 series sprite source](https://www.tt-wiki.net/wiki/NMLTutorial/Train_single_engine) 
-## License
-This NewGRF is licensed under the **[GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)**
 
 Contributing to this project implies agreement with this license.
