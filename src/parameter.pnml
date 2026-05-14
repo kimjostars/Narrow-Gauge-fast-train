@@ -68,6 +68,17 @@ if(param_cargo_capacity >= 4){
     param_cargo_capacity_general = 620;
     param_cargo_capacity_express = 240;
 }
+//speed
+if(param_high_speed == 0){
+    param_speed_120_to_160 = 120;
+    param_speed_130_to_160 = 130;
+    param_speed_160_to_200 = 160;
+}
+if(param_high_speed == 1){
+    param_speed_120_to_160 = 160;
+    param_speed_130_to_160 = 160;
+    param_speed_160_to_200 = 199;
+}
 // traininfo offset
 traininfo_y_offset = 2;
 train_width_32_px = 1;

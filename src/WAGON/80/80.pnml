@@ -15,6 +15,7 @@ item(FEAT_TRAINS, item_80_series){
         ai_special_flag: AI_FLAG_PASSENGER;
         ai_engine_rank: 0;
         vehicle_life: 60;
+        speed: param_speed_160_to_200;
         loading_speed: param_loading_1D;
         cost_factor: 64;
         running_cost_factor: 6;
@@ -38,7 +39,6 @@ item(FEAT_TRAINS, item_80_series){
             string(STR_NARROWGAUGE),
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))));
-        speed: sw_80_series_speed;
         purchase: spriteset_80_series_purchase;
         default: spriteset_80_series_default;
     }

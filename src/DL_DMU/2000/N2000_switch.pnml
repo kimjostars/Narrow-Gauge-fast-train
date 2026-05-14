@@ -1,7 +1,3 @@
-switch(FEAT_TRAINS, SELF, sw_N2000_series_speed, param_high_speed){
-    0: 130;
-    1: 160;
-}
 switch(FEAT_TRAINS, SELF, sw_N2000_series_head_1_front_graphic, train_is_driving_backwards){
     0: return spriteset_N2000_series_1_front_light;
     1: return spriteset_N2000_series_1_back_light;

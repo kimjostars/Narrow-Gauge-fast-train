@@ -20,7 +20,7 @@ item(FEAT_TRAINS, item_N2000_series){
         refit_cost: 0;
         dual_headed: 1;
         track_type: TR_1067_NE;
-        speed: 130 km/h;
+        speed: param_speed_130_to_160;
         weight: 39 ton;
         power: 710 hp;
         cargo_capacity: param_cargo_capacity_express;
@@ -45,7 +45,6 @@ item(FEAT_TRAINS, item_N2000_series){
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_JR_SHIKOKU))));
         can_attach_wagon: sw_2000_series_attach_vehid;
-        speed: sw_N2000_series_speed;
         start_stop: sw_2000_series_start_stop;
         purchase: spriteset_N2000_series_purchase;
         default: sw_N2000_series_head_graphic;

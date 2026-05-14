@@ -1,7 +1,3 @@
-switch(FEAT_TRAINS, SELF, sw_2000_series_speed, param_high_speed){
-    0: 120;
-    1: 160;
-}
 switch(FEAT_TRAINS, SELF, sw_2000_series_start_stop, num_vehs_in_consist){
     1: return string(STR_CANNOT_CAR,2);
     return CB_RESULT_NO_TEXT;

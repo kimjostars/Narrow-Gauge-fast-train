@@ -14,7 +14,3 @@ switch(FEAT_TRAINS, SELF, sw_600_series_graphics, position_in_vehid_chain % 2){
     0: return sw_600_series_front_graphics; 
     1: return sw_600_series_back_graphics;
 }
-switch(FEAT_TRAINS, SELF, sw_600_series_speed, param_high_speed){
-    0: return 160;
-    1: return 199;
-}

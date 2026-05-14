@@ -1,4 +1,0 @@
-switch(FEAT_TRAINS, SELF, sw_80_series_speed, param_high_speed){
-    0: return 160;
-    1: return 200;
-}
