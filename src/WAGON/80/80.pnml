@@ -17,8 +17,8 @@ item(FEAT_TRAINS, item_80_series){
         vehicle_life: 60;
         speed: param_speed_160_to_200;
         loading_speed: param_loading_1D;
-        cost_factor: 64;
-        running_cost_factor: 6;
+        cost_factor: 80;
+        running_cost_factor: 10;
         reliability_decay: 20;
         power: 0 kW;
         cargo_age_period: 185;

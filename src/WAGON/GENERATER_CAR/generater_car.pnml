@@ -16,8 +16,8 @@ item(FEAT_TRAINS, item_generater_car){
         ai_engine_rank: 0;
         vehicle_life: 60;
         loading_speed: 0;
-        cost_factor: 64;
-        running_cost_factor: 6;
+        cost_factor: 80;
+        running_cost_factor: 10;
         reliability_decay: 20;
         speed: param_speed_160_to_200;
         power: 0 kW;
