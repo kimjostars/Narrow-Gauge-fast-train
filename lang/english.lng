@@ -134,14 +134,15 @@ STR_GENERATER_CAR_DESC :It is a train equipped with a diesel generator to supply
 
 STR_COMPANY :{GREEN}Company Color {STRING}
 STR_GREEN_CAR :{GREEN}Green Car
+STR_CONDUCTOR :{BLACK}Deputy Director's Office
 STR_HIGH_SPEED_TYPE :{BLACK}(High speed type) is set to a maximum speed of {COMMA}km/h.
 
 #wagon name
 STR_OHA :{SILVER}oha {COMMA} {BLACK}{STRING}
 STR_ORO :{SILVER}oro {COMMA} {BLACK}{STRING}
 STR_OSHI :{SILVER}oshi {COMMA} {BLACK}{STRING}
-STR_OHAHU :{SILVER}ohahu {COMMA} {BLACK}{STRING}
-STR_KONI :{SILVER}koni {COMMA} {BLACK}{STRING}
+STR_OHAFU :{SILVER}ohafu {COMMA} {BLACK}{STRING}
+STR_HONI :{SILVER}honi {COMMA} {BLACK}{STRING}
 
 #train name
 

@@ -918,15 +918,18 @@ item(FEAT_TRAINS, item_EH1000_series){
 }//80
 spriteset(spriteset_80_series_default, "gfx/80/80_series_default.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_80_series_default_green_car, "gfx/80/80_series_default_green_car.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_80_series_default_garder, "gfx/80/80_series_default_garder.png"){tmpl_32_train_main(0, 1)}
 
 spriteset(spriteset_80_series_purchase, "gfx/80/80_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_80_series_graphic, cargo_subtype){
     0: return spriteset_80_series_default;
     1: return spriteset_80_series_default_green_car;
+    2: return spriteset_80_series_default_garder;
 }
 switch(FEAT_TRAINS, SELF, sw_80_series_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH,string(STR_OHA,80,string(STR_80_DEFAULT_CAR, string(STR_SPACE))));
     1: return string(STR_DASH,string(STR_ORO,80,string(STR_80_DEFAULT_CAR, string(STR_GREEN_CAR))));
+    2: return string(STR_DASH,string(STR_OHAFU,80,string(STR_80_DEFAULT_CAR, string(STR_CONDUCTOR))));
 }
 item(FEAT_TRAINS, item_80_series){
     property {
@@ -970,10 +973,18 @@ item(FEAT_TRAINS, item_80_series){
         default: sw_80_series_graphic;
     }
 }//generater car
-spriteset(spriteset_80_series_default_generater_car, "gfx/GENERATER_CAR/80_series_default_generater_car.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_generater_car_default, "gfx/GENERATER_CAR/generater_car_default.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_generater_car_80, "gfx/GENERATER_CAR/generater_car_80.png"){tmpl_32_train_main(0, 1)}
 
-spriteset(spriteset_generater_car, "gfx/GENERATER_CAR/generater_car_purchase.png"){tmpl_purchase_single_head(0, 0)}
-
+spriteset(spriteset_generater_car_purchase, "gfx/GENERATER_CAR/generater_car_purchase.png"){tmpl_purchase_single_head(0, 0)}
+switch(FEAT_TRAINS, SELF, sw_generater_car_graphic, cargo_subtype){
+    0: return spriteset_generater_car_default;
+    1: return spriteset_generater_car_80;
+}
+switch(FEAT_TRAINS, SELF, sw_generater_car_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_DASH,string(STR_HONI,80));
+    1: return string(STR_DASH,string(STR_HONI,80));
+}
 item(FEAT_TRAINS, item_generater_car){
     property {
         name: string(STR_NAME_GERENATER_CAR_TRAIN);
@@ -995,7 +1006,7 @@ item(FEAT_TRAINS, item_generater_car){
         power: 0 kW;
         cargo_capacity: 100;
         cargo_age_period: 185;
-        weight: 28 ton;
+        weight: 24 ton;
         tractive_effort_coefficient: 0;
         air_drag_coefficient: 0.07;
         reliability_decay: 20;
@@ -1013,8 +1024,9 @@ item(FEAT_TRAINS, item_generater_car){
             string(STR_NARROWGAUGE),
             string(STR_GENERATER_CAR_DESC),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))));
-        purchase: spriteset_generater_car;
-        default: spriteset_80_series_default_generater_car;
+        cargo_subtype_text: sw_generater_car_cargo_subtype_text;
+        purchase: spriteset_generater_car_purchase;
+        default: sw_generater_car_graphic;
     }
 }//sort
 sort(FEAT_TRAINS, [

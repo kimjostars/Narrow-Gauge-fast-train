@@ -23,7 +23,7 @@ item(FEAT_TRAINS, item_generater_car){
         power: 0 kW;
         cargo_capacity: 100;
         cargo_age_period: 185;
-        weight: 28 ton;
+        weight: 24 ton;
         tractive_effort_coefficient: 0;
         air_drag_coefficient: 0.07;
         reliability_decay: 20;
@@ -41,7 +41,8 @@ item(FEAT_TRAINS, item_generater_car){
             string(STR_NARROWGAUGE),
             string(STR_GENERATER_CAR_DESC),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))));
-        purchase: spriteset_generater_car;
-        default: spriteset_80_series_default_generater_car;
+        cargo_subtype_text: sw_generater_car_cargo_subtype_text;
+        purchase: spriteset_generater_car_purchase;
+        default: sw_generater_car_graphic;
     }
 }

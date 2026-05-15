@@ -1,3 +1,4 @@
-spriteset(spriteset_80_series_default_generater_car, "gfx/GENERATER_CAR/80_series_default_generater_car.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_generater_car_default, "gfx/GENERATER_CAR/generater_car_default.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_generater_car_80, "gfx/GENERATER_CAR/generater_car_80.png"){tmpl_32_train_main(0, 1)}
 
-spriteset(spriteset_generater_car, "gfx/GENERATER_CAR/generater_car_purchase.png"){tmpl_purchase_single_head(0, 0)}
+spriteset(spriteset_generater_car_purchase, "gfx/GENERATER_CAR/generater_car_purchase.png"){tmpl_purchase_single_head(0, 0)}

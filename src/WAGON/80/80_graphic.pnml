@@ -1,4 +1,5 @@
 spriteset(spriteset_80_series_default, "gfx/80/80_series_default.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_80_series_default_green_car, "gfx/80/80_series_default_green_car.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_80_series_default_garder, "gfx/80/80_series_default_garder.png"){tmpl_32_train_main(0, 1)}
 
 spriteset(spriteset_80_series_purchase, "gfx/80/80_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
