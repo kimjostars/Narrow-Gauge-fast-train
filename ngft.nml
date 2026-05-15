@@ -925,8 +925,8 @@ switch(FEAT_TRAINS, SELF, sw_80_series_graphic, cargo_subtype){
     1: return spriteset_80_series_default_green_car;
 }
 switch(FEAT_TRAINS, SELF, sw_80_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH,string(STR_80_DEFAULT_CAR, string(STR_SPACE)));
-    1: return string(STR_DASH,string(STR_80_DEFAULT_CAR, string(STR_GREEN_CAR)));
+    0: return string(STR_DASH,string(STR_OHA,80,string(STR_80_DEFAULT_CAR, string(STR_SPACE))));
+    1: return string(STR_DASH,string(STR_ORO,80,string(STR_80_DEFAULT_CAR, string(STR_GREEN_CAR))));
 }
 item(FEAT_TRAINS, item_80_series){
     property {
@@ -1008,6 +1008,11 @@ item(FEAT_TRAINS, item_generater_car){
         dual_headed: 0;
     }
     graphics {
+        additional_text: 
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_GENERATER_CAR_DESC),
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))));
         purchase: spriteset_generater_car;
         default: spriteset_80_series_default_generater_car;
     }

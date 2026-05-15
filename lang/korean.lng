@@ -123,11 +123,22 @@ STR_CANNOT_CAR :{COMMA}량 이상연결하여야 합니다.
 #individual
 STR_MUCAR_NAME :[NGFT] 공통객차 (MU)
 STR_MU_DESC :동차형 차량에 붙여서 해당열차의 객차로 사용가능합니다.
+
 STR_NAME_GERENATER_CAR_TRAIN :[NGFT] 발전차
+STR_GENERATER_CAR_DESC :객차, 냉동컨테이너, 냉동화차에 전력을 공급위해 사용되는 디젤발전기가 갖춰진 열차입니다.
 
 STR_COMPANY :{GREEN}회사색상 {STRING}
 STR_GREEN_CAR :{GREEN} 그린샤
 STR_HIGH_SPEED_TYPE :{BLACK}(고속형) 최고속도 {COMMA}km/h로 설정됩니다.
+
+#wagonname
+STR_OHA :{SILVER}오하 {COMMA} {BLACK}{STRING}
+STR_ORO :{SILVER}오로 {COMMA} {BLACK}{STRING}
+STR_OSHI :{SILVER}오시 {COMMA} {BLACK}{STRING}
+STR_OHAHU :{SILVER}오하후 {COMMA} {BLACK}{STRING}
+STR_KONI :{SILVER}코니 {COMMA} {BLACK}{STRING}
+
+#train name
 
 STR_NAME_600_TRAINS :600계 {WHITE}(EMU){BLACK}
 

@@ -128,11 +128,22 @@ STR_CANNOT_CAR :{COMMA}Car Must Connect.
 #individual
 STR_MUCAR_NAME :[NGFT] Multi Unit Car (MU)
 STR_MU_DESC :It can be attached to a self-propelled vehicle and used as a passenger car for the corresponding train.
+
 STR_NAME_GERENATER_CAR_TRAIN :[NGFT] Generater Car
+STR_GENERATER_CAR_DESC :It is a train equipped with a diesel generator to supply power to passenger trains, refrigerated containers, and refrigerated freight cars.
 
 STR_COMPANY :{GREEN}Company Color {STRING}
 STR_GREEN_CAR :{GREEN}Green Car
 STR_HIGH_SPEED_TYPE :{BLACK}(High speed type) is set to a maximum speed of {COMMA}km/h.
+
+#wagon name
+STR_OHA :{SILVER}oha {COMMA} {BLACK}{STRING}
+STR_ORO :{SILVER}oro {COMMA} {BLACK}{STRING}
+STR_OSHI :{SILVER}oshi {COMMA} {BLACK}{STRING}
+STR_OHAHU :{SILVER}ohahu {COMMA} {BLACK}{STRING}
+STR_KONI :{SILVER}koni {COMMA} {BLACK}{STRING}
+
+#train name
 
 STR_NAME_600_TRAINS :600 series {WHITE}(EMU){BLACK}
 

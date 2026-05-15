@@ -3,6 +3,6 @@ switch(FEAT_TRAINS, SELF, sw_80_series_graphic, cargo_subtype){
     1: return spriteset_80_series_default_green_car;
 }
 switch(FEAT_TRAINS, SELF, sw_80_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH,string(STR_80_DEFAULT_CAR, string(STR_SPACE)));
-    1: return string(STR_DASH,string(STR_80_DEFAULT_CAR, string(STR_GREEN_CAR)));
+    0: return string(STR_DASH,string(STR_OHA,80,string(STR_80_DEFAULT_CAR, string(STR_SPACE))));
+    1: return string(STR_DASH,string(STR_ORO,80,string(STR_80_DEFAULT_CAR, string(STR_GREEN_CAR))));
 }

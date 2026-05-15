@@ -36,6 +36,11 @@ item(FEAT_TRAINS, item_generater_car){
         dual_headed: 0;
     }
     graphics {
+        additional_text: 
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_GENERATER_CAR_DESC),
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))));
         purchase: spriteset_generater_car;
         default: spriteset_80_series_default_generater_car;
     }
