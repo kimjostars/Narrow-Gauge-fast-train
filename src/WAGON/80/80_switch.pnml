@@ -1,0 +1,8 @@
+switch(FEAT_TRAINS, SELF, sw_80_series_graphic, cargo_subtype){
+    0: return spriteset_80_series_default;
+    1: return spriteset_80_series_default_green_car;
+}
+switch(FEAT_TRAINS, SELF, sw_80_series_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_80_DEFAULT_CAR, string(STR_SPACE));
+    1: return string(STR_80_DEFAULT_CAR, string(STR_GREEN_CAR));
+}

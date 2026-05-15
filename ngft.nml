@@ -917,9 +917,17 @@ item(FEAT_TRAINS, item_EH1000_series){
     }
 }//80
 spriteset(spriteset_80_series_default, "gfx/80/80_series_default.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_80_series_default_green_car, "gfx/80/80_series_default_green_car.png"){tmpl_32_train_main(0, 1)}
 
 spriteset(spriteset_80_series_purchase, "gfx/80/80_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
-
+switch(FEAT_TRAINS, SELF, sw_80_series_graphic, cargo_subtype){
+    0: return spriteset_80_series_default;
+    1: return spriteset_80_series_default_green_car;
+}
+switch(FEAT_TRAINS, SELF, sw_80_series_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_80_DEFAULT_CAR, string(STR_SPACE));
+    1: return string(STR_80_DEFAULT_CAR, string(STR_GREEN_CAR));
+}
 item(FEAT_TRAINS, item_80_series){
     property {
         name: string(STR_NAME_80_SERIES);
@@ -957,8 +965,9 @@ item(FEAT_TRAINS, item_80_series){
             string(STR_NARROWGAUGE),
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))));
+        cargo_subtype_text: sw_80_series_cargo_subtype_text;
         purchase: spriteset_80_series_purchase;
-        default: spriteset_80_series_default;
+        default: sw_80_series_graphic;
     }
 }//generater car
 spriteset(spriteset_80_series_default_generater_car, "gfx/GENERATER_CAR/80_series_default_generater_car.png"){tmpl_32_train_main(0, 1)}

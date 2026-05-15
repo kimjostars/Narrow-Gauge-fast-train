@@ -39,7 +39,8 @@ item(FEAT_TRAINS, item_80_series){
             string(STR_NARROWGAUGE),
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))));
+        cargo_subtype_text: sw_80_series_cargo_subtype_text;
         purchase: spriteset_80_series_purchase;
-        default: spriteset_80_series_default;
+        default: sw_80_series_graphic;
     }
 }
