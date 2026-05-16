@@ -295,7 +295,7 @@ template tmpl_purchase_dual_head_32bpp(x, y){
 }//trains
 spriteset(spriteset_mucar, "gfx/mucar/mucar.png") {tmpl_32_train_basic(0, 0)}
 spriteset(spriteset_mucar_purchase, "gfx/mucar/mucar_purchase.png"){tmpl_purchase_single_head(0, 0)}
-item(FEAT_TRAINS, item_mucar){
+item(FEAT_TRAINS, item_mucar, 9000){
     property {
         name: string(STR_MUCAR_NAME);
         climates_available: ALL_CLIMATES;
@@ -382,7 +382,7 @@ switch(FEAT_TRAINS, SELF, sw_123_serise_cargo_subtype_text, cargo_subtype){
     4: return string(STR_DASH,string(STR_123_SERIES_JE_RW,string(STR_JR,string(STR_JR_EAST))));
     return CB_RESULT_NO_TEXT;
 }
-item(FEAT_TRAINS, item_123_series){
+item(FEAT_TRAINS, item_123_series, 0123){
     property {
         name: string(STR_NAME_123_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -492,7 +492,7 @@ switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
     2: return string(STR_521_0_3_SERIES);
     3: return string(STR_DASH,string(STR_521_100_SERIES,string(STR_JR,string(STR_JR_WEST))));
 }
-item(FEAT_TRAINS, item_521_series){
+item(FEAT_TRAINS, item_521_series, 0521){
     property {
         name: string(STR_NAME_521_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -569,7 +569,7 @@ switch(FEAT_TRAINS, SELF, sw_600_series_graphics, position_in_vehid_chain % 2){
     0: return sw_600_series_front_graphics; 
     1: return sw_600_series_back_graphics;
 }
-item(FEAT_TRAINS, item_600_series){
+item(FEAT_TRAINS, item_600_series, 0600){
     property {
         name: string(STR_NAME_600_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -685,7 +685,7 @@ switch(FEAT_TRAINS, SELF, sw_2000_series_2_graphics, train_is_driving_backwards)
     0: return spriteset_2000_series_2_front;
     1: return spriteset_2000_series_2_back;
 }
-item(FEAT_TRAINS, item_2000_series){
+item(FEAT_TRAINS, item_2000_series, 2000){
     property {
         name: string(STR_NAME_2000_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -762,7 +762,7 @@ switch(FEAT_TRAINS, SELF, sw_N2000_series_head_graphic, position_in_consist){
     0: return sw_N2000_series_head_1_front_graphic;
     default: return sw_N2000_series_head_1_back_graphic;
 }
-item(FEAT_TRAINS, item_N2000_series){
+item(FEAT_TRAINS, item_N2000_series, 2001){
     property {
         name: string(STR_NAME_N2000_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -793,7 +793,7 @@ item(FEAT_TRAINS, item_N2000_series){
         curve_speed_mod: 70;
         bitmask_vehicle_info: 0;
         length: 8;
-        variant_group: item_2000_series;
+        variant_group: 2000;
     }
     graphics {
         additional_text:
@@ -872,7 +872,7 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_articulated_part, extra_callback_info
     1: return item_EH1000_series;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-item(FEAT_TRAINS, item_EH1000_series){
+item(FEAT_TRAINS, item_EH1000_series, 1000){
     property {
         name: string(STR_NAME_EH1000_TRAINS);
         track_type: TR_1067_AC_DC;
@@ -931,7 +931,7 @@ switch(FEAT_TRAINS, SELF, sw_80_series_cargo_subtype_text, cargo_subtype){
     1: return string(STR_DASH,string(STR_ORO, 80, string(STR_CONCAT_2, string(STR_DEFAULT_LIVERY), string(STR_GREEN_CAR))));
     2: return string(STR_DASH,string(STR_OHAFU, 80, string(STR_CONCAT_2, string(STR_DEFAULT_LIVERY), string(STR_CONDUCTOR))));
 }
-item(FEAT_TRAINS, item_80_series){
+item(FEAT_TRAINS, item_80_series, 0080){
     property {
         name: string(STR_NAME_80_SERIES);
         climates_available: ALL_CLIMATES;
@@ -985,7 +985,7 @@ switch(FEAT_TRAINS, SELF, sw_generater_car_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH,string(STR_HONI, 80, string(STR_SILVER)));
     1: return string(STR_DASH,string(STR_HONI, 80, string(STR_CONCAT_2_DASH_BL, string(STR_DKGREEN), string(STR_SILVER))));
 }
-item(FEAT_TRAINS, item_generater_car){
+item(FEAT_TRAINS, item_generater_car, 9001){
     property {
         name: string(STR_NAME_GERENATER_CAR_TRAIN);
         climates_available: ALL_CLIMATES;
@@ -1004,7 +1004,7 @@ item(FEAT_TRAINS, item_generater_car){
         reliability_decay: 20;
         speed: param_speed_160_to_200;
         power: 0 kW;
-        cargo_capacity: 100;
+        cargo_capacity: 1;
         cargo_age_period: 185;
         weight: 24 ton;
         tractive_effort_coefficient: 0;
@@ -1025,20 +1025,21 @@ item(FEAT_TRAINS, item_generater_car){
             string(STR_GENERATER_CAR_DESC),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))));
         cargo_subtype_text: sw_generater_car_cargo_subtype_text;
+        cargo_capacity: return 0;
         purchase: spriteset_generater_car_purchase;
         default: sw_generater_car_graphic;
     }
 }//sort
 sort(FEAT_TRAINS, [
-    item_mucar,
-    item_generater_car,
-    item_123_series,
-    item_521_series,
-    item_600_series,
-    item_2000_series,
-    item_N2000_series,
-    item_EH1000_series,
-    item_80_series
+    9000,
+    9001,
+    0123,
+    0521,
+    0600,
+    2000,
+    2001,
+    1000,
+    0080
 ]);
 /*command list
     build: python3 build.py --entry src/ngft.pnml --merge Narrow-Gauge-fast-train/ngft.nml
