@@ -3,10 +3,10 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, cargo_subtype % 2){
     1: return param_speed_160_to_200;
 }
 switch(FEAT_TRAINS, SELF, sw_EF1000_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_SPACE), string(STR_LIVERY, string(STR_RED))));
-    1: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_HIGH_SPEED_TYPE,160), string(STR_LIVERY, string(STR_RED))));
-    2: return string(STR_DASH, string(STR_COMPANY, string(STR_SPACE)));
-    3: return string(STR_DASH, string(STR_COMPANY, string(STR_HIGH_SPEED_TYPE, 160)));
+    0: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_BAR), string(STR_LIVERY, string(STR_RED))));
+    1: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_HIGH_SPEED_TYPE,160), string(STR_BAR), string(STR_LIVERY, string(STR_RED))));
+    2: return string(STR_DASH, string(STR_COMPANY));
+    3: return string(STR_DASH, string(STR_CONCAT_2, string(STR_COMPANY), string(STR_HIGH_SPEED_TYPE, 160)));
     return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_default_front_graphic, train_is_driving_backwards){
