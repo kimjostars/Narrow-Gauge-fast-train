@@ -3,6 +3,6 @@ switch(FEAT_TRAINS, SELF, sw_generater_car_graphic, cargo_subtype){
     1: return spriteset_generater_car_80;
 }
 switch(FEAT_TRAINS, SELF, sw_generater_car_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH,string(STR_HONI,80));
-    1: return string(STR_DASH,string(STR_HONI,80));
+    0: return string(STR_DASH,string(STR_HONI,80,string(STR_SILVER)));
+    1: return string(STR_DASH,string(STR_HONI,80,string(STR_CONCAT_2_DASH_BL,string(STR_DKGREEN),string(STR_SILVER))));
 }
