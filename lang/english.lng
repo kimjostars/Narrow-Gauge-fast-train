@@ -133,6 +133,7 @@ STR_NAME_GERENATER_CAR_TRAIN :[NGFT] Generater Car
 STR_GENERATER_CAR_DESC :It is a train equipped with a diesel generator to supply power to passenger trains, refrigerated containers, and refrigerated freight cars.
 
 STR_COMPANY :{GREEN}Company Color {STRING}
+STR_GENERAL_CAR :{SILVER}General Car
 STR_GREEN_CAR :{GREEN}Green Car
 STR_CONDUCTOR :{BLACK}Deputy Director's Office
 STR_HIGH_SPEED_TYPE :{BLACK}(High speed type) is set to a maximum speed of {COMMA}km/h.
@@ -168,15 +169,12 @@ STR_2000_1_PENETRATING :penetrating type
 STR_NAME_N2000_TRAINS :N2000 serise {WHITE}(DMU){BLACK}
 
 STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}
-STR_EH1000_SERIES_JF_R :{STRING} {RED}Default Livery {STRING}
-
 STR_EH1000_CONCEPT :EH1000 is a train designed for high-speed operation of long trains. It features a co-co+co-co bogie arrangement and is heavy. Due to this, it has high power output and exerts high pressure on the tracks, making it difficult to operate on low-grade railways.
 
 STR_NAME_80_SERIES :[NGFT] 80 series
-STR_80_DEFAULT_CAR :{DKBLUE}Default Livery {STRING}
 
 #color Livery
-STR_LIVERY :{BLACK}Livery
+STR_LIVERY :{STRING} {BLACK}Livery
 STR_DEFAULT_LIVERY :{BLACK}Default Livery
 STR_WHITH :{WHITE}Whith
 STR_GRAY :{GRAY}Gray
