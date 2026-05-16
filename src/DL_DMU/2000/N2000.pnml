@@ -2,7 +2,7 @@
 
 #include "N2000_switch.pnml"
 
-item(FEAT_TRAINS, item_N2000_series){
+item(FEAT_TRAINS, item_N2000_series, 2001){
     property {
         name: string(STR_NAME_N2000_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
@@ -33,7 +33,7 @@ item(FEAT_TRAINS, item_N2000_series){
         curve_speed_mod: 70;
         bitmask_vehicle_info: 0;
         length: 8;
-        variant_group: item_2000_series;
+        variant_group: 2000;
     }
     graphics {
         additional_text:

@@ -2,7 +2,7 @@
 
 #include "80_switch.pnml"
 
-item(FEAT_TRAINS, item_80_series){
+item(FEAT_TRAINS, item_80_series, 0080){
     property {
         name: string(STR_NAME_80_SERIES);
         climates_available: ALL_CLIMATES;

@@ -1,6 +1,6 @@
 spriteset(spriteset_mucar, "gfx/mucar/mucar.png") {tmpl_32_train_basic(0, 0)}
 spriteset(spriteset_mucar_purchase, "gfx/mucar/mucar_purchase.png"){tmpl_purchase_single_head(0, 0)}
-item(FEAT_TRAINS, item_mucar){
+item(FEAT_TRAINS, item_mucar, 9000){
     property {
         name: string(STR_MUCAR_NAME);
         climates_available: ALL_CLIMATES;

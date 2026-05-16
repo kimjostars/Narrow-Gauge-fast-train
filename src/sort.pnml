@@ -1,11 +1,11 @@
 sort(FEAT_TRAINS, [
-    item_mucar,
-    item_generater_car,
-    item_123_series,
-    item_521_series,
-    item_600_series,
-    item_2000_series,
-    item_N2000_series,
-    item_EH1000_series,
-    item_80_series
+    9000,
+    9001,
+    0123,
+    0521,
+    0600,
+    2000,
+    2001,
+    1000,
+    0080
 ]);

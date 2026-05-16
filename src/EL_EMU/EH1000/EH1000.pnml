@@ -2,7 +2,7 @@
 
 #include "EH1000_switch.pnml"
 
-item(FEAT_TRAINS, item_EH1000_series){
+item(FEAT_TRAINS, item_EH1000_series, 1000){
     property {
         name: string(STR_NAME_EH1000_TRAINS);
         track_type: TR_1067_AC_DC;

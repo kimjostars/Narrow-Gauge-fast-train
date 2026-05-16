@@ -2,7 +2,7 @@
 
 #include "600_switch.pnml"
 
-item(FEAT_TRAINS, item_600_series){
+item(FEAT_TRAINS, item_600_series, 0600){
     property {
         name: string(STR_NAME_600_TRAINS);
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);

@@ -2,7 +2,7 @@
 
 #include "generater_car_switch.pnml"
 
-item(FEAT_TRAINS, item_generater_car){
+item(FEAT_TRAINS, item_generater_car, 9001){
     property {
         name: string(STR_NAME_GERENATER_CAR_TRAIN);
         climates_available: ALL_CLIMATES;
