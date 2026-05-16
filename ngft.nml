@@ -834,8 +834,8 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, cargo_subtype % 2){
     1: return param_speed_160_to_200;
 }
 switch(FEAT_TRAINS, SELF, sw_EF1000_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_BAR), string(STR_LIVERY, string(STR_RED))));
-    1: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_HIGH_SPEED_TYPE,160), string(STR_BAR), string(STR_LIVERY, string(STR_RED))));
+    0: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_RED), string(STR_GRAY))));
+    1: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_HIGH_SPEED_TYPE,160), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_RED), string(STR_GRAY))));
     2: return string(STR_DASH, string(STR_COMPANY));
     3: return string(STR_DASH, string(STR_CONCAT_2, string(STR_COMPANY), string(STR_HIGH_SPEED_TYPE, 160)));
     return CB_RESULT_NO_TEXT;
@@ -927,9 +927,9 @@ switch(FEAT_TRAINS, SELF, sw_80_series_graphic, cargo_subtype){
     2: return spriteset_80_series_default_garder;
 }
 switch(FEAT_TRAINS, SELF, sw_80_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH,string(STR_OHA, 80, string(STR_CONCAT_2,string(STR_DEFAULT_LIVERY),string(STR_GENERAL_CAR))));
-    1: return string(STR_DASH,string(STR_ORO, 80, string(STR_CONCAT_2,string(STR_DEFAULT_LIVERY),string(STR_GREEN_CAR))));
-    2: return string(STR_DASH,string(STR_OHAFU, 80, string(STR_CONCAT_2,string(STR_DEFAULT_LIVERY),string(STR_CONDUCTOR))));
+    0: return string(STR_DASH,string(STR_OHA, 80, string(STR_CONCAT_2, string(STR_DEFAULT_LIVERY), string(STR_GENERAL_CAR))));
+    1: return string(STR_DASH,string(STR_ORO, 80, string(STR_CONCAT_2, string(STR_DEFAULT_LIVERY), string(STR_GREEN_CAR))));
+    2: return string(STR_DASH,string(STR_OHAFU, 80, string(STR_CONCAT_2, string(STR_DEFAULT_LIVERY), string(STR_CONDUCTOR))));
 }
 item(FEAT_TRAINS, item_80_series){
     property {
@@ -983,7 +983,7 @@ switch(FEAT_TRAINS, SELF, sw_generater_car_graphic, cargo_subtype){
 }
 switch(FEAT_TRAINS, SELF, sw_generater_car_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH,string(STR_HONI, 80, string(STR_SILVER)));
-    1: return string(STR_DASH,string(STR_HONI, 80, string(STR_CONCAT_2_DASH_BL,string(STR_DKGREEN),string(STR_SILVER))));
+    1: return string(STR_DASH,string(STR_HONI, 80, string(STR_CONCAT_2_DASH_BL, string(STR_DKGREEN), string(STR_SILVER))));
 }
 item(FEAT_TRAINS, item_generater_car){
     property {
