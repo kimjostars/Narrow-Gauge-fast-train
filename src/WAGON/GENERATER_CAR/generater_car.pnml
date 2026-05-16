@@ -21,7 +21,7 @@ item(FEAT_TRAINS, item_generater_car){
         reliability_decay: 20;
         speed: param_speed_160_to_200;
         power: 0 kW;
-        cargo_capacity: 100;
+        cargo_capacity: 1;
         cargo_age_period: 185;
         weight: 24 ton;
         tractive_effort_coefficient: 0;
@@ -42,6 +42,7 @@ item(FEAT_TRAINS, item_generater_car){
             string(STR_GENERATER_CAR_DESC),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))));
         cargo_subtype_text: sw_generater_car_cargo_subtype_text;
+        cargo_capacity: return 0;
         purchase: spriteset_generater_car_purchase;
         default: sw_generater_car_graphic;
     }
