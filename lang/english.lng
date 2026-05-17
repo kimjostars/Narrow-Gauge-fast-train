@@ -130,7 +130,7 @@ STR_CANNOT_CAR :{COMMA}Car Must Connect.
 STR_MUCAR_NAME :[NGFT] Multi Unit Car (MU)
 STR_MU_DESC :It can be attached to a self-propelled vehicle and used as a passenger car for the corresponding train.
 
-STR_NAME_GERENATER_CAR_TRAIN :HONI 80
+STR_NAME_GERENATER_CAR_TRAIN :[NGFT] Generator Car
 STR_GENERATER_CAR_DESC :It is a train equipped with a diesel generator to supply power to passenger trains, refrigerated containers, and refrigerated freight cars.
 
 STR_COMPANY :{GREEN}Company Color
