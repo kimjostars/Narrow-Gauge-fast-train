@@ -1,0 +1,37 @@
+#include "driving_car_graphic.pnml"
+
+#include "driving_car_switch.pnml"
+
+item(FEAT_TRAINS, item_driving_car, 9002){
+    property {
+        name: string(STR_NAME_DRIVENG_CAR);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2020,01,01);
+        track_type: TR_1067_NE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT,TRAIN_FLAG_2CC);
+        extra_flags: bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        ai_special_flag: AI_FLAG_PASSENGER;
+        ai_engine_rank: 0;
+        vehicle_life: 60;
+        cost_factor: 64;
+        running_cost_factor: 6;
+        reliability_decay: 20;
+        speed: 0 km/h;
+        power: 0 kW;
+        weight: 28 ton;
+        tractive_effort_coefficient: 0;
+        air_drag_coefficient: 0.07;
+        reliability_decay: 20;
+        running_cost_base: RUNNING_COST_STEAM;
+        dual_headed: 0;
+        length: 8;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+    }
+    graphics {
+        default: spriteset_80_series_default;
+    }
+}

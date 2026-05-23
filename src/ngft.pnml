@@ -27,6 +27,8 @@
 #include "WAGON/80/80.pnml"
 //generater car
 #include "WAGON/GENERATER_CAR/generater_car.pnml"
+//driving car
+#include "WAGON/DRIVING_CAR/driving_car.pnml"
 //sort
 #include "sort.pnml"
 

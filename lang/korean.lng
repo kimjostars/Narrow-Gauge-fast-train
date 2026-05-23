@@ -127,6 +127,8 @@ STR_MU_DESC :동차형 차량에 붙여서 해당열차의 객차로 사용가�
 STR_NAME_GERENATER_CAR_TRAIN :[NGFT] 발전차
 STR_GENERATER_CAR_DESC :객차, 냉동컨테이너, 냉동화차에 전력을 공급위해 사용되는 디젤발전기가 갖춰진 열차입니다.
 
+STR_NAME_DRIVENG_CAR :[NGFT] 운전객차
+
 STR_COMPANY :{GREEN}회사색상
 STR_AUTOFORM :{GREEN}자동조성
 STR_GENERAL_CAR :{SILVER}일반실

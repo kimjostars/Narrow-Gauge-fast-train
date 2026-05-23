@@ -133,6 +133,8 @@ STR_MU_DESC :It can be attached to a self-propelled vehicle and used as a passen
 STR_NAME_GERENATER_CAR_TRAIN :[NGFT] Generator Car
 STR_GENERATER_CAR_DESC :It is a train equipped with a diesel generator to supply power to passenger trains, refrigerated containers, and refrigerated freight cars.
 
+STR_NAME_DRIVENG_CAR :[NGFT] Driving Car
+
 STR_COMPANY :{GREEN}Company Color
 STR_AUTOFORM :{GREEN}Auto Formation
 STR_GENERAL_CAR :{SILVER}General Car

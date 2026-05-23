@@ -40,7 +40,8 @@ item(FEAT_TRAINS, item_generater_car, 9001){
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
             string(STR_GENERATER_CAR_DESC),
-            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))));
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))),
+            string(STR_LIVERIES,string(LV_VARIOUS)));
         cargo_subtype_text: sw_generater_car_cargo_subtype_text;
         cargo_capacity: return 0;
         purchase: spriteset_generater_car_purchase;

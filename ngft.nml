@@ -994,7 +994,8 @@ item(FEAT_TRAINS, item_80_series, 0080){
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
-            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))));
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))),
+            string(STR_LIVERIES,string(LV_VARIOUS)));
         cargo_subtype_text: sw_80_series_cargo_subtype_text;
         purchase: spriteset_80_series_purchase;
         default: sw_80_series_graphic;
@@ -1050,16 +1051,53 @@ item(FEAT_TRAINS, item_generater_car, 9001){
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
             string(STR_GENERATER_CAR_DESC),
-            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))));
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))),
+            string(STR_LIVERIES,string(LV_VARIOUS)));
         cargo_subtype_text: sw_generater_car_cargo_subtype_text;
         cargo_capacity: return 0;
         purchase: spriteset_generater_car_purchase;
         default: sw_generater_car_graphic;
     }
+}//driving car
+
+
+item(FEAT_TRAINS, item_driving_car, 9002){
+    property {
+        name: string(STR_NAME_DRIVENG_CAR);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2020,01,01);
+        track_type: TR_1067_NE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT,TRAIN_FLAG_2CC);
+        extra_flags: bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        ai_special_flag: AI_FLAG_PASSENGER;
+        ai_engine_rank: 0;
+        vehicle_life: 60;
+        cost_factor: 64;
+        running_cost_factor: 6;
+        reliability_decay: 20;
+        speed: 0 km/h;
+        power: 0 kW;
+        weight: 28 ton;
+        tractive_effort_coefficient: 0;
+        air_drag_coefficient: 0.07;
+        reliability_decay: 20;
+        running_cost_base: RUNNING_COST_STEAM;
+        dual_headed: 0;
+        length: 8;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+    }
+    graphics {
+        default: spriteset_80_series_default;
+    }
 }//sort
 sort(FEAT_TRAINS, [
     9000,
     9001,
+    9002,
     0123,
     0521,
     0600,
