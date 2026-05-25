@@ -16,10 +16,11 @@ item(FEAT_TRAINS, item_driving_car, 9002){
         ai_special_flag: AI_FLAG_PASSENGER;
         ai_engine_rank: 0;
         vehicle_life: 60;
-        cost_factor: 64;
-        running_cost_factor: 6;
+        cost_factor: 80;
+        running_cost_factor: 11;
         reliability_decay: 20;
-        speed: 0 km/h;
+        speed: param_speed_160_to_200;
+        cargo_capacity: 33;
         power: 0 kW;
         weight: 28 ton;
         tractive_effort_coefficient: 0;
@@ -32,6 +33,13 @@ item(FEAT_TRAINS, item_driving_car, 9002){
         bitmask_vehicle_info: 0;
     }
     graphics {
-        default: spriteset_80_series_default;
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_GENERATER_CAR_DESC),
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))),
+            string(STR_LIVERIES,string(LV_VARIOUS)));
+        purchase: spriteset_driving_car_purchase;
+        default: sw_driving_car_80;
     }
 }

@@ -1,0 +1,4 @@
+spriteset(spriteset_driving_car_80_front, "gfx/DRIVING_CAR/driving_car_80.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_driving_car_80_back, "gfx/DRIVING_CAR/driving_car_80.png"){tmpl_32_train_main(0, 31)}
+
+spriteset(spriteset_driving_car_purchase, "gfx/DRIVING_CAR/driving_car_purchase.png"){tmpl_purchase_single_head(0, 0)}

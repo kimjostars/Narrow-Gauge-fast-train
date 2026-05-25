@@ -1020,7 +1020,7 @@ item(FEAT_TRAINS, item_generater_car, 9001){
         introduction_date: date(2020,01,01);
         track_type: TR_1067_NE;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+        misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
         refit_cost: 0;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         ai_special_flag: AI_FLAG_PASSENGER;
@@ -1059,8 +1059,14 @@ item(FEAT_TRAINS, item_generater_car, 9001){
         default: sw_generater_car_graphic;
     }
 }//driving car
+spriteset(spriteset_driving_car_80_front, "gfx/DRIVING_CAR/driving_car_80.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_driving_car_80_back, "gfx/DRIVING_CAR/driving_car_80.png"){tmpl_32_train_main(0, 31)}
 
-
+spriteset(spriteset_driving_car_purchase, "gfx/DRIVING_CAR/driving_car_purchase.png"){tmpl_purchase_single_head(0, 0)}
+switch(FEAT_TRAINS, SELF, sw_driving_car_80, train_is_driving_backwards){
+    0: return spriteset_driving_car_80_front;
+    1: return spriteset_driving_car_80_back;
+}
 item(FEAT_TRAINS, item_driving_car, 9002){
     property {
         name: string(STR_NAME_DRIVENG_CAR);
@@ -1075,10 +1081,11 @@ item(FEAT_TRAINS, item_driving_car, 9002){
         ai_special_flag: AI_FLAG_PASSENGER;
         ai_engine_rank: 0;
         vehicle_life: 60;
-        cost_factor: 64;
-        running_cost_factor: 6;
+        cost_factor: 80;
+        running_cost_factor: 11;
         reliability_decay: 20;
-        speed: 0 km/h;
+        speed: param_speed_160_to_200;
+        cargo_capacity: 33;
         power: 0 kW;
         weight: 28 ton;
         tractive_effort_coefficient: 0;
@@ -1091,7 +1098,14 @@ item(FEAT_TRAINS, item_driving_car, 9002){
         bitmask_vehicle_info: 0;
     }
     graphics {
-        default: spriteset_80_series_default;
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_GENERATER_CAR_DESC),
+            string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))),
+            string(STR_LIVERIES,string(LV_VARIOUS)));
+        purchase: spriteset_driving_car_purchase;
+        default: sw_driving_car_80;
     }
 }//sort
 sort(FEAT_TRAINS, [

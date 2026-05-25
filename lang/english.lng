@@ -175,7 +175,7 @@ STR_NAME_N2000_TRAINS :N2000 serise {WHITE}(DMU){BLACK}
 STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}
 STR_EH1000_CONCEPT :EH1000 is a train designed for high-speed operation of long trains. It features a co-co+co-co bogie arrangement and is heavy. Due to this, it has high power output and exerts high pressure on the tracks, making it difficult to operate on low-grade railways.
 
-STR_NAME_80_SERIES :[NGFT] 80 series
+STR_NAME_80_SERIES :80 series
 
 #color Livery
 STR_LIVERY :{STRING} {BLACK}Livery

@@ -1,0 +1,4 @@
+switch(FEAT_TRAINS, SELF, sw_driving_car_80, train_is_driving_backwards){
+    0: return spriteset_driving_car_80_front;
+    1: return spriteset_driving_car_80_back;
+}

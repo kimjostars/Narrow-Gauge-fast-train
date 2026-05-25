@@ -169,7 +169,7 @@ STR_NAME_N2000_TRAINS :N2000계 {WHITE}(DMU){BLACK}
 STR_NAME_EH1000_TRAINS :EH1000 {WHITE}(EL){BLACK}
 STR_EH1000_CONCEPT :EH1000은 장대열차의 고속운행을 위해 만들어진 열차입니다. co-co+co-co 배열의 대차를 가지며 중량이 높습니다. 이로인해 출력이 높고 선로에 가해지는 부하가 높아 저수준의 철도에는 운행이 힘들것입니다.
 
-STR_NAME_80_SERIES :[NGFT] 80계 객차
+STR_NAME_80_SERIES :80계 객차
 
 #color Livery
 STR_LIVERY :{STRING} {BLACK}도색
