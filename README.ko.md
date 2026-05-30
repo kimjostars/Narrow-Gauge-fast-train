@@ -15,8 +15,9 @@
 이세트의 기본언어는 한국어 입니다.
 다른언어로 번역하고 싶으시다면 이 Github 프로젝트에 Pull Request를 열어주세요.
 Pull Request를 열 줄 모르신다면, Issues에 올리셔도 괜찮습니다. 이 파일을 번역하시면 됩니다.
-- **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : 한국어
-번역은 언제나 환영입니다.
+- **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : 한국어 언어파일
+
+다른언어로의 번역은 언제나 환영합니다.
 ### Contributors
 코드 : kimjostars, irice7350
 
