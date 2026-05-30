@@ -20,7 +20,6 @@ item(FEAT_TRAINS, item_2000_series, 2000){
         refit_cost: 0;
         dual_headed: 0;
         track_type: TR_1067_NE;
-        speed: param_speed_120_to_160;
         weight: 39 ton;
         power: 660 hp;
         cargo_capacity: param_cargo_capacity_express;
@@ -45,6 +44,7 @@ item(FEAT_TRAINS, item_2000_series, 2000){
             string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JR,string(STR_JR_SHIKOKU)),string(STR_TOSA))));
         can_attach_wagon: sw_2000_series_attach_vehid;
         cargo_subtype_text: sw_2000_serise_head_cargo_subtype_text;
+        speed: param_speed_120_to_160;
         start_stop: sw_2000_series_start_stop;
         purchase: spriteset_2000_series_purchase;
         default: sw_2000_series_head_graphics;

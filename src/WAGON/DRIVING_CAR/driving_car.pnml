@@ -19,8 +19,8 @@ item(FEAT_TRAINS, item_driving_car, 9002){
         cost_factor: 80;
         running_cost_factor: 11;
         reliability_decay: 20;
-        speed: param_speed_160_to_200;
-        cargo_capacity: 33;
+        cargo_capacity: param_cargo_capacity_express;
+        loading_speed: param_loading_1D;
         power: 0 kW;
         weight: 28 ton;
         tractive_effort_coefficient: 0;
@@ -39,6 +39,7 @@ item(FEAT_TRAINS, item_driving_car, 9002){
             string(STR_USAGE, string(STR_DRIVENG_CAR_DESC)),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))),
             string(STR_LIVERIES,string(LV_VARIOUS)));
+        speed: param_speed_160_to_200;
         purchase: spriteset_driving_car_purchase;
         default: sw_driving_car_80;
     }

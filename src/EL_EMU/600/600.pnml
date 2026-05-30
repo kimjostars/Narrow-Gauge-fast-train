@@ -18,7 +18,6 @@ item(FEAT_TRAINS, item_600_series, 0600){
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
         refit_cost: 0;
         track_type: [TR_1067_AC_DC,TR_1435_AC_DC];
-        speed: param_speed_160_to_200;
         ai_special_flag: AI_FLAG_PASSENGER;
         power: 900 kW;
         running_cost_base: RUNNING_COST_ELECTRIC;
@@ -44,6 +43,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL,string(STR_JR_PASSENGER)))));
         can_attach_wagon: sw_600_series_attach_wagon;
+        speed: param_speed_160_to_200;
         purchase: spriteset_600_series_purchase;
         default: sw_600_series_graphics;
     }

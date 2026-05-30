@@ -585,7 +585,6 @@ item(FEAT_TRAINS, item_600_series, 0600){
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
         refit_cost: 0;
         track_type: [TR_1067_AC_DC,TR_1435_AC_DC];
-        speed: param_speed_160_to_200;
         ai_special_flag: AI_FLAG_PASSENGER;
         power: 900 kW;
         running_cost_base: RUNNING_COST_ELECTRIC;
@@ -611,6 +610,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL,string(STR_JR_PASSENGER)))));
         can_attach_wagon: sw_600_series_attach_wagon;
+        speed: param_speed_160_to_200;
         purchase: spriteset_600_series_purchase;
         default: sw_600_series_graphics;
     }
@@ -703,7 +703,6 @@ item(FEAT_TRAINS, item_2000_series, 2000){
         refit_cost: 0;
         dual_headed: 0;
         track_type: TR_1067_NE;
-        speed: param_speed_120_to_160;
         weight: 39 ton;
         power: 660 hp;
         cargo_capacity: param_cargo_capacity_express;
@@ -728,6 +727,7 @@ item(FEAT_TRAINS, item_2000_series, 2000){
             string(STR_OPERATOR,string(STR_CONCAT_2_DASH,string(STR_JR,string(STR_JR_SHIKOKU)),string(STR_TOSA))));
         can_attach_wagon: sw_2000_series_attach_vehid;
         cargo_subtype_text: sw_2000_serise_head_cargo_subtype_text;
+        speed: param_speed_120_to_160;
         start_stop: sw_2000_series_start_stop;
         purchase: spriteset_2000_series_purchase;
         default: sw_2000_series_head_graphics;
@@ -780,7 +780,6 @@ item(FEAT_TRAINS, item_N2000_series, 2001){
         refit_cost: 0;
         dual_headed: 1;
         track_type: TR_1067_NE;
-        speed: param_speed_130_to_160;
         weight: 39 ton;
         power: 710 hp;
         cargo_capacity: param_cargo_capacity_express;
@@ -805,6 +804,7 @@ item(FEAT_TRAINS, item_N2000_series, 2001){
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_JR_SHIKOKU))));
         can_attach_wagon: sw_2000_series_attach_vehid;
+        speed: param_speed_130_to_160;
         start_stop: sw_2000_series_start_stop;
         purchase: spriteset_N2000_series_purchase;
         default: sw_N2000_series_head_graphic;
@@ -971,7 +971,6 @@ item(FEAT_TRAINS, item_80_series, 0080){
         ai_special_flag: AI_FLAG_PASSENGER;
         ai_engine_rank: 0;
         vehicle_life: 60;
-        speed: param_speed_160_to_200;
         loading_speed: param_loading_1D;
         cost_factor: 80;
         running_cost_factor: 10;
@@ -997,6 +996,7 @@ item(FEAT_TRAINS, item_80_series, 0080){
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))),
             string(STR_LIVERIES,string(LV_VARIOUS)));
         cargo_subtype_text: sw_80_series_cargo_subtype_text;
+        speed: param_speed_160_to_200;
         purchase: spriteset_80_series_purchase;
         default: sw_80_series_graphic;
     }
@@ -1030,7 +1030,6 @@ item(FEAT_TRAINS, item_generater_car, 9001){
         cost_factor: 80;
         running_cost_factor: 10;
         reliability_decay: 20;
-        speed: param_speed_160_to_200;
         power: 0 kW;
         cargo_capacity: 1;
         cargo_age_period: 185;
@@ -1055,6 +1054,7 @@ item(FEAT_TRAINS, item_generater_car, 9001){
             string(STR_LIVERIES,string(LV_VARIOUS)));
         cargo_subtype_text: sw_generater_car_cargo_subtype_text;
         cargo_capacity: return 0;
+        speed: param_speed_160_to_200;
         purchase: spriteset_generater_car_purchase;
         default: sw_generater_car_graphic;
     }
@@ -1084,8 +1084,8 @@ item(FEAT_TRAINS, item_driving_car, 9002){
         cost_factor: 80;
         running_cost_factor: 11;
         reliability_decay: 20;
-        speed: param_speed_160_to_200;
-        cargo_capacity: 33;
+        cargo_capacity: param_cargo_capacity_express;
+        loading_speed: param_loading_1D;
         power: 0 kW;
         weight: 28 ton;
         tractive_effort_coefficient: 0;
@@ -1104,6 +1104,7 @@ item(FEAT_TRAINS, item_driving_car, 9002){
             string(STR_USAGE, string(STR_DRIVENG_CAR_DESC)),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))),
             string(STR_LIVERIES,string(LV_VARIOUS)));
+        speed: param_speed_160_to_200;
         purchase: spriteset_driving_car_purchase;
         default: sw_driving_car_80;
     }

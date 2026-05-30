@@ -15,7 +15,6 @@ item(FEAT_TRAINS, item_80_series, 0080){
         ai_special_flag: AI_FLAG_PASSENGER;
         ai_engine_rank: 0;
         vehicle_life: 60;
-        speed: param_speed_160_to_200;
         loading_speed: param_loading_1D;
         cost_factor: 80;
         running_cost_factor: 10;
@@ -41,6 +40,7 @@ item(FEAT_TRAINS, item_80_series, 0080){
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR,string(STR_JR_PASSENGER)))),
             string(STR_LIVERIES,string(LV_VARIOUS)));
         cargo_subtype_text: sw_80_series_cargo_subtype_text;
+        speed: param_speed_160_to_200;
         purchase: spriteset_80_series_purchase;
         default: sw_80_series_graphic;
     }
