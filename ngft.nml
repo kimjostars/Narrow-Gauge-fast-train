@@ -1101,7 +1101,7 @@ item(FEAT_TRAINS, item_driving_car, 9002){
         additional_text:
             string(STR_TRAIN_DESC,
             string(STR_NARROWGAUGE),
-            string(STR_GENERATER_CAR_DESC),
+            string(STR_DRIVENG_CAR_DESC),
             string(STR_OPERATOR,string(STR_VIRTUAL,string(STR_JR))),
             string(STR_LIVERIES,string(LV_VARIOUS)));
         purchase: spriteset_driving_car_purchase;

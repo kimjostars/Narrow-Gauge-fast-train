@@ -128,6 +128,7 @@ STR_NAME_GERENATER_CAR_TRAIN :[NGFT] 발전차
 STR_GENERATER_CAR_DESC :객차, 냉동컨테이너, 냉동화차에 전력을 공급위해 사용되는 디젤발전기가 갖춰진 열차입니다.
 
 STR_NAME_DRIVENG_CAR :[NGFT] 운전객차
+STR_DRIVENG_CAR_DESC :운전객차는 객차형열차의 뒤에 붙어 회차후 기관차를 돌리지않고 감속없이 운행할수 있도록합니다.
 
 STR_COMPANY :{GREEN}회사색상
 STR_AUTOFORM :{GREEN}자동조성
