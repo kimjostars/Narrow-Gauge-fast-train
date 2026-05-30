@@ -101,6 +101,8 @@ STR_LONG :{SILVER}Long cargo
 ###Gauge
 STR_NARROWGAUGE :Gauge:{GOLD} Narrow (1,067mm)
 STR_STANDARDGAUGE:Gauge :{GOLD} Standard (1,435mm)
+STR_NARROW :Narrow (1,067mm)
+STR_STANDARD :Standard (1,435mm)
 
 ###Loading Speed
 STR_LOAD_SPEED :Loading Speed: {GOLD}{STRING}

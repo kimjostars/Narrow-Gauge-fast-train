@@ -95,6 +95,8 @@ STR_LONG :{SILVER}장대 화물
 ###Gauge
 STR_NARROWGAUGE :궤간:{GOLD} 협궤 (1,067mm)
 STR_STANDARDGAUGE :궤간:{GOLD} 표준궤 (1,435mm)
+STR_NARROW :협궤 (1,067mm)
+STR_STANDARD :표준궤 (1,435mm)
 
 ###Loading Speed
 STR_LOAD_SPEED :출입문수: {GOLD}{STRING}

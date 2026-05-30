@@ -17,7 +17,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         sprite_id: SPRITE_ID_NEW_TRAIN;
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
         refit_cost: 0;
-        track_type: TR_1067_AC_DC;
+        track_type: [TR_1067_AC_DC,TR_1435_AC_DC];
         speed: param_speed_160_to_200;
         ai_special_flag: AI_FLAG_PASSENGER;
         power: 900 kW;
@@ -37,7 +37,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
     graphics {
         additional_text:
             string(STR_TRAIN_DESC,
-            string(STR_NARROWGAUGE),
+            string(STR_CONCAT_2_DASH_BL, string(STR_NARROWGAUGE), string(STR_STANDARD)),
             string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
             string(STR_LOAD_SPEED,string(STR_DOORS,2)),
             string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
