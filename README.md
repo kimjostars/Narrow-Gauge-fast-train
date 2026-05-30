@@ -15,7 +15,8 @@ Compile: `nmlc -l ./lang/ ./{main file}.nml`
 The default language of this set is Korean.
 If you would like to translate it into another language, please open a Pull Request on this GitHub project.
 If you are not familiar with creating a Pull Request, you may also submit it via Issues. Please translate the following file:
-* **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : Korean
+* **[src/lang/korean.lng](https://github.com/kimjostars/Narrow-Gauge-fast-train/blob/main/src/lang/korean.lng)** : Korean Language file
+  
 Translations are always welcome.
 ### Contributors
 code : kimjostars, irice7350
