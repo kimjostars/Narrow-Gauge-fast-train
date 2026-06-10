@@ -575,12 +575,12 @@ item(FEAT_TRAINS, item_600_series, 0600){
         climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date: date(2000,01,01);
         model_life: 45;
-        vehicle_life: 30;
+        vehicle_life: 15;
         reliability_decay: 20;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         loading_speed: param_loading_2D;
-        cost_factor: 40;
-        running_cost_factor: 50;
+        cost_factor: 45;
+        running_cost_factor: 55;
         sprite_id: SPRITE_ID_NEW_TRAIN;
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC, TRAIN_FLAG_MU); 
         refit_cost: 0;
@@ -603,7 +603,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
     graphics {
         additional_text:
             string(STR_TRAIN_DESC,
-            string(STR_CONCAT_2_DASH_BL, string(STR_NARROWGAUGE), string(STR_STANDARD)),
+            string(STR_CONCAT_2_DASH, string(STR_NARROWGAUGE), string(STR_STANDARD)),
             string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
             string(STR_LOAD_SPEED,string(STR_DOORS,2)),
             string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
