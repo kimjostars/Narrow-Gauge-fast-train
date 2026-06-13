@@ -3,6 +3,7 @@
 #desc
 STR_NGFT_NAME :Narrow Gauge Fast Train SET {VERSION}
 STR_NGFT_DESC :Narrow Gauge Fast Train SET is a set of trains that can run over 200 km/h on 1067mm narrow guage. {}{RED}JP+ Track {BLACK}is required to run this newGRF. {}Code: Kimhostars {}Graphics: Kimjostars, raeun_cos, JP+(Asset used) {}Translation: irice7350
+STR_NGFT_URL :https://github.com/kimjostars/Narrow-Gauge-fast-train
 
 #parameters
 STR_NGFT_PURCHASE_COST_NAME :Purchase cost
