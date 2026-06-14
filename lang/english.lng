@@ -181,6 +181,8 @@ STR_EH1000_CONCEPT :EH1000 is a train designed for high-speed operation of long 
 
 STR_NAME_80_SERIES :80 series
 
+STR_NAME_MANI_40_SERIES :MANI 40 mail car
+
 #color Livery
 STR_LIVERY :{STRING} {BLACK}Livery
 STR_DEFAULT_LIVERY :{BLACK}Default Livery

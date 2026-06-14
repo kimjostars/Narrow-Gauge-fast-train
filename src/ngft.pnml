@@ -25,6 +25,8 @@
 #include "EL_EMU/EH1000/EH1000.pnml"
 //80
 #include "WAGON/80/80.pnml"
+//mani40
+#include "FREIGHT/MANI40/mani40.pnml"
 //generater car
 #include "WAGON/GENERATER_CAR/generater_car.pnml"
 //driving car
