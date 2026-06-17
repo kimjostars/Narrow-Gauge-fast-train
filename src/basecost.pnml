@@ -4,4 +4,6 @@ basecost {
 	PR_RUNNING_TRAIN_STEAM: param_running_cost +1;
 	PR_RUNNING_TRAIN_DIESEL: param_running_cost;
 	PR_RUNNING_TRAIN_ELECTRIC: param_running_cost;
+
+	PR_BUILD_RAIL	: param_rail_cost+1;
 }

@@ -14,10 +14,10 @@ grf {
             max_value: 3;
             def_value: 2;
             names: {
-                0: string(STR_NGFT_PURCHASE_COST_VERY_LOW);
-                1: string(STR_NGFT_PURCHASE_COST_LOW);
-                2: string(STR_NGFT_PURCHASE_COST_NOMAL);
-                3: string(STR_NGFT_PURCHASE_COST_HIGH);
+                0: string(STR_NGFT_COST_VERY_LOW);
+                1: string(STR_NGFT_COST_LOW);
+                2: string(STR_NGFT_COST_NOMAL);
+                3: string(STR_NGFT_COST_HIGH);
             };
         }
     }
@@ -30,10 +30,10 @@ grf {
             max_value: 3;
             def_value: 2;
             names: {
-                0: string(STR_NGFT_RUNNING_COST_VERY_LOW);
-                1: string(STR_NGFT_RUNNING_COST_LOW);
-                2: string(STR_NGFT_RUNNING_COST_NOMAL);
-                3: string(STR_NGFT_RUNNING_COST_HIGH);
+                0: string(STR_NGFT_COST_VERY_LOW);
+                1: string(STR_NGFT_COST_LOW);
+                2: string(STR_NGFT_COST_NOMAL);
+                3: string(STR_NGFT_COST_HIGH);
             };
         }
     }
@@ -77,6 +77,22 @@ grf {
             desc: string(STR_NGFT_HGIH_SPEED_DESC);
             def_value: 0;
             bit: 0;
+        }
+    }
+    param 5 { 
+        param_rail_cost {
+            type: int;
+            name: string(STR_NGFT_RAIL_COST);
+            desc: string(STR_NGFT_RAIL_COST);
+            min_value: 0;
+            max_value: 3;
+            def_value: 2;
+            names: {
+                0: string(STR_COST_VERY_LOW);
+                1: string(STR_COST_LOW);
+                2: string(STR_COST_NOMAL);
+                3: string(STR_COST_HIGH);
+            };
         }
     }
 }

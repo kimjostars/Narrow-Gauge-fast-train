@@ -8,16 +8,8 @@ STR_NGFT_URL :https://github.com/kimjostars/Narrow-Gauge-fast-train
 #parameters
 STR_NGFT_PURCHASE_COST_NAME :Purchase cost
 STR_NGFT_PURCHASE_COST_DESC :It is Purchase cost Defind
-STR_NGFT_PURCHASE_COST_VERY_LOW :Very Low
-STR_NGFT_PURCHASE_COST_LOW :Low
-STR_NGFT_PURCHASE_COST_NOMAL :Nomal (Default)
-STR_NGFT_PURCHASE_COST_HIGH :High
 STR_NGFT_RUNNING_COST_NAME : Running Cost
 STR_NGFT_RUNNING_COST_DESC : It is Running Cost Defind
-STR_NGFT_RUNNING_COST_VERY_LOW :Very Low
-STR_NGFT_RUNNING_COST_LOW :Low
-STR_NGFT_RUNNING_COST_NOMAL :Nomal (Default)
-STR_NGFT_RUNNING_COST_HIGH :High
 STR_NGFT_LOADING_SPEED_NAME :Loading Speed
 STR_NGFT_LOADING_SPEED_DESC :It is Loading Speed Defind
 STR_NGFT_LOADING_SPEED_VERY_SLOW :Very Slow
@@ -33,6 +25,10 @@ STR_NGFT_CARGO_CAPACITY_X2 :x2
 STR_NGFT_CARGO_CAPACITY_X4 :x4
 STR_NGFT_HGIH_SPEED_NAME :Improvement of train speed limits
 STR_NGFT_HGIH_SPEED_DESC :Enabling this setting increases the train speed limit.{}default value is disabled.
+STR_NGFT_COST_VERY_LOW :Very Low
+STR_NGFT_COST_LOW :Low
+STR_NGFT_COST_NOMAL :Nomal (Default)
+STR_NGFT_COST_HIGH :High
 
 #trains
 #commonness
@@ -182,6 +178,9 @@ STR_EH1000_CONCEPT :EH1000 is a train designed for high-speed operation of long 
 STR_NAME_80_SERIES :80 series
 
 STR_NAME_MANI_40_SERIES :MANI 40 mail car
+
+#track
+STR_NGFT_HIGH_SPEED_AC :{GOLD}Narrow High Speed Track {RED}(AC)
 
 #color Livery
 STR_LIVERY :{STRING} {BLACK}Livery
