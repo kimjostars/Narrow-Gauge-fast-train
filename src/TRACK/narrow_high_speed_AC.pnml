@@ -1,4 +1,4 @@
-#include "src/TRACK/narrow_hgh_speed_AC_graphics.pnml"
+#include "narrow_hgh_speed_AC_graphics.pnml"
 
 item(FEAT_RAILTYPES, track_narrow_high_speed_ac, 01) {
     property {
@@ -13,7 +13,7 @@ item(FEAT_RAILTYPES, track_narrow_high_speed_ac, 01) {
 
         station_graphics: RAILTYPE_STATION_NORMAL;
         acceleration_model: ACC_MODEL_RAIL;
-        speed_limit: 199 km/h;
+        speed_limit: 220 km/h;
         construction_cost: 12;
         maintenance_cost: 11;
         sort_order: 17;
@@ -24,5 +24,8 @@ item(FEAT_RAILTYPES, track_narrow_high_speed_ac, 01) {
         compatible_railtype_list: ["NAAN", "NBAN", "NCAN", "NDAN", "NEAN", "NFAN", "NGAN", "NHAN", "dAAN", "_AAE","_BAE", "NAAD", "NBAD", "NCAD", "NAAA", "NBAA", "NCAA", "NAAE", "NBAE", "NCAE", "NDAE", "NEAE", "NFAE", "NGAE", "NHAE", "dAAE", "dBAE"];
         powered_railtype_list: ["_AAE", "_BAE", "NAAA", "NBAA", "NCAA", "NAAE", "NBAE", "NCAE", "NDAE", "NEAE", "NFAE", "NGAE", "NHAE", "dAAE", "dBAE"];
         alternative_railtype_list: ["NABA", "NACA", "NADA", "NAEA", "IHE_"];
+    }
+    graphics {
+        gui: spriteset_track_gui;
     }
 }

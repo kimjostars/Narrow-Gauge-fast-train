@@ -1,0 +1,3 @@
+spriteset(spriteset_track_gui, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/track/track_gui.png"){
+    tmpl_gui(140,0,0)
+}

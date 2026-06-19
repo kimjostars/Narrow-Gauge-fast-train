@@ -31,6 +31,9 @@
 #include "WAGON/GENERATER_CAR/generater_car.pnml"
 //driving car
 #include "WAGON/DRIVING_CAR/driving_car.pnml"
+
+//track
+#include "TRACK/narrow_high_speed_AC.pnml"
 //sort
 #include "sort.pnml"
 

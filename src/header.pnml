@@ -82,16 +82,16 @@ grf {
     param 5 { 
         param_rail_cost {
             type: int;
-            name: string(STR_NGFT_RAIL_COST);
-            desc: string(STR_NGFT_RAIL_COST);
+            name: string(STR_NGFT_RAIL_COST_NAME);
+            desc: string(STR_NGFT_RAIL_COST_DESC);
             min_value: 0;
             max_value: 3;
             def_value: 2;
             names: {
-                0: string(STR_COST_VERY_LOW);
-                1: string(STR_COST_LOW);
-                2: string(STR_COST_NOMAL);
-                3: string(STR_COST_HIGH);
+                0: string(STR_NGFT_COST_VERY_LOW);
+                1: string(STR_NGFT_COST_LOW);
+                2: string(STR_NGFT_COST_NOMAL);
+                3: string(STR_NGFT_COST_HIGH);
             };
         }
     }

@@ -20,6 +20,8 @@ STR_NGFT_CARGO_CAPACITY_DESC :수송량를 설정합니다. {}"x1"로 설정하�
 STR_NGFT_CARGO_CAPACITY_default :x1 (기본값)
 STR_NGFT_HGIH_SPEED_NAME :열차 제한속도 향상
 STR_NGFT_HGIH_SPEED_DESC :이설정을 활성화하면 {RED}특급,{SILVER}가상{BLACK}열차의 제한속도가 열차에 따라 200km/h혹은 160km/h급으로 설정됩니다.{}기본값은 비활성입니다.
+STR_NGFT_RAIL_COST_NAME :고속 협궤 선로 건설비용
+STR_NGFT_RAIL_COST_DESC :고속 협궤 선로의 건설비용을 정의 합니다.
 STR_NGFT_COST_VERY_LOW :매우낮음
 STR_NGFT_COST_LOW :낮음
 STR_NGFT_COST_NOMAL :보통 (기본값)
