@@ -83,9 +83,9 @@ template tmpl_purchase_dual_head_32bpp(x, y){
 	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
 }
 //track
-template tmpl_gui (xVolt, y, tun) {
+template tmpl_gui (y, tun) {
     [ 0,    y,      11,      13,       7,       0]   // ↕
-    [ xVolt,y,      21,      13,       1,       2]   // ↗
+    [ 115,  y,      21,      13,       1,       2]   // ↗
     [ 40,   y,      21,      13,       1,       6]   // ↔
     [ 65,   y,      21,      13,       1,       2]   // ↘
     [ 90,   y,      20,      20,       1,       2]   // x

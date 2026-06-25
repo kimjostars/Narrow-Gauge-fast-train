@@ -2,7 +2,7 @@
 
 item(FEAT_RAILTYPES, track_narrow_high_speed_ac, 01) {
     property {
-        label: "NAHA";
+        label: "NCEA";
         introduction_date: date(2020, 1, 1);               
         name: string(STR_NGFT_HIGH_SPEED_AC);
         menu_text: string(STR_NGFT_HIGH_SPEED_AC);
@@ -16,14 +16,14 @@ item(FEAT_RAILTYPES, track_narrow_high_speed_ac, 01) {
         speed_limit: 220 km/h;
         construction_cost: 12;
         maintenance_cost: 11;
-        sort_order: 17;
+        sort_order: 37;
         map_colour: 164;
         curve_speed_multiplier: 2;
 
-        railtype_flags: bitmask(RAILTYPE_FLAG_CATENARY,RAILTYPE_FLAG_PRECOMBINED);
-        compatible_railtype_list: ["NAAN", "NBAN", "NCAN", "NDAN", "NEAN", "NFAN", "NGAN", "NHAN", "dAAN", "_AAE","_BAE", "NAAD", "NBAD", "NCAD", "NAAA", "NBAA", "NCAA", "NAAE", "NBAE", "NCAE", "NDAE", "NEAE", "NFAE", "NGAE", "NHAE", "dAAE", "dBAE"];
-        powered_railtype_list: ["_AAE", "_BAE", "NAAA", "NBAA", "NCAA", "NAAE", "NBAE", "NCAE", "NDAE", "NEAE", "NFAE", "NGAE", "NHAE", "dAAE", "dBAE"];
-        alternative_railtype_list: ["NABA", "NACA", "NADA", "NAEA", "IHE_"];
+        railtype_flags: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_PRECOMBINED);
+        compatible_railtype_list: ["NAAN", "RAIL", "NAAD", "NAAA", "NAAE", "NABE", "ELNG", "ELRL", "RAIL"];
+        introduces_railtype_list: ["NAAE", "NABE", "ELNG", "ELRL"];
+        powered_railtype_list: ["NAAA", "NAAE", "NAAN", "NABE", "ELNG", "ELRL"];
     }
     graphics {
         gui: spriteset_track_gui;
