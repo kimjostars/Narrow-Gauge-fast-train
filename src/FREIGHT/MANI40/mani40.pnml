@@ -1,3 +1,5 @@
+#include "mani40_graphic.pnml"
+
 item(FEAT_TRAINS, item_mani40_series, 7740){
     property {
         name: string(STR_NAME_MANI_40_SERIES);
@@ -30,7 +32,7 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
     }
     graphics {
         speed: param_speed_160_to_200;
-        purchase: spriteset_80_series_purchase;
+        purchase: spriteset_mani40_default;
         default: sw_80_series_graphic;
     }
 }

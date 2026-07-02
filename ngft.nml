@@ -1378,6 +1378,7 @@ item(FEAT_TRAINS, item_80_series, 0080){
         default: sw_80_series_graphic;
     }
 }//mani40
+spriteset(spriteset_mani40_default, "gfx/MANI40/mani40.png"){tmpl_32_train_main(0, 1)}
 item(FEAT_TRAINS, item_mani40_series, 7740){
     property {
         name: string(STR_NAME_MANI_40_SERIES);
@@ -1410,7 +1411,7 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
     }
     graphics {
         speed: param_speed_160_to_200;
-        purchase: spriteset_80_series_purchase;
+        purchase: spriteset_mani40_default;
         default: sw_80_series_graphic;
     }
 }//generater car
