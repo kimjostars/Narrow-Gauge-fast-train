@@ -34,6 +34,6 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
         speed: param_speed_160_to_200;
         purchase: spriteset_mani40_purchase;
 
-        default: spriteset_mani40_default;
+        default: spritegroup_mani40_default;
     }
 }
