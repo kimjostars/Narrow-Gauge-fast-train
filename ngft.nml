@@ -719,6 +719,7 @@ spriteset(spriteset_123_series_JC_W_3_DOOR, "gfx/123/123_series_JC_W_3_DOOR.png"
 spriteset(spriteset_123_series_JC_W_3_DOOR_rev, "gfx/123/123_series_JC_W_3_DOOR.png"){tmpl_32_train_basic(0, 27)}
 spriteset(spriteset_123_series_JE_RW, "gfx/123/123_series_JE_RW.png"){tmpl_32_train_basic(0, 1)}
 spriteset(spriteset_123_series_JE_RW_rev, "gfx/123/123_series_JE_RW.png"){tmpl_32_train_basic(0, 27)}
+
 spriteset(spriteset_123_series_purchase, "gfx/123/123_series_purchase.png"){tmpl_purchase_single_head(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_123_series_JW_YY_graphics, train_is_driving_backwards){
     0: return spriteset_123_series_JW_YY;
@@ -1378,7 +1379,9 @@ item(FEAT_TRAINS, item_80_series, 0080){
         default: sw_80_series_graphic;
     }
 }//mani40
-spriteset(spriteset_mani40_default, "gfx/MANI40/mani40.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_mani40_default, "gfx/MANI40/mani40_default.png"){tmpl_32_train_main(0, 1)}
+
+spriteset(spriteset_mani40_purchase, "gfx/MANI40/mani40_purchase.png"){tmpl_purchase_single_head(0, 0)}
 item(FEAT_TRAINS, item_mani40_series, 7740){
     property {
         name: string(STR_NAME_MANI_40_SERIES);
@@ -1412,7 +1415,7 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
     graphics {
         speed: param_speed_160_to_200;
         purchase: spriteset_mani40_default;
-        default: spriteset_mani40_default;
+        default: spriteset_mani40_purchase;
     }
 }//generater car
 spriteset(spriteset_generater_car_default, "gfx/GENERATER_CAR/generater_car_default.png"){tmpl_32_train_main(0, 1)}
