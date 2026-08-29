@@ -1391,7 +1391,7 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
         sprite_id: SPRITE_ID_NEW_TRAIN;
         misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT,TRAIN_FLAG_2CC);
         refit_cost: 0;
-        refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+        refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS, CC_REFRIGERATED, CC_PIECE_GOODS, CC_POTABLE);
         ai_special_flag: AI_FLAG_CARGO;
         ai_engine_rank: 0;
         vehicle_life: 60;
@@ -1415,7 +1415,7 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
     graphics {
         speed: param_speed_160_to_200;
         purchase: spriteset_mani40_purchase;
-        
+
         default: spriteset_mani40_default;
     }
 }//generater car
