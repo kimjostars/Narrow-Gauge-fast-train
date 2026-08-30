@@ -1,9 +1,11 @@
 spriteset(spriteset_mani40_default, "gfx/MANI40/mani40_default.png"){tmpl_32_train_main(0, 1)}
-spriteset(spriteset_mani40_default_1,"gfx/MANI40/mani40_default_loading.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_mani40_default_little,"gfx/MANI40/mani40_default_loading.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_mani40_default_medium,"gfx/MANI40/mani40_default_loading.png"){tmpl_32_train_main(0, 31)}
+spriteset(spriteset_mani40_default_many,"gfx/MANI40/mani40_default_loading.png"){tmpl_32_train_main(0, 61)}
 
 spriteset(spriteset_mani40_purchase, "gfx/MANI40/mani40_purchase.png"){tmpl_purchase_single_head(0, 0)}
 
 spritegroup spritegroup_mani40_default {
-    loading: spriteset_mani40_default_1;
+    loading: [spriteset_mani40_default_little, spriteset_mani40_default_medium, spriteset_mani40_default_many];
     loaded: spriteset_mani40_default;
 }
