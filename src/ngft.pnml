@@ -27,6 +27,8 @@
 #include "WAGON/80/80.pnml"
 //mani40
 #include "FREIGHT/MANI40/mani40.pnml"
+//taki2000
+#include "FREIGHT/TAKI2000/taki2000.pnml"
 //generater car
 #include "WAGON/GENERATER_CAR/generater_car.pnml"
 //driving car

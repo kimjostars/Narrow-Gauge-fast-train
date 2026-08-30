@@ -1,26 +1,26 @@
-#include "mani40_graphic.pnml"
+#include "taki2000_graphic.pnml"
 
-item(FEAT_TRAINS, item_mani40_series, 7740){
+item(FEAT_TRAINS, item_taki2000_series, 1162){
     property {
-        name: string(STR_NAME_MANI_40_SERIES);
+        name: string(STR_NAME_TAKI_2000_SERIES);
         climates_available: ALL_CLIMATES;
         introduction_date: date(2021,01,01);
         track_type: TR_1067_NE;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT,TRAIN_FLAG_2CC);
+        misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC);
         refit_cost: 0;
-        refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS, CC_REFRIGERATED, CC_PIECE_GOODS, CC_POTABLE);
+        refittable_cargo_classes: bitmask(CC_LIQUID);
         ai_special_flag: AI_FLAG_CARGO;
         ai_engine_rank: 0;
         vehicle_life: 60;
         loading_speed: param_loading_6D;
-        cost_factor: 63;
-        running_cost_factor: 9;
+        cost_factor: 67;
+        running_cost_factor: 10;
         reliability_decay: 20;
         power: 0 kW;
+        cargo_capacity: 100;
         cargo_age_period: 185;
         weight: 20 ton;
-        cargo_capacity: 100;
         tractive_effort_coefficient: 0;
         air_drag_coefficient: 0.07;
         reliability_decay: 20;
@@ -29,11 +29,11 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
         length: 8;
         extra_power_per_wagon: 0;
         bitmask_vehicle_info: 0;
+        dual_headed: 0;
     }
     graphics {
         speed: param_speed_160_to_200;
-        purchase: spriteset_mani40_purchase;
 
-        default: spritegroup_mani40_default;
+        default: spriteset_taki2000_default;
     }
 }
