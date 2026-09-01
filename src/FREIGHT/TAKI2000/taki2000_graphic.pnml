@@ -1,1 +1,2 @@
 spriteset(spriteset_taki2000_default, "gfx/TAKI2000/taki2000_default.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_taki2000_2cc, "gfx/TAKI2000/taki2000_2cc.png"){tmpl_32_train_main(0, 1)}

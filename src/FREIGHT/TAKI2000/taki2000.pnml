@@ -1,5 +1,7 @@
 #include "taki2000_graphic.pnml"
 
+#include "taki2000_switch.pnml"
+
 item(FEAT_TRAINS, item_taki2000_series, 1162){
     property {
         name: string(STR_NAME_TAKI_2000_SERIES);
@@ -33,7 +35,8 @@ item(FEAT_TRAINS, item_taki2000_series, 1162){
     }
     graphics {
         speed: param_speed_160_to_200;
+        cargo_subtype_text: sw_taki2000_cargo_subtype_text;
 
-        default: spriteset_taki2000_default;
+        default: sw_taki2000_graphic;
     }
 }

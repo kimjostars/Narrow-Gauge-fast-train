@@ -1428,6 +1428,16 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
     }
 }//taki2000
 spriteset(spriteset_taki2000_default, "gfx/TAKI2000/taki2000_default.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_taki2000_2cc, "gfx/TAKI2000/taki2000_2cc.png"){tmpl_32_train_main(0, 1)}
+switch(FEAT_TRAINS, SELF, sw_taki2000_graphic, cargo_subtype){
+    0: return spriteset_taki2000_default;
+    1: return spriteset_taki2000_2cc;
+}
+switch(FEAT_TRAINS, SELF, sw_taki2000_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_DASH, string(STR_DEFAULT_LIVERY));
+    1: return string(STR_DASH, string(STR_COMPANY));
+    return CB_RESULT_NO_TEXT;
+}
 item(FEAT_TRAINS, item_taki2000_series, 1162){
     property {
         name: string(STR_NAME_TAKI_2000_SERIES);
@@ -1461,8 +1471,9 @@ item(FEAT_TRAINS, item_taki2000_series, 1162){
     }
     graphics {
         speed: param_speed_160_to_200;
+        cargo_subtype_text: sw_taki2000_cargo_subtype_text;
 
-        default: spriteset_taki2000_default;
+        default: sw_taki2000_graphic;
     }
 }//generater car
 spriteset(spriteset_generater_car_default, "gfx/GENERATER_CAR/generater_car_default.png"){tmpl_32_train_main(0, 1)}

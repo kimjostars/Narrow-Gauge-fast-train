@@ -1,0 +1,9 @@
+switch(FEAT_TRAINS, SELF, sw_taki2000_graphic, cargo_subtype){
+    0: return spriteset_taki2000_default;
+    1: return spriteset_taki2000_2cc;
+}
+switch(FEAT_TRAINS, SELF, sw_taki2000_cargo_subtype_text, cargo_subtype){
+    0: return string(STR_DASH, string(STR_DEFAULT_LIVERY));
+    1: return string(STR_DASH, string(STR_COMPANY));
+    return CB_RESULT_NO_TEXT;
+}
