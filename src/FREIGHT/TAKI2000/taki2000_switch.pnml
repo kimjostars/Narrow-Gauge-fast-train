@@ -1,6 +1,14 @@
+random_switch(FEAT_TRAINS, SELF, random_taki2000_2cc){
+    1: return spriteset_taki2000_2cc_1;
+    1: return spriteset_taki2000_2cc_2;
+}
+random_switch(FEAT_TRAINS, SELF, random_taki2000_default){
+    2: return spriteset_taki2000_default;
+    1: random_taki2000_2cc;
+}
 switch(FEAT_TRAINS, SELF, sw_taki2000_graphic, cargo_subtype){
-    0: return spriteset_taki2000_default;
-    1: return spriteset_taki2000_2cc;
+    0: random_taki2000_default;
+    1: random_taki2000_2cc;
 }
 switch(FEAT_TRAINS, SELF, sw_taki2000_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH, string(STR_DEFAULT_LIVERY));

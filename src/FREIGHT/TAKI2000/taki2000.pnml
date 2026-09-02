@@ -36,6 +36,7 @@ item(FEAT_TRAINS, item_taki2000_series, 1162){
     graphics {
         speed: param_speed_160_to_200;
         cargo_subtype_text: sw_taki2000_cargo_subtype_text;
+        purchase: spriteset_taki2000_purchase;
 
         default: sw_taki2000_graphic;
     }

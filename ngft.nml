@@ -1428,10 +1428,21 @@ item(FEAT_TRAINS, item_mani40_series, 7740){
     }
 }//taki2000
 spriteset(spriteset_taki2000_default, "gfx/TAKI2000/taki2000_default.png"){tmpl_32_train_main(0, 1)}
-spriteset(spriteset_taki2000_2cc, "gfx/TAKI2000/taki2000_2cc.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_taki2000_2cc_1, "gfx/TAKI2000/taki2000_2cc.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_taki2000_2cc_2, "gfx/TAKI2000/taki2000_2cc.png"){tmpl_32_train_main(0, 31)}
+
+spriteset(spriteset_taki2000_purchase, "gfx/TAKI2000/taki2000_purchase.png"){tmpl_purchase_single_head(0, 0)}
+random_switch(FEAT_TRAINS, SELF, random_taki2000_2cc){
+    1: return spriteset_taki2000_2cc_1;
+    1: return spriteset_taki2000_2cc_2;
+}
+random_switch(FEAT_TRAINS, SELF, random_taki2000_default){
+    2: return spriteset_taki2000_default;
+    1: random_taki2000_2cc;
+}
 switch(FEAT_TRAINS, SELF, sw_taki2000_graphic, cargo_subtype){
-    0: return spriteset_taki2000_default;
-    1: return spriteset_taki2000_2cc;
+    0: random_taki2000_default;
+    1: random_taki2000_2cc;
 }
 switch(FEAT_TRAINS, SELF, sw_taki2000_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH, string(STR_DEFAULT_LIVERY));
@@ -1472,6 +1483,7 @@ item(FEAT_TRAINS, item_taki2000_series, 1162){
     graphics {
         speed: param_speed_160_to_200;
         cargo_subtype_text: sw_taki2000_cargo_subtype_text;
+        purchase: spriteset_taki2000_purchase;
 
         default: sw_taki2000_graphic;
     }
