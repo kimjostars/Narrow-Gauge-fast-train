@@ -96,6 +96,10 @@ STR_EXPRESS_PASSENGER:{RED}Express Passengers
 STR_LIGHT :{SILVER}Light Cargo
 STR_HEAVY :{SILVER}Heavy Cargo
 STR_LONG :{SILVER}Long cargo
+STR_LTD :{SILVER}Express cargo
+STR_TANK :{SILVER}General Liquid Cargo
+STR_CHEM :{SILVER}Hazardous Liquid Cargo
+STR_GAS_CARGO :{SILVER}Gaseous Cargo 
 
 ###Gauge
 STR_NARROWGAUGE :Gauge:{GOLD} Narrow (1,067mm)

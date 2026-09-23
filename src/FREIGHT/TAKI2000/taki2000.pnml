@@ -11,7 +11,7 @@ item(FEAT_TRAINS, item_taki2000_series, 1162){
         sprite_id: SPRITE_ID_NEW_TRAIN;
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC);
         refit_cost: 0;
-        refittable_cargo_classes: bitmask(CC_LIQUID_BULK, CC_GAS_BULK, CC_POWDER_BULK);
+        refittable_cargo_classes: bitmask(CC_LIQUID_BULK, CC_GAS_BULK);
         non_refittable_cargo_classes: bitmask(CC_POTABLE);
         ai_special_flag: AI_FLAG_CARGO;
         ai_engine_rank: 0;
@@ -35,6 +35,12 @@ item(FEAT_TRAINS, item_taki2000_series, 1162){
         dual_headed: 0;
     }
     graphics {
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_USE, string(STR_CONCAT_2_DASH,
+            string(STR_CONCAT_2_DASH, string(STR_TANK), string(STR_CHEM)), string(STR_GAS_CARGO))),
+            string(STR_OPERATOR, string(STR_VIRTUAL, string(STR_JR, string(STR_JR_FREIGFT)))));
         speed: param_speed_160_to_200;
         cargo_subtype_text: sw_taki2000_cargo_subtype_text;
         purchase: spriteset_taki2000_purchase;
