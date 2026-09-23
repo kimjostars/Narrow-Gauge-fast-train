@@ -21,6 +21,6 @@ Pull Request를 열 줄 모르신다면, Issues에 올리셔도 괜찮습니다.
 ### Contributors
 코드 : kimjostars, irice7350
 
-그래픽 : kimjostars, raeun_cos, [JP+](https://github.com/OpenTTD-JPplus)(에셋 사용), [600계 스프라이트 출처](https://www.tt-wiki.net/wiki/NMLTutorial/Train_single_engine) 
+그래픽 : kimjostars, raeun_cos, [JP+](https://github.com/OpenTTD-JPplus)(에셋 사용, 타키2000형 그래픽의 모티프), [600계 스프라이트 출처](https://www.tt-wiki.net/wiki/NMLTutorial/Train_single_engine) 
 
 본프로젝트에 기여함은 라이선스에 동의함을 의미합니다.

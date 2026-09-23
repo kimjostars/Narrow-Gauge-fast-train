@@ -21,6 +21,6 @@ Translations are always welcome.
 ### Contributors
 code : kimjostars, irice7350
 
-graghic : kimjostars, raeun_cos, [JP+](https://github.com/OpenTTD-JPplus)(Asset usage), [600 series sprite source](https://www.tt-wiki.net/wiki/NMLTutorial/Train_single_engine) 
+graghic : kimjostars, raeun_cos, [JP+](https://github.com/OpenTTD-JPplus)(Asset usage, The motif for the Taki 2000-type graphic design), [600 series sprite source](https://www.tt-wiki.net/wiki/NMLTutorial/Train_single_engine) 
 
 Contributing to this project implies agreement with this license.
