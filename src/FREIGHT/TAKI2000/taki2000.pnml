@@ -11,7 +11,7 @@ item(FEAT_TRAINS, item_taki2000_series, 1162){
         sprite_id: SPRITE_ID_NEW_TRAIN;
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC);
         refit_cost: 0;
-        refittable_cargo_classes: bitmask(CC_LIQUID);
+        refittable_cargo_classes: bitmask(CC_LIQUID_BULK, CC_GAS_BULK);
         ai_special_flag: AI_FLAG_CARGO;
         ai_engine_rank: 0;
         vehicle_life: 60;

@@ -220,7 +220,18 @@ if(param_high_speed == 1){
 }
 // traininfo offset
 traininfo_y_offset = 2;
-train_width_32_px = 1;//base cost
+train_width_32_px = 1;
+
+
+// FLAX 화물등급 정의
+const CC_OPEN_BULK = 4; // remaps legacy NML class: CC_BULK
+const CC_COVERED_BULK = 9; // remaps legacy NML class: CC_COVERED
+const CC_POWDER_BULK = 11; // remaps legacy NML class: CC_POWDERIZED
+const CC_LIQUID_BULK = 6; // remaps legacy NML class: CC_LIQUID
+const CC_GAS_BULK = 8; // remaps legacy NML class: CC_HAZARDOUS
+const CC_FLATBED = 10; // remaps legacy NML class: CC_OVERSIZED
+const CC_WEIRD = 12; // remaps legacy NML class: CC_NON_POURABLE
+//base cost
 basecost {
 	PR_BUILD_VEHICLE_TRAIN : param_purchase_cost -2;
 	PR_BUILD_VEHICLE_WAGON: param_purchase_cost +2;
@@ -1459,7 +1470,7 @@ item(FEAT_TRAINS, item_taki2000_series, 1162){
         sprite_id: SPRITE_ID_NEW_TRAIN;
         misc_flags: bitmask(TRAIN_FLAG_TILT,TRAIN_FLAG_2CC);
         refit_cost: 0;
-        refittable_cargo_classes: bitmask(CC_LIQUID);
+        refittable_cargo_classes: bitmask(CC_LIQUID_BULK, CC_GAS_BULK);
         ai_special_flag: AI_FLAG_CARGO;
         ai_engine_rank: 0;
         vehicle_life: 60;
