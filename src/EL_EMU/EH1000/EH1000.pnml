@@ -18,6 +18,7 @@ item(FEAT_TRAINS, item_EH1000_series, 1000){
         air_drag_coefficient: 0;
         tractive_effort_coefficient: 0.4;
         weight: 160 ton;
+        power: 5000 kW;
         ai_special_flag: AI_FLAG_PASSENGER;
         engine_class: ENGINE_CLASS_ELECTRIC;
         sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -38,7 +39,6 @@ item(FEAT_TRAINS, item_EH1000_series, 1000){
             string(STR_LIVERIES,string(LV_VARIOUS)),
             string(STR_EH1000_CONCEPT));
         speed: sw_EH1000_series_speed;
-        power: sw_EH1000_series_power;
         articulated_part: sw_EH1000_series_articulated_part;
         cargo_capacity: return 0;
         cargo_subtype_text: sw_EH1000_series_cargo_subtype_text;
