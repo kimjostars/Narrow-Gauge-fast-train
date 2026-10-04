@@ -2,6 +2,10 @@ switch(FEAT_TRAINS, SELF, sw_EH1000_series_speed, cargo_subtype % 2){
     0: return param_speed_130_to_160;
     1: return param_speed_160_to_200;
 }
+switch(FEAT_TRAINS, SELF, sw_EH1000_series_power, cargo_subtype % 2){
+    0: return 7040;
+    1: return 5498;
+}
 switch(FEAT_TRAINS, SELF, sw_EH1000_series_cargo_subtype_text, cargo_subtype){
     0: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_RED), string(STR_GRAY))));
     1: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR, string(STR_JR_FREIGFT)), string(STR_DEFAULT_LIVERY), string(STR_HIGH_SPEED_TYPE,160), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_RED), string(STR_GRAY))));
