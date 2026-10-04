@@ -764,11 +764,11 @@ switch(FEAT_TRAINS, SELF, sw_123_series_loading_speed, cargo_subtype){
     3: return param_loading_3D;
 }
 switch(FEAT_TRAINS, SELF, sw_123_serise_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR,string(STR_JR_WEST)), string(STR_DOORS, 2), string(STR_CHUGOKU_LIVERY), string(STR_BAR), string(STR_YELLOW)));
-    1: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR,string(STR_JR_WEST)), string(STR_DOORS, 2), string(STR_YAMAGUCHI_LIVERY), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_BLUE), string(STR_WHITE))));
-    2: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR,string(STR_JR_CENTRAL)), string(STR_DOORS, 2), string(STR_SHONAN_LIVERY), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_ORANGE), string(STR_GREEN))));
-    3: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR,string(STR_JR_CENTRAL)), string(STR_DOORS, 3), string(STR_SHONAN_LIVERY), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_ORANGE), string(STR_GREEN))));
-    4: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR,string(STR_JR_EAST)), string(STR_DOORS, 2), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_RED), string(STR_WHITE))));
+    0: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR, string(STR_JR_WEST)), string(STR_DOORS, 2), string(STR_CHUGOKU_LIVERY), string(STR_BAR), string(STR_YELLOW)));
+    1: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR, string(STR_JR_WEST)), string(STR_DOORS, 2), string(STR_YAMAGUCHI_LIVERY), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_BLUE), string(STR_WHITE))));
+    2: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR, string(STR_JR_CENTRAL)), string(STR_DOORS, 2), string(STR_SHONAN_LIVERY), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_ORANGE), string(STR_GREEN))));
+    3: return string(STR_DASH, string(STR_CONCAT_5, string(STR_JR, string(STR_JR_CENTRAL)), string(STR_DOORS, 3), string(STR_SHONAN_LIVERY), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_ORANGE), string(STR_GREEN))));
+    4: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_EAST)), string(STR_DOORS, 2), string(STR_BAR), string(STR_CONCAT_2_DASH_BL, string(STR_RED), string(STR_WHITE))));
     return CB_RESULT_NO_TEXT;
 }
 item(FEAT_TRAINS, item_123_series, 0123){
@@ -876,10 +876,10 @@ switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
     return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH,string(STR_521_0_SERIES,string(STR_JR,string(STR_JR_WEST))));
-    1: return string(STR_521_0_1_2_SERIES);
-    2: return string(STR_521_0_3_SERIES);
-    3: return string(STR_DASH,string(STR_521_100_SERIES,string(STR_JR,string(STR_JR_WEST))));
+    0: return string(STR_DASH, string(STR_CONCAT_3, string(STR_JR, string(STR_JR_WEST)), string(STR_CONCAT_SERIES, 0), string(STR_BLUE)));
+    1: return string(STR_BRANCH, string(STR_CONCAT_2, string(STR_JR, string(STR_JR_WEST)), string(STR_CONCAT_BATCH_STRING, string(STR_COMMA_NUMBER_2, 1, 2))));
+    2: return string(STR_END, string(STR_CONCAT_2, string(STR_JR, string(STR_JR_WEST)), string(STR_CONCAT_BATCH, 3)));
+    3: return string(STR_DASH, string(STR_CONCAT_3, string(STR_JR, string(STR_JR_WEST)), string(STR_CONCAT_SERIES, 100), string(STR_CREAM)));
 }
 item(FEAT_TRAINS, item_521_series, 0521){
     property {
