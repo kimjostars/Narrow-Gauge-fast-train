@@ -42,8 +42,8 @@ switch(FEAT_TRAINS, SELF, sw_521_series_graphics, cargo_subtype){
     return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_TRAINS, SELF, sw_521_series_cargo_subtype_text, cargo_subtype){
-    0: return string(STR_DASH, string(STR_CONCAT_3, string(STR_JR, string(STR_JR_WEST)), string(STR_CONCAT_SERIES, 0), string(STR_BLUE)));
+    0: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_WEST)), string(STR_CONCAT_SERIES, 0), string(STR_BAR), string(STR_BLUE)));
     1: return string(STR_BRANCH, string(STR_CONCAT_BATCH_STRING, string(STR_COMMA_NUMBER_2, 1, 2)));
     2: return string(STR_END, string(STR_CONCAT_BATCH, 3));
-    3: return string(STR_DASH, string(STR_CONCAT_3, string(STR_JR, string(STR_JR_WEST)), string(STR_CONCAT_SERIES, 100), string(STR_CREAM)));
+    3: return string(STR_DASH, string(STR_CONCAT_4, string(STR_JR, string(STR_JR_WEST)), string(STR_CONCAT_SERIES, 100), string(STR_BAR), string(STR_CREAM)));
 }
