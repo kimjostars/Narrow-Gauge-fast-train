@@ -44,7 +44,7 @@ item(FEAT_TRAINS, item_kiha189, 0189) {
             string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_JR_WEST))),);
         can_attach_wagon: sw_kiha189_series_attach_wagon;
-        speed: param_speed_120_to_160;
+        speed: param_speed_130_to_160;
         purchase: spriteset_kiha189_series_purchase;
         default: sw_kiha189_series_graphics;
     }
