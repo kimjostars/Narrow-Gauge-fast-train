@@ -1,0 +1,59 @@
+#include "kiha189_graphic.pnml"
+
+#include "kiha189_switch.pnml"
+
+item(FEAT_TRAINS, item_kiha189, 0189) {
+    property {
+        name: string(STR_NAME_KIHA189_SERIES);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2010,01,01);
+        track_type: TR_1067_NE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_MU);
+        engine_class: ENGINE_CLASS_DIESEL;
+        model_life: 45;
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        ai_special_flag: AI_FLAG_PASSENGER;
+        ai_engine_rank: 0;
+        vehicle_life: 30;
+        loading_speed: param_loading_2D;
+        cost_factor: 21;
+        running_cost_factor: 47;
+        reliability_decay: 10;
+        power: 340 kW;
+        cargo_capacity: param_cargo_capacity_express;
+        weight: 48 ton;
+        tractive_effort_coefficient: 0;
+        air_drag_coefficient: 0.07;
+        reliability_decay: 10;
+        running_cost_base: RUNNING_COST_DIESEL;
+        length: 8;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+        dual_headed: 1;
+    }
+    graphics {
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_NOT_DENKI,string(STR_DIESEL)),
+            string(STR_LOAD_SPEED, string(STR_DOORS, 2)),
+            string(STR_FORMATION, string(STR_NUM_CARS_1, 3)),
+            string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
+            string(STR_OPERATOR,string(STR_JR,string(STR_JR_WEST))),);
+        can_attach_wagon: sw_kiha189_series_attach_wagon;
+        speed: param_speed_120_to_160;
+        purchase: spriteset_kiha189_series_purchase;
+        default: sw_kiha189_series_graphics;
+    }
+    livery_override(item_mucar){
+        weight: 48;
+        cargo_capacity: param_cargo_capacity_express;
+        loading_speed: param_loading_2D;
+        power: 456;
+        length: 8;
+        default: spriteset_kiha189_series_2;
+    }
+}

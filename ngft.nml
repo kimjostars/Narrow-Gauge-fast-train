@@ -1394,6 +1394,89 @@ item(FEAT_TRAINS, item_80_series, 0080){
         purchase: spriteset_80_series_purchase;
         default: sw_80_series_graphic;
     }
+}//kiha189
+spriteset(spriteset_kiha189_series_1_front, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_kiha189_series_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_1_series.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_kiha189_series_1_back, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_kiha189_series_1_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_1_series.png"){tmpl_32_train_main(0, 31)}
+spriteset(spriteset_kiha189_series_2, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_kiha189_series_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_2_series.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_kiha189_series_3_front, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_kiha189_series_3_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_3_series.png"){tmpl_32_train_main(0, 1)}
+spriteset(spriteset_kiha189_series_3_back, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
+alternative_sprites(spriteset_kiha189_series_3_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_3_series.png"){tmpl_32_train_main(0, 31)}
+spriteset(spriteset_kiha189_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_dual_head(0, 0)}
+alternative_sprites(spriteset_kiha189_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_series_purchase.png"){tmpl_purchase_dual_head_32bpp(0, 0)}
+switch(FEAT_TRAINS, SELF, sw_kiha189_series_attach_wagon, [vehicle_type_id == item_kiha189 || vehicle_type_id == item_mucar]){
+    0: return string(STR_CANNOT_ATTACH_OTHER);
+    1: return CB_RESULT_ATTACH_ALLOW;
+}
+switch(FEAT_TRAINS, SELF, sw_kiha189_series_front_graphics, train_is_driving_backwards){
+    0: return spriteset_kiha189_series_1_front;
+    1: return spriteset_kiha189_series_1_back;
+}
+switch(FEAT_TRAINS, SELF, sw_kiha189_series_back_graphics, train_is_driving_backwards){
+    0: return spriteset_kiha189_series_3_back;
+    1: return spriteset_kiha189_series_3_front;
+}
+switch(FEAT_TRAINS, SELF, sw_kiha189_series_graphics, position_in_vehid_chain % 2){ 
+    0: return sw_kiha189_series_front_graphics; 
+    1: return sw_kiha189_series_back_graphics;
+}
+item(FEAT_TRAINS, item_kiha189, 0189) {
+    property {
+        name: string(STR_NAME_KIHA189_SERIES);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2010,01,01);
+        track_type: TR_1067_NE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_MU);
+        engine_class: ENGINE_CLASS_DIESEL;
+        model_life: 45;
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        ai_special_flag: AI_FLAG_PASSENGER;
+        ai_engine_rank: 0;
+        vehicle_life: 30;
+        loading_speed: param_loading_2D;
+        cost_factor: 21;
+        running_cost_factor: 47;
+        reliability_decay: 10;
+        power: 340 kW;
+        cargo_capacity: param_cargo_capacity_express;
+        weight: 48 ton;
+        tractive_effort_coefficient: 0;
+        air_drag_coefficient: 0.07;
+        reliability_decay: 10;
+        running_cost_base: RUNNING_COST_DIESEL;
+        length: 8;
+        extra_power_per_wagon: 0;
+        bitmask_vehicle_info: 0;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+        dual_headed: 1;
+    }
+    graphics {
+        additional_text:
+            string(STR_TRAIN_DESC,
+            string(STR_NARROWGAUGE),
+            string(STR_NOT_DENKI,string(STR_DIESEL)),
+            string(STR_LOAD_SPEED, string(STR_DOORS, 2)),
+            string(STR_FORMATION, string(STR_NUM_CARS_1, 3)),
+            string(STR_USAGE, string(STR_USE_LTDEXPRESS)),
+            string(STR_OPERATOR,string(STR_JR,string(STR_JR_WEST))),);
+        can_attach_wagon: sw_kiha189_series_attach_wagon;
+        speed: param_speed_120_to_160;
+        purchase: spriteset_kiha189_series_purchase;
+        default: sw_kiha189_series_graphics;
+    }
+    livery_override(item_mucar){
+        weight: 48;
+        cargo_capacity: param_cargo_capacity_express;
+        loading_speed: param_loading_2D;
+        power: 456;
+        length: 8;
+        default: spriteset_kiha189_series_2;
+    }
 }//mani40
 spriteset(spriteset_mani40_default, "gfx/MANI40/mani40_default.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_mani40_default_little,"gfx/MANI40/mani40_default_loading.png"){tmpl_32_train_main(0, 1)}
