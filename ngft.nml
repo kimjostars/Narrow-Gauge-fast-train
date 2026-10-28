@@ -1445,7 +1445,7 @@ item(FEAT_TRAINS, item_kiha189, 0189) {
         power: 340 kW;
         cargo_capacity: param_cargo_capacity_express;
         weight: 48 ton;
-        tractive_effort_coefficient: 0;
+        tractive_effort_coefficient: 0.2;
         air_drag_coefficient: 0.07;
         reliability_decay: 10;
         running_cost_base: RUNNING_COST_DIESEL;
@@ -1473,7 +1473,7 @@ item(FEAT_TRAINS, item_kiha189, 0189) {
         weight: 48;
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_2D;
-        power: 456;
+        power: 340;
         length: 8;
         default: spriteset_kiha189_series_2;
     }
