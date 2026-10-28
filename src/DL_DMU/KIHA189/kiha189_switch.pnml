@@ -7,8 +7,8 @@ switch(FEAT_TRAINS, SELF, sw_kiha189_series_front_graphics, train_is_driving_bac
     1: return spriteset_kiha189_series_1_back;
 }
 switch(FEAT_TRAINS, SELF, sw_kiha189_series_back_graphics, train_is_driving_backwards){
-    0: return spriteset_kiha189_series_3_back;
-    1: return spriteset_kiha189_series_3_front;
+    0: return spriteset_kiha189_series_3_front;
+    1: return spriteset_kiha189_series_3_back;
 }
 switch(FEAT_TRAINS, SELF, sw_kiha189_series_graphics, position_in_vehid_chain % 2){ 
     0: return sw_kiha189_series_front_graphics; 
