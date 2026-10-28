@@ -1402,9 +1402,9 @@ alternative_sprites(spriteset_kiha189_series_1_back, ZOOM_LEVEL_NORMAL, BIT_DEPT
 spriteset(spriteset_kiha189_series_2, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
 alternative_sprites(spriteset_kiha189_series_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_2_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_kiha189_series_3_front, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_kiha189_series_3_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_3_series.png"){tmpl_32_train_main(0, 1)}
+alternative_sprites(spriteset_kiha189_series_3_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_1_series.png"){tmpl_32_train_main(0, 31)}
 spriteset(spriteset_kiha189_series_3_back, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
-alternative_sprites(spriteset_kiha189_series_3_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_3_series.png"){tmpl_32_train_main(0, 31)}
+alternative_sprites(spriteset_kiha189_series_3_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_1_series.png"){tmpl_32_train_main(0, 1)}
 spriteset(spriteset_kiha189_series_purchase, "gfx/purchase_8bpp.png"){tmpl_purchase_dual_head(0, 0)}
 alternative_sprites(spriteset_kiha189_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/KIHA189/kiha189_series_purchase.png"){tmpl_purchase_dual_head_32bpp(0, 0)}
 switch(FEAT_TRAINS, SELF, sw_kiha189_series_attach_wagon, [vehicle_type_id == item_kiha189 || vehicle_type_id == item_mucar]){
