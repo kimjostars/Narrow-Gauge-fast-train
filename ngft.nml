@@ -241,26 +241,6 @@ basecost {
 
 	//PR_BUILD_RAIL	: param_rail_cost+1;
 }//template
-template tmpl_32_train(x, y){
-    // arguments x, y: coordinates of top-left corner of first sprite
-    [x,      y,  8, 24,  -3, -12] //xpos ypos xsize ysize xoff yoff
-    [x +  9, y, 22, 20, -14, -12]
-    [x + 32, y, 32, 16, -16, -12]
-    [x + 65, y, 22, 20,  -6, -12]
-}
-template tmpl_32_train_4_views(num){
-    // argument num: Index in the graphics file, assuming vertical ordering of vehicles
-    tmpl_32_train(1, 1 + 32 * num)
-}
-template tmpl_32_train_8_views(num, reversed){
-    // argument num: Index in the graphics file, assuming vertical ordering of vehicles
-    // argument reversed: Reverse visible orientation of vehicle, if set to 1
-    tmpl_32_train(reversed ? 89 : 1, 1 + 32 * num)
-    tmpl_32_train(reversed ? 1 : 89, 1 + 32 * num)
-}
-template tmpl_32_train_single(num, xsize, ysize, xoff, yoff) { 
-    [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
-}
 template tmpl_32_train_basic(x, y){
     //[left_x, upper_y, width, height, offset_x, offset_y]
     [x    , y,  8, 24,  -3, -12]
@@ -324,363 +304,7 @@ template tmpl_purchase_dual_head_32bpp(x, y){
 	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
     [x, y, 74, 15, -13, -10]
 	[1 , 1, 1, 1, 0, 0, "gfx/empty/empty_32bpp.png"]
-}
-//track
-// template tmpl_gui (y, tun) {
-//     [ 0,    y,      11,      13,       7,       0]   // ↕
-//     [ 115,  y,      21,      13,       1,       2]   // ↗
-//     [ 40,   y,      21,      13,       1,       6]   // ↔
-//     [ 65,   y,      21,      13,       1,       2]   // ↘
-//     [ 90,   y,      20,      20,       1,       2]   // x
-//     [ 190,  0,      20,      20,       0,       0]   // depot
-//     [ 215,  tun,    20,      20,       0,       0]   // tunnel
-//     [ 240,  0,      20,      20,       0,       0]   // convert
-//     [ 265,  0,      32,      32,       0,       0]   // ↕ cursor
-//     [ 265,  34,     32,      32,       0,       0]   // ↗ cursor
-//     [ 265,  68,     32,      32,       0,       0]   // ↔ cursor
-//     [ 265,  102,    32,      32,       0,       0]   // ↘ cursor
-//     [ 265,  136,    32,      32,       0,       0]   // x cursor
-//     [ 265,  170,    32,      32,       0,       0]   // depot cursor
-//     [ 265,  204,    32,      32,       0,       0]   // tunnel cursor
-//     [ 265,  238,    32,      32,       0,       0]   // convert cursor
-// }
-// // Overlay
-// template tmpl_overlay (x, y) {
-//     [ x,      y,      64,      31,     -31,       0]   // ↗↙
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↖↘
-//     [ x+140,  y,      64,      31,     -31,       0]   // ↔U
-//     [ x+210,  y,      64,      31,     -31,       0]   // ↔D
-//     [ x+280,  y,      64,      31,     -31,       0]   // ↕R
-//     [ x+350,  y,      64,      31,     -31,       0]   // ↕L
-//     [ x+420,  y,      64,      39,     -31,      -8]   // ↗ slope up
-//     [ x+490,  y,      64,      23,     -31,       0]   // ↘ slope up 
-//     [ x+560,  y,      64,      23,     -31,       0]   // ↙ slope up
-//     [ x+630,  y,      64,      39,     -31,      -8]   // ↖ slope up
-// }
-// // Underlay v2
-// template tmpl_underlay_v2 (x, y) {
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↗↙
-//     [ x+140,  y,      64,      31,     -31,       0]   // ↖↘
-//     [ x+280,  y,      64,      31,     -31,       0]   // ↔U
-//     [ x+0,    y+40,   64,      31,     -31,       0]   // ↔D
-//     [ x+0,    y+160,  64,      31,     -31,       0]   // ↕R
-//     [ x+0,    y+80,   64,      31,     -31,       0]   // ↕L
-//     [ x+0,    y+320,  64,      39,     -31,      -8]   // ↗ slope up
-//     [ x+70,   y+320,  64,      23,     -31,       0]   // ↘ slope up  
-//     [ x+140,  y+320,  64,      23,     -31,       0]   // ↙ slope up 
-//     [ x+210,  y+320,  64,      39,     -31,      -8]   // ↖ slope up
-//     [ x,y,1,1,0,0]
-//     [ x,y,1,1,0,0]
-//     [ x,y,1,1,0,0]
-//     [ x,y,1,1,0,0]
-//     [ x,y,1,1,0,0]
-//     [ x,y,1,1,0,0]
-// }
-// template tmpl_combined (x, y) {
-//     [ x+70,   y,      64,      31,     -31,       0]
-//     [ x+140,  y,      64,      31,     -31,       0]
-//     [ x+210,  y,      64,      31,     -31,       0]
-//     [ x+280,  y,      64,      31,     -31,       0]
-//     [ x+350,  y,      64,      31,     -31,       0]
-//     [ x+420,  y,      64,      31,     -31,       0]
-//     [ x+490,  y,      64,      31,     -31,       0]
-//     [ x+0,    y+40,   64,      31,     -31,       0]
-//     [ x+70,   y+40,   64,      31,     -31,       0]
-//     [ x+140,  y+40,   64,      31,     -31,       0]
-//     [ x+210,  y+40,   64,      31,     -31,       0]
-//     [ x+280,  y+40,   64,      31,     -31,       0]
-//     [ x+350,  y+40,   64,      31,     -31,       0]
-//     [ x+420,  y+40,   64,      31,     -31,       0]
-//     [ x+490,  y+40,   64,      31,     -31,       0]
-//     [ x+0,    y+80,   64,      31,     -31,       0]
-//     [ x+70,   y+80,   64,      31,     -31,       0]
-//     [ x+140,  y+80,   64,      31,     -31,       0]
-//     [ x+210,  y+80,   64,      31,     -31,       0]
-//     [ x+280,  y+80,   64,      31,     -31,       0]
-//     [ x+350,  y+80,   64,      31,     -31,       0]
-//     [ x+420,  y+80,   64,      31,     -31,       0]
-//     [ x+490,  y+80,   64,      31,     -31,       0]
-//     [ x+0,    y+120,  64,      31,     -31,       0]
-//     [ x+70,   y+120,  64,      31,     -31,       0]
-//     [ x+140,  y+120,  64,      31,     -31,       0]
-//     [ x+210,  y+120,  64,      31,     -31,       0]
-//     [ x+280,  y+120,  64,      31,     -31,       0]
-//     [ x+350,  y+120,  64,      31,     -31,       0]
-//     [ x+420,  y+120,  64,      31,     -31,       0]
-//     [ x+490,  y+120,  64,      31,     -31,       0]
-//     [ x+0,    y+160,  64,      31,     -31,       0]
-//     [ x+70,   y+160,  64,      31,     -31,       0]
-//     [ x+140,  y+160,  64,      31,     -31,       0]
-//     [ x+210,  y+160,  64,      31,     -31,       0]
-//     [ x+280,  y+160,  64,      31,     -31,       0]
-//     [ x+350,  y+160,  64,      31,     -31,       0]
-//     [ x+420,  y+160,  64,      31,     -31,       0]
-//     [ x+490,  y+160,  64,      31,     -31,       0]
-//     [ x+0,    y+200,  64,      31,     -31,       0]
-//     [ x+70,   y+200,  64,      31,     -31,       0]
-//     [ x+140,  y+200,  64,      31,     -31,       0]
-//     [ x+210,  y+200,  64,      31,     -31,       0]
-//     [ x+280,  y+200,  64,      31,     -31,       0]
-//     [ x+350,  y+200,  64,      31,     -31,       0]
-//     [ x+420,  y+200,  64,      31,     -31,       0]
-//     [ x+490,  y+200,  64,      31,     -31,       0]
-//     [ x+0,    y+240,  64,      31,     -31,       0]
-//     [ x+70,   y+240,  64,      31,     -31,       0]
-//     [ x+140,  y+240,  64,      31,     -31,       0]
-//     [ x+210,  y+240,  64,      31,     -31,       0]
-//     [ x+280,  y+240,  64,      31,     -31,       0]
-//     [ x+350,  y+240,  64,      31,     -31,       0]
-//     [ x+420,  y+240,  64,      31,     -31,       0]
-//     [ x+490,  y+240,  64,      31,     -31,       0]
-//     [ x+0,    y+280,  64,      31,     -31,       0]
-//     [ x+70,   y+280,  64,      31,     -31,       0]
-//     [ x+140,  y+280,  64,      31,     -31,       0]
-//     [ x+210,  y+280,  64,      31,     -31,       0]
-//     [ x+280,  y+280,  64,      31,     -31,       0]
-//     [ x+350,  y+280,  64,      31,     -31,       0]
-//     [ x+420,  y+280,  64,      31,     -31,       0]
-//     [ x+490,  y+280,  64,      31,     -31,       0]
-// }
-// // Underlay
-// template tmpl_underlay (x, y) {
-//     [ x,      y,      64,      31,     -31,       0]   // ↗↙
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↖↘
-//     [ x+140,  y,      64,      31,     -31,       0]   // ↔U
-//     [ x+210,  y,      64,      31,     -31,       0]   // ↔D
-//     [ x+280,  y,      64,      31,     -31,       0]   // ↕R
-//     [ x+350,  y,      64,      31,     -31,       0]   // ↕L
-//     [ x+420,  y,      64,      39,     -31,      -8]   // ↗ slope up
-//     [ x+490,  y,      64,      23,     -31,       0]   // ↘ slope up 
-//     [ x+560,  y,      64,      23,     -31,       0]   // ↙ slope up
-//     [ x+630,  y,      64,      39,     -31,      -8]   // ↖ slope up
-//     [ x+700,  y,      64,      31,     -31,       0]   // +
-//     [ x+770,  y,      64,      31,     -31,       0]   // combi SW
-//     [ x+840,  y,      64,      31,     -31,       0]   // combi NE
-//     [ x+910,  y,      64,      31,     -31,       0]   // combi SE
-//     [ x+980,  y,      64,      31,     -31,       0]   // combi NW
-//     [ x+1050, y,      64,      31,     -31,       0]   // combi all
-// }
-// //deco overlay
-// template tmpl_overlay_deco (x, y) {
-//     [ x,      y,      64,      31,     -31,       0]   // ↗↙
-//     [ x,      y,      64,      31,     -31,       0]   // ↖↘
-//     [ x+70,  y,       64,      31,     -31,       0]   // ↔U
-//     [ x+140,  y,       64,      31,     -31,       0]   // ↔D
-//     [ x+210,  y,      64,      31,     -31,       0]   // ↕R
-//     [ x+280,  y,      64,      31,     -31,       0]   // ↕L
-//     [ x+350,  y,      64,      39,     -31,      -8]   // ↗ slope up
-//     [ x+420,  y,      64,      23,     -31,       0]   // ↘ slope up 
-//     [ x+490,  y,      64,      23,     -31,       0]   // ↙ slope up
-//     [ x+560,  y,      64,      39,     -31,      -8]   // ↖ slope up
-// }
-// //deco underlay
-// template tmpl_underlay_deco (x, y) {
-//     [ x,      y,      64,      31,     -31,       0]   // ↗↙
-//     [ x,      y,      64,      31,     -31,       0]   // ↖↘
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↔U
-//     [ x+140,  y,      64,      31,     -31,       0]   // ↔D
-//     [ x+210,  y,      64,      31,     -31,       0]   // ↕R
-//     [ x+280,  y,      64,      31,     -31,       0]   // ↕L
-//     [ x+350,  y,      64,      39,     -31,      -8]   // ↗ slope up
-//     [ x+420,  y,      64,      23,     -31,       0]   // ↘ slope up 
-//     [ x+490,  y,      64,      23,     -31,       0]   // ↙ slope up
-//     [ x+560,  y,      64,      39,     -31,      -8]   // ↖ slope up
-//     [ x,      y,      64,      31,     -31,       0]   // +
-//     [ x,      y,      64,      31,     -31,       0]   // combi SW
-//     [ x,      y,      64,      31,     -31,       0]   // combi NE
-//     [ x,      y,      64,      31,     -31,       0]   // combi SE
-//     [ x,      y,      64,      31,     -31,       0]   // combi NW
-//     [ x,      y,      64,      31,     -31,       0]   // combi all
-// }
-// // Bridge Surface
-// template tmpl_bridge_surface (x, y) {
-//     [ x,      y,      64,      31,     -31,       0]   // ↗↙
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↖↘
-//     [ x+140,  y,      64,      39,     -31,      -8]   // ↗ slope up
-//     [ x+210,  y,      64,      23,     -31,       0]   // ↘ slope up 
-//     [ x+280,  y,      64,      23,     -31,       0]   // ↙ slope up
-//     [ x+350,  y,      64,      39,     -31,      -8]   // ↖ slope up
-// }
-// template tmpl_bridge_surface_v2 () {
-//     [0,   360,    64,      31,     -31,       0]   // ↗↙
-//     [70,  360,    64,      31,     -31,       0]   // ↖↘
-//     [140, 360,    64,      39,     -31,      -8]   // ↗ slope up
-//     [210, 360,    64,      23,     -31,       0]   // ↘ slope up  
-//     [280, 360,    64,      23,     -31,       0]   // ↙ slope up 
-//     [350, 360,    64,      39,     -31,      -8]   // ↖ slope up
-// }
-// template tmpl_bridge_surface_deco (x, y) {
-//     [ x,      y,      64,      31,     -31,       0]   // ↗↙
-//     [ x,      y,      64,      31,     -31,       0]   // ↖↘
-//     [ x+350,  y,      64,      39,     -31,      -8]   // ↗ slope up
-//     [ x+420,  y,      64,      23,     -31,       0]   // ↘ slope up 
-//     [ x+490,  y,      64,      23,     -31,       0]   // ↙ slope up
-//     [ x+560,  y,      64,      39,     -31,      -8]   // ↖ slope up
-// }
-// // Tunnel
-// template tmpl_tunnel_overlay_v2 (x, y) {
-//     [ x+70,      y,      66,      50,     -31,     -49]  // ↙
-//     [ x+70+278,  y,      66,      50,     -33,     -49]  // ↖
-//     [ x+70+138,  y,      66,      50,     -31,     -49]  // ↗
-//     [ x+70+418,  y,      66,      50,     -31,     -48]  // ↘
-// }
-// template tmpl_tunnel_underlay_v2 (x, y) {
-//     [ x,      y,      66,      50,     -31,     -19]  // ↙
-//     [ x+278,  y,      66,      50,     -33,     -19]  // ↖
-//     [ x+140,  y,      64,      50,     -31,     -19]  // ↗
-//     [ x+418,  y,      66,      50,     -31,     -18]  // ↘
-// }
-// template tmpl_tunnel_underlay (x, y) {
-//     [ x,      y,      64,      50,     -31,     -10]  // ↙
-//     [ x+70,   y,      64,      50,     -31,     -19]  // ↖
-//     [ x+140,  y,      64,      50,     -31,     -19]  // ↗
-//     [ x+210,  y,      64,      50,     -31,     -10]  // ↘
-// }
-// template tmpl_tunnel_overlay (x, y) {
-//     [ x,      y,      64,      50,     -31,     -40]  // ↙
-//     [ x+70,   y,      64,      50,     -27,     -38]  // ↖
-//     [ x+140,  y,      64,      50,     -35,     -38]  // ↗
-//     [ x+210,  y,      64,      50,     -31,     -40]  // ↘
-// }
-// template tmpl_tunnel_urban_underlay_v2 (x, y) {
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↙
-//     [ x+140,  y,      64,      31,     -31,       0]   // ↖
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↗
-//     [ x+140,  y,      64,      31,     -31,       0]   // ↘
-// }
-// template tmpl_tunnel_urban_underlay (x, y) {
-//     [ x,      y,      64,      31,     -31,       0]   // ↙
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↖
-//     [ x,      y,      64,      31,     -31,       0]   // ↗
-//     [ x+70,   y,      64,      31,     -31,       0]   // ↘
-// }
-// template tmpl_tunnel_urban_overlay (x, y) {
-//     [ x,      y,      64,      50,     -31,     -39]  // ↙
-//     [ x+70,   y,      64,      50,     -31,     -38]  // ↖
-//     [ x+140,  y,      64,      50,     -31,     -38]  // ↗
-//     [ x+210,  y,      64,      50,     -31,     -39]  // ↘
-// }
-// // Fence
-// template tmpl_fence (x, y) {
-//     [ x,      y,      32,      25,     -33,     -11]
-//     [ x+40,   y,      32,      25,       3,     -11]
-//     [ x+80,   y,       8,      39,      -3,     -24]
-//     [ x+100,  y,      64,      12,     -31,     -12]
-//     [ x+170,  y,      32,      17,     -33,     -10]
-//     [ x+210,  y,      32,      17,       3,     -10]
-//     [ x+250,  y,      32,      35,     -33,     -20]
-//     [ x+290,  y,      32,      35,       3,     -20]
-//     [ x,      y,      32,      25,     -29,      -9]
-//     [ x+40,   y,      32,      25,      -1,      -9]
-//     [ x+330,  y,       8,      39,      -3,     -24]
-//     [ x+100,  y,      64,      12,     -31,     -12]
-//     [ x+170,  y,      32,      17,     -29,      -8]
-//     [ x+210,  y,      32,      17,      -1,      -8]
-//     [ x+250,  y,      32,      35,     -29,     -18]
-//     [ x+290,  y,      32,      35,      -1,     -18]
-// }
-// //grass overlay
-// template tmpl_fence_grassy (x, y) {
-//     [ x,      y,      40,      30,     -33,     -13]
-//     [ x+40,   y,      40,      30,      -5,     -13]
-//     [ x+80,   y,       8,      39,      -6,     -20]
-//     [ x+100,  y,      64,      12,     -31,     -12]
-//     [ x+170,  y,      40,      17,     -34,     -7]
-//     [ x+210,  y,      40,      17,       -4,     -8]
-//     [ x+250,  y,      40,      35,     -34,     -17]
-//     [ x+290,  y,      40,      35,       -4,     -17]
-//     [ x,      y+50,      40,      30,     -37,      -14]
-//     [ x+40,   y+50,      40,      30,      -1,      -14]
-//     [ x+80,  y+50,       8,      39,       -2,     -23]
-//     [ x+100,  y+50,      64,      12,     -31,     -10]
-//     [ x+170,  y+50,      40,      17,     -36,      -9]
-//     [ x+210,  y+50,      40,      17,      -2,      -9]
-//     [ x+250,  y+50,     40,      35,     -37,     -19]
-//     [ x+290,  y+50,     40,      35,      -1,     -19]
-// }
-// //fence v2
-// template tmpl_fence_v2 (x, y) {
-//     [ x,      y,      48,      30,     -41,     -13]
-//     [ x+50,   y,      48,      30,      -6,     -13]
-//     [ x+100,  y,      13,      39,      -6,     -23]
-//     [ x+114,  y,      64,      30,     -31,     -26]
-//     [ x+179,  y,      48,      30,     -41,     -18]
-//     [ x+228,  y,      48,      30,      -6,     -19]
-//     [ x+277,  y,      48,      35,     -42,     -19]
-//     [ x+326,  y,      48,      35,      -6,     -19]
-//     [ x,      y+40,   48,      30,     -37,     -11]
-//     [ x+50,   y+40,   48,      30,      -10,     -11]
-//     [ x+100,  y+40,   13,      39,      -6,     -23]
-//     [ x+114,  y+40,   64,      30,     -31,     -26]
-//     [ x+179,  y+40,   48,      30,     -37,     -17]
-//     [ x+228,  y+40,   48,      30,     -10,     -18]
-//     [ x+277,  y+40,   48,      35,     -38,     -18]
-//     [ x+326,  y+40,   48,      35,     -10,     -18]
-// }
-// // Depot
-// template tmpl_depot (x, y) {
-//     [ x,      y,      64,      57,     -31,     -30]   // SE entry
-//     [ x+70,   y,      64,      57,      -9,     -41]   // SE
-//     [ x+140,  y,      64,      57,     -31,     -30]   // SW entry
-//     [ x+210,  y,      64,      57,     -53,     -41]   // SW
-//     [ x+280,  y,      64,      57,     -53,     -41]   // NE
-//     [ x+350,  y,      64,      57,      -9,     -41]   // NW
-// }
-// // Catenary Wires
-// template tmpl_catenary_wire(x, y) {
-//     [0,		y,  	32, 20, -29, -6]
-//     [48,	y,  	32, 20,  -1, -6]
-//     [96,	y,  	32,  5,  -1, -6]
-//     [144,	y,  	1,  20,   0, -7]
-//     [160,	y,  	32, 28, -29, -6]
-//     [208,	y,  	32, 13,  -1,  2]
-//     [256,	y,  	32, 13, -29,  2]
-//     [304,	y,  	32, 28,  -1, -6]
-//     [352,	y, 		32, 19, -29, -5]
-//     [400,	y, 		32, 19,  -1, -5]
-//     [448,	y, 		32,  5,  -1, -6]
-//     [496,	y, 		1,  20,   0, -7]
-//     [512,	y, 		32, 27, -29, -5]
-//     [560,	y, 		32, 12,  -1,  3]
-//     [608,	y, 		32, 12, -29,  3]
-//     [656,	y, 		32, 27,  -1, -5]
-//     [704,	y, 		32, 20, -29, -6]
-//     [0, 	y+50, 	32,	20,  -1, -6]
-//     [48, 	y+50, 	32,  5,  -1, -6]
-//     [96, 	y+50, 	1,  20,   0, -7]
-//     [112, 	y+50, 	32, 28, -29, -6]
-//     [160, 	y+50, 	32, 13,  -1,  2]
-//     [208, 	y+50, 	32,	13, -29,  2]
-//     [256, 	y+50, 	32, 28,  -1, -6]
-//     [304, 	y+50, 	16, 11, -29,  3]
-//     [336, 	y+50, 	16, 12,  -1, -6]
-//     [368, 	y+50, 	16, 12, -13, -6]
-//     [400, 	y+50, 	16, 11,  15,  3]
-// }
-// //Catenary pylons
-// template tmpl_catenary_pylons(x, y) {
-//     [x+0,   y,  15, 25, -7, -20]
-//     [x+16,  y,  15, 25, 0,  -21]
-//     [x+32,  y,  15, 25, 0,  -20]
-//     [x+48,  y,  15, 25, -7, -21]
-//     [x+64,  y,  15, 25, 0,  -19]
-//     [x+80,  y,  15, 25, 0,  -21]
-//     [x+96,  y,  15, 25, -1, -19]
-//     [x+112, y,  15, 25, -10, -19]
-// }
-// // Level Crossings
-// template tmpl_level_crossing (x, y, z) {
-//     [ x,      z,      64,      56,     -31,     -25]
-//     [ x+70,   z,      64,      56,     -31,     -25]
-//     [ x+140,  y,      64,      56,     -33,     -22,ANIM]
-//     [ x+210,  y,      64,      56,     -31,     -21,ANIM]
-//     [ x+280,  y,      64,      56,     -57,     -39,ANIM]
-//     [ x+350,  y,      64,      56,     -57,     -34,ANIM]
-//     [ x+420,  y,      64,      56,      -7,     -35,ANIM]
-//     [ x+490,  y,      64,      56,      -5,     -39,ANIM]
-//     [ x+560,  y,      64,      56,     -31,     -52,ANIM]
-//     [ x+630,  y,      64,      56,     -31,     -52,ANIM]
-// }//trains
+}//trains
 spriteset(spriteset_mucar, "gfx/mucar/mucar.png") {tmpl_32_train_basic(0, 0)}
 spriteset(spriteset_mucar_purchase, "gfx/mucar/mucar_purchase.png"){tmpl_purchase_single_head(0, 0)}
 item(FEAT_TRAINS, item_mucar, 9000){
@@ -935,28 +559,60 @@ item(FEAT_TRAINS, item_521_series, 0521){
         default: sw_521_series_graphics;
     }
 }//600,to do : remake
-spriteset(spriteset_600_series_front_lighted, "gfx/600/600_series.png") { tmpl_32_train_8_views(0, 0) } 
-spriteset(spriteset_600_series_rear_lighted, "gfx/600/600_series.png") { tmpl_32_train_8_views(1, 0) } 
-spriteset(spriteset_600_series_front, "gfx/600/600_series.png") { tmpl_32_train_8_views(2, 0) } 
-spriteset(spriteset_600_series_rear, "gfx/600/600_series.png") { tmpl_32_train_8_views(3, 0) } 
-spriteset(spriteset_600_series_middle, "gfx/600/600_series.png") { tmpl_32_train_4_views(4) } 
 spriteset(spriteset_600_series_purchase, "gfx/600/600_series_purchase.png") {tmpl_purchase_dual_head(0, 0)} 
-spriteset(spriteset_600_series_invisible, "gfx/600/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
+
+spriteset(spriteset_600_series_1_front, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 1) }
+spriteset(spriteset_600_series_1_back, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_1_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 31) }
+spriteset(spriteset_600_series_2_general, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_2_general, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_middle.png") { tmpl_32_train_main(0, 1) }
+spriteset(spriteset_600_series_2_general_panto, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_2_general_panto, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_middle.png") { tmpl_32_train_main(0, 31) }
+spriteset(spriteset_600_series_2_green_car, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_2_green_car, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_middle.png") { tmpl_32_train_main(0, 61) }
+spriteset(spriteset_600_series_2_general_panto_since, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_2_general_panto_since, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_middle.png") { tmpl_32_train_main(0, 91) }
+spriteset(spriteset_600_series_3_front, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_3_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 31) }
+spriteset(spriteset_600_series_3_back, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_3_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 1) }
 switch(FEAT_TRAINS, SELF, sw_600_series_attach_wagon, [vehicle_type_id == item_600_series || vehicle_type_id == item_mucar]){
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
 }
-switch(FEAT_TRAINS, SELF, sw_600_series_front_graphics, train_is_driving_backwards){
-    0: return spriteset_600_series_rear_lighted;
-    1: return spriteset_600_series_front_lighted;
+switch(FEAT_TRAINS, SELF, sw_600_series_start_stop, num_vehs_in_consist < 4){
+    0: return string(STR_CANNOT_CAR,4);
+    1: return CB_RESULT_NO_TEXT;
 }
-switch(FEAT_TRAINS, SELF, sw_600_series_back_graphics, train_is_driving_backwards){
-    0: return spriteset_600_series_front_lighted;
-    1: return spriteset_600_series_rear_lighted;
+switch(FEAT_TRAINS, SELF, sw_600_series_front_graphics, train_is_driving_backwards){
+    0: return spriteset_600_series_1_front;
+    1: return spriteset_600_series_1_back;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_rear_graphics, train_is_driving_backwards){
+    0: return spriteset_600_series_3_front;
+    1: return spriteset_600_series_3_back;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_3to6_cars_middle_graphics, position_in_vehid_chain % 4){ 
+    0: return spriteset_600_series_2_general_panto;
+    1: return spriteset_600_series_2_general_panto_since;
+    2: return spriteset_600_series_2_general;
+    3: return spriteset_600_series_2_green_car;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_7to99_middle_graphics, position_in_vehid_chain % 8){ 
+    0..2: return sw_600_series_3to6_cars_middle_graphics;
+    3..5: return spriteset_600_series_2_green_car;
+    6: return spriteset_600_series_2_general_panto;
+    7: return spriteset_600_series_2_general_panto_since;
+    default: return spriteset_600_series_2_general;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_wagon_graphics, num_vehs_in_vehid_chain){
+    1..4: return sw_600_series_3to6_cars_middle_graphics;
+    default: return sw_600_series_7to99_middle_graphics;
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_graphics, position_in_vehid_chain % 2){ 
     0: return sw_600_series_front_graphics; 
-    1: return sw_600_series_back_graphics;
+    1: return sw_600_series_rear_graphics;
 }
 item(FEAT_TRAINS, item_600_series, 0600){
     property {
@@ -967,7 +623,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         vehicle_life: 15;
         reliability_decay: 20;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
-        loading_speed: param_loading_2D;
+        loading_speed: param_loading_1D;
         cost_factor: 45;
         running_cost_factor: 55;
         sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -979,7 +635,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 1;
         cargo_capacity: param_cargo_capacity_express;
-        weight: 40 ton;
+        weight: 43 ton;
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon: 0 kW;
@@ -988,6 +644,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 0;
+        speed: 270 km/h;
     }
     graphics {
         additional_text:
@@ -995,20 +652,20 @@ item(FEAT_TRAINS, item_600_series, 0600){
             string(STR_CONCAT_2_DASH, string(STR_NARROWGAUGE), string(STR_STANDARD)),
             string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
             string(STR_LOAD_SPEED,string(STR_DOORS,2)),
-            string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
+            string(STR_FORMATION,string(STR_NUM_CARS_1,6)),
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL,string(STR_JR_PASSENGER)))));
         can_attach_wagon: sw_600_series_attach_wagon;
-        speed: param_speed_160_to_200;
+        start_stop: sw_600_series_start_stop;
         purchase: spriteset_600_series_purchase;
         default: sw_600_series_graphics;
     }
     livery_override(item_mucar){
-        weight: 40;
+        weight: 43;
         cargo_capacity: param_cargo_capacity_express;
-        loading_speed: param_loading_2D;
-        power: 350;
-        default: spriteset_600_series_middle;
+        loading_speed: param_loading_1D;
+        power: 350/2;
+        default: sw_600_series_wagon_graphics;
     }
 }//2000
 spriteset(spriteset_2000_series_1_front_light, "gfx/mucar/mucar.png"){tmpl_32_train_basic(0, 0)}
@@ -1415,13 +1072,13 @@ switch(FEAT_TRAINS, SELF, sw_kiha189_series_front_graphics, train_is_driving_bac
     0: return spriteset_kiha189_series_1_front;
     1: return spriteset_kiha189_series_1_back;
 }
-switch(FEAT_TRAINS, SELF, sw_kiha189_series_back_graphics, train_is_driving_backwards){
+switch(FEAT_TRAINS, SELF, sw_kiha189_series_rear_graphics, train_is_driving_backwards){
     0: return spriteset_kiha189_series_3_front;
     1: return spriteset_kiha189_series_3_back;
 }
 switch(FEAT_TRAINS, SELF, sw_kiha189_series_graphics, position_in_vehid_chain % 2){ 
     0: return sw_kiha189_series_front_graphics; 
-    1: return sw_kiha189_series_back_graphics;
+    1: return sw_kiha189_series_rear_graphics;
 }
 item(FEAT_TRAINS, item_kiha189, 0189) {
     property {

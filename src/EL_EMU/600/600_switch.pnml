@@ -2,15 +2,36 @@ switch(FEAT_TRAINS, SELF, sw_600_series_attach_wagon, [vehicle_type_id == item_6
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
 }
-switch(FEAT_TRAINS, SELF, sw_600_series_front_graphics, train_is_driving_backwards){
-    0: return spriteset_600_series_rear_lighted;
-    1: return spriteset_600_series_front_lighted;
+switch(FEAT_TRAINS, SELF, sw_600_series_start_stop, num_vehs_in_consist < 4){
+    0: return string(STR_CANNOT_CAR,4);
+    1: return CB_RESULT_NO_TEXT;
 }
-switch(FEAT_TRAINS, SELF, sw_600_series_back_graphics, train_is_driving_backwards){
-    0: return spriteset_600_series_front_lighted;
-    1: return spriteset_600_series_rear_lighted;
+switch(FEAT_TRAINS, SELF, sw_600_series_front_graphics, train_is_driving_backwards){
+    0: return spriteset_600_series_1_front;
+    1: return spriteset_600_series_1_back;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_rear_graphics, train_is_driving_backwards){
+    0: return spriteset_600_series_3_front;
+    1: return spriteset_600_series_3_back;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_3to6_cars_middle_graphics, position_in_vehid_chain % 4){ 
+    0: return spriteset_600_series_2_general_panto;
+    1: return spriteset_600_series_2_general_panto_since;
+    2: return spriteset_600_series_2_general;
+    3: return spriteset_600_series_2_green_car;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_7to99_middle_graphics, position_in_vehid_chain % 8){ 
+    0..2: return sw_600_series_3to6_cars_middle_graphics;
+    3..5: return spriteset_600_series_2_green_car;
+    6: return spriteset_600_series_2_general_panto;
+    7: return spriteset_600_series_2_general_panto_since;
+    default: return spriteset_600_series_2_general;
+}
+switch(FEAT_TRAINS, SELF, sw_600_series_wagon_graphics, num_vehs_in_vehid_chain){
+    1..4: return sw_600_series_3to6_cars_middle_graphics;
+    default: return sw_600_series_7to99_middle_graphics;
 }
 switch(FEAT_TRAINS, SELF, sw_600_series_graphics, position_in_vehid_chain % 2){ 
     0: return sw_600_series_front_graphics; 
-    1: return sw_600_series_back_graphics;
+    1: return sw_600_series_rear_graphics;
 }

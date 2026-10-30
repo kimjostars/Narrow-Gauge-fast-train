@@ -11,7 +11,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         vehicle_life: 15;
         reliability_decay: 20;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
-        loading_speed: param_loading_2D;
+        loading_speed: param_loading_1D;
         cost_factor: 45;
         running_cost_factor: 55;
         sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -23,7 +23,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 1;
         cargo_capacity: param_cargo_capacity_express;
-        weight: 40 ton;
+        weight: 43 ton;
         ai_engine_rank: 0;
         engine_class: ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon: 0 kW;
@@ -32,6 +32,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 0;
+        speed: 270 km/h;
     }
     graphics {
         additional_text:
@@ -39,19 +40,19 @@ item(FEAT_TRAINS, item_600_series, 0600){
             string(STR_CONCAT_2_DASH, string(STR_NARROWGAUGE), string(STR_STANDARD)),
             string(STR_DENKI, string(STR_AC_DC_2_HZ, 20, 50, 60, 1500)),
             string(STR_LOAD_SPEED,string(STR_DOORS,2)),
-            string(STR_FORMATION,string(STR_NUM_CARS_1,9)),
+            string(STR_FORMATION,string(STR_NUM_CARS_1,6)),
             string(STR_USAGE,string(STR_USE_LTDEXPRESS)),
             string(STR_OPERATOR,string(STR_JR,string(STR_VIRTUAL,string(STR_JR_PASSENGER)))));
         can_attach_wagon: sw_600_series_attach_wagon;
-        speed: param_speed_160_to_200;
+        start_stop: sw_600_series_start_stop;
         purchase: spriteset_600_series_purchase;
         default: sw_600_series_graphics;
     }
     livery_override(item_mucar){
-        weight: 40;
+        weight: 43;
         cargo_capacity: param_cargo_capacity_express;
-        loading_speed: param_loading_2D;
-        power: 350;
-        default: spriteset_600_series_middle;
+        loading_speed: param_loading_1D;
+        power: 350/2;
+        default: sw_600_series_wagon_graphics;
     }
 }

@@ -1,7 +1,18 @@
-spriteset(spriteset_600_series_front_lighted, "gfx/600/600_series.png") { tmpl_32_train_8_views(0, 0) } 
-spriteset(spriteset_600_series_rear_lighted, "gfx/600/600_series.png") { tmpl_32_train_8_views(1, 0) } 
-spriteset(spriteset_600_series_front, "gfx/600/600_series.png") { tmpl_32_train_8_views(2, 0) } 
-spriteset(spriteset_600_series_rear, "gfx/600/600_series.png") { tmpl_32_train_8_views(3, 0) } 
-spriteset(spriteset_600_series_middle, "gfx/600/600_series.png") { tmpl_32_train_4_views(4) } 
 spriteset(spriteset_600_series_purchase, "gfx/600/600_series_purchase.png") {tmpl_purchase_dual_head(0, 0)} 
-spriteset(spriteset_600_series_invisible, "gfx/600/600_series.png") { tmpl_32_train_single(6, 1, 1, 0, 0) }
+
+spriteset(spriteset_600_series_1_front, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 1) }
+spriteset(spriteset_600_series_1_back, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_1_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 31) }
+spriteset(spriteset_600_series_2_general, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_2_general, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_middle.png") { tmpl_32_train_main(0, 1) }
+spriteset(spriteset_600_series_2_general_panto, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_2_general_panto, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_middle.png") { tmpl_32_train_main(0, 31) }
+spriteset(spriteset_600_series_2_green_car, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_2_green_car, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_middle.png") { tmpl_32_train_main(0, 61) }
+spriteset(spriteset_600_series_2_general_panto_since, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_2_general_panto_since, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_middle.png") { tmpl_32_train_main(0, 91) }
+spriteset(spriteset_600_series_3_front, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_3_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 31) }
+spriteset(spriteset_600_series_3_back, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
+alternative_sprites(spriteset_600_series_3_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 1) }
