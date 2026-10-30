@@ -5,10 +5,10 @@
 item(FEAT_TRAINS, item_600_series, 0600){
     property {
         name: string(STR_NAME_600_TRAINS);
-        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date: date(2000,01,01);
-        model_life: 45;
-        vehicle_life: 15;
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2012,01,01);
+        model_life: 35;
+        vehicle_life: 25;
         reliability_decay: 20;
         refittable_cargo_classes: bitmask(CC_PASSENGERS);
         loading_speed: param_loading_1D;
@@ -19,7 +19,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         refit_cost: 0;
         track_type: [TR_1067_AC_DC,TR_1435_AC_DC];
         ai_special_flag: AI_FLAG_PASSENGER;
-        power: 900 kW;
+        power: 760 kW;
         running_cost_base: RUNNING_COST_ELECTRIC;
         dual_headed: 1;
         cargo_capacity: param_cargo_capacity_express;
@@ -29,10 +29,11 @@ item(FEAT_TRAINS, item_600_series, 0600){
         extra_power_per_wagon: 0 kW;
         tractive_effort_coefficient: 0.9 / 10;
         air_drag_coefficient: 0.06;
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
         extra_weight_per_wagon: 0 ton;
         bitmask_vehicle_info: 0;
         speed: 270 km/h;
+        curve_speed_mod: 80;
     }
     graphics {
         additional_text:
@@ -52,7 +53,7 @@ item(FEAT_TRAINS, item_600_series, 0600){
         weight: 43;
         cargo_capacity: param_cargo_capacity_express;
         loading_speed: param_loading_1D;
-        power: 350/2;
+        power: 760/2;
         default: sw_600_series_wagon_graphics;
     }
 }
