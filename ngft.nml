@@ -559,8 +559,6 @@ item(FEAT_TRAINS, item_521_series, 0521){
         default: sw_521_series_graphics;
     }
 }//600,to do : remake
-spriteset(spriteset_600_series_purchase, "gfx/600/600_series_purchase.png") {tmpl_purchase_dual_head(0, 0)} 
-
 spriteset(spriteset_600_series_1_front, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
 alternative_sprites(spriteset_600_series_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 1) }
 spriteset(spriteset_600_series_1_back, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
@@ -577,6 +575,8 @@ spriteset(spriteset_600_series_3_front, "gfx/mucar/mucar.png") { tmpl_32_train_b
 alternative_sprites(spriteset_600_series_3_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 31) }
 spriteset(spriteset_600_series_3_back, "gfx/mucar/mucar.png") { tmpl_32_train_basic(0, 0) }
 alternative_sprites(spriteset_600_series_3_back, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_front.png") { tmpl_32_train_main(0, 1) }
+spriteset(spriteset_600_series_purchase, "gfx/purchase_8bpp.png") { tmpl_purchase_dual_head(0, 0) }
+alternative_sprites(spriteset_600_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/600/600_series_purchase.png") { tmpl_purchase_dual_head_32bpp(0, 0) }
 switch(FEAT_TRAINS, SELF, sw_600_series_attach_wagon, [vehicle_type_id == item_600_series || vehicle_type_id == item_mucar]){
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
