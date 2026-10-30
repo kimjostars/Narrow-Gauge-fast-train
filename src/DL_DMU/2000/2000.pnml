@@ -5,7 +5,7 @@
 item(FEAT_TRAINS, item_2000_series, 2000){
     property {
         name: string(STR_NAME_2000_TRAINS);
-        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        climates_available: param_actual_train_usage == 0 ? ALL_CLIMATES : NO_CLIMATE;
         misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
         introduction_date: date(1990,07,01);
         engine_class: ENGINE_CLASS_DIESEL;

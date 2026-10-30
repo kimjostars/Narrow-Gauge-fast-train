@@ -5,7 +5,7 @@
 item(FEAT_TRAINS, item_521_series, 0521){
     property {
         name: string(STR_NAME_521_TRAINS);
-        climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        climates_available: param_actual_train_usage == 0 ? ALL_CLIMATES : NO_CLIMATE;
         introduction_date: date(2006,10,21);
         model_life: 45;
         vehicle_life: 30;

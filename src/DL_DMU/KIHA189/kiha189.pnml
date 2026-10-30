@@ -5,7 +5,7 @@
 item(FEAT_TRAINS, item_kiha189, 0189) {
     property {
         name: string(STR_NAME_KIHA189_SERIES);
-        climates_available: ALL_CLIMATES;
+        climates_available: param_actual_train_usage == 0 ? ALL_CLIMATES : NO_CLIMATE;
         introduction_date: date(2010,01,01);
         track_type: TR_1067_NE;
         sprite_id: SPRITE_ID_NEW_TRAIN;
