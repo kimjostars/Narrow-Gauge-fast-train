@@ -84,7 +84,7 @@ grf {
             type: bool;
             name: string(STR_NGFT_ACTUAL_TRAIN_USAGE_NAME);
             desc: string(STR_NGFT_ACTUAL_TRAIN_USAGE_DESC);
-            def_value: 1;
+            def_value: 0;
             bit: 0;
         }
     }
