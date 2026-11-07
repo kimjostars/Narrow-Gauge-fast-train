@@ -2,7 +2,7 @@ switch(FEAT_TRAINS, SELF, sw_600_series_attach_wagon, [vehicle_type_id == item_6
     0: return string(STR_CANNOT_ATTACH_OTHER);
     1: return CB_RESULT_ATTACH_ALLOW;
 }
-switch(FEAT_TRAINS, SELF, sw_600_series_start_stop, num_vehs_in_consist < 4){
+switch(FEAT_TRAINS, SELF, sw_600_series_start_stop, num_vehs_in_consist >= 4){
     0: return string(STR_CANNOT_CAR,4);
     1: return CB_RESULT_NO_TEXT;
 }
