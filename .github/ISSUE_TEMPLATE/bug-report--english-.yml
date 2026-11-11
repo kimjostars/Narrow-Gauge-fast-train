@@ -1,0 +1,25 @@
+name: "Bug Report [English]"
+description: Found a bug? Please fill out the form below to submit a bug report
+title: "[BUG]"
+labels: "Bug"
+body:
+  - type: markdown
+	  attributes:
+    	value: |
+        Thank you for reporting the bug. Please fill out the form below to submit a bug report.
+  - type: textarea
+    attributes:
+      label: Error Details, Expected Result
+      description: Describe the bug you found and what you expected to happen. Please include screenshots if necessary.
+    validations:
+  		required: true
+  - type: textarea
+    attributes:
+  		label: Reproduction Steps
+  		description: Explain how to reproduce the bug. Please include screenshots if necessary.
+  	validations:
+    	required: true
+  - type: textarea
+    attributes:
+      label: Additional Information
+    	description: If you have any additional information to share, please include it here.
