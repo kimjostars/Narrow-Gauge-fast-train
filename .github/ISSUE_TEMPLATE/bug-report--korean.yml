@@ -1,7 +1,7 @@
 name: "버그제보 [한국어]"
 description: 버그사항을 찾으셨습니까? 아래 양식에 맞춰 버그리포트를 작성해주세요
 title: "[BUG]"
-labels: "Bug"
+labels: Bug
 body:
   - type: markdown
 	  attributes:
